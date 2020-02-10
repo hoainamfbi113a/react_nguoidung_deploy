@@ -1,171 +1,145 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { homedir } from 'os';
-class Home extends Component {
+import {Link}  from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+class HeaderNav extends Component {
+  logOut(e) {
+    e.preventDefault()
+    localStorage.removeItem('usertoken')
+    this.props.history.push(`/`)
+  }
   render() {
-    return (
-      <div className="web_content">
-    
-      <div className="content">
-        <aside className="aside-show">
-          <div className="slideshow">
-            <div className="slide"><img src="../images/slide2.jpg" alt="" /></div>
-            <div className="slide"><img src="../images/slide1.jpg" style={{display: 'none'}} alt="" /></div>
-            <div className="slide"><img src="../images/slide3.jpg" style={{display: 'none'}} alt="" /></div>
-          </div>
-          <div className="nut-slide">
-            <span id="btn-prev"><i className="fas fa-chevron-left" /></span>
-            <span id="btn-next"><i className="fas fa-chevron-right" /></span>
-          </div>
-        </aside>
-        <aside className="aside-banner">
-          <div>
-            <ul className="banner1">
-              <figure style={{background: 'rgb(144, 144, 245)'}}>
-                <h4>
-                  <a href> BÀI GIẢNG MỚI
-                  </a>
-                </h4>
-              </figure>    
-              <a href> Hướng dẫn giải toán lớp 5</a>
-              <br />
-              <a href> Hướng dẫn phát âm tiếng anh như người bản địa</a>
-              <br />
-              <a href> Hướng dẫn giải bài tập toán lớp 3</a>
-            </ul>
-          </div>
-          <div className="banner1">
-            <img height={100} width={400} src="../images/banner2.jpg" alt="banner1" />
-          </div>
-          <div className="banner1">
-            <img height={100} width={400} src="../images/banner1.jpg" alt="banner1" />
-          </div>
-        </aside>
-        <aside className="aside-main">
-          <div className="inf-class">
-            <a href><img src="../images/lop1.jpg" alt="lop 1" /></a>
-            <a href><img src="../images/lop2.jpg" alt="lop 2" /></a>
-            <a href><img src="../images/lop3.jpg" alt="lop 3" /></a>
-            <a href><img src="../images/lop4.jpg" alt="lop 4" /></a>
-            <a href><img src="../images/lop5.jpg" alt="lop 5" /></a>
-          </div>
-        </aside>
-        <aside className="aside-topdiem">
-        </aside>
-        <aside className="aside-carousel">
-          <div className="carousel active_carousel">
-            <div className="boxcarousel">
-              <img height="146px" width="240px" src="../images/carousel1.jpg" />
-              <h3>....</h3>
-              <div className="destation">
-                ..................................
-              </div>
-            </div>
-            <div className="boxcarousel">
-              <img height="146px" width="240px" src="../images/carousel2.jpg" />
-              <h3>....</h3>
-              <div className="destation">
-                ..................................
-              </div>
-            </div>
-            <div className="boxcarousel">
-              <img height="146px" width="240px" src="../images/carousel3.jpg" />
-              <h3>....</h3>
-              <div className="destation">
-                ..................................
-              </div>
-            </div>
-            <div className="boxcarousel">
-              <img height="146px" width="240px" src="../images/carousel4.jpg" />
-              <h3>....</h3>
-              <div className="destation">
-                ..................................
-              </div>
-            </div>
-            <div className="boxcarousel">
-              <img height="146px" width="240px" src="../images/carousel5.jpg" />
-              <h3>....</h3>
-              <div className="destation">
-                ..................................
-              </div>
-            </div>
-          </div>
-          <div className="nut-slide-carousel">
-            <span id="btn-prev-carousel"><i className="fa fa-chevron-left" style={{fontSize: '30px', color: '#666'}} /></span>
-            <span id="btn-next-carousel"><i className="fa fa-chevron-right" style={{fontSize: '30px', color: '#666'}} /></span>
-          </div>
-        </aside>
-        <aside className="aside-quangcao">
-          <img height="200px" width="1250px" src="../images/quangcao.jpg" />
-        </aside>
-        <aside className="aside-topquestion">
-          <figure style={{background: 'rgb(144, 144, 245)'}}>
-            <h4>
-              <a href> TOP CÂU HỎI!!!</a>
-            </h4>
-          </figure>    
-        </aside>
-        <aside className="aside-tintuc">
-          <div className="carousel active_carousel">
-            <div className="boxcarousel">
-              <img height="146px" width="240px" src="../images/banner.png" />
-              <h3>....</h3>
-              <div className="destation">
-                ..................................
-              </div>
-            </div>
-            <div className="boxcarousel">
-              <img height="146px" width="240px" src="../images/banner.png" />
-              <h3>....</h3>
-              <div className="destation">
-                ..................................
-              </div>
-            </div>
-            <div className="boxcarousel">
-              <img height="146px" width="240px" src="../images/banner.png" />
-              <h3>....</h3>
-              <div className="destation">
-                ..................................
-              </div>
-            </div>
-            <div className="boxcarousel">
-              <img height="146px" width="240px" src="../images/banner.png" />
-              <h3>....</h3>
-              <div className="destation">
-                ..................................
-              </div>
-            </div>
-            <div className="boxcarousel">
-              <img height="146px" width="240px" src="../images/banner.png" />
-              <h3>....</h3>
-              <div className="destation">
-                ..................................
-              </div>
-            </div>
-          </div>
-          <div className="nut-slide-carousel">
-            <span id="btn-prev-carousel"><i className="fa fa-chevron-left" style={{fontSize: '30px', color: '#666'}} /></span>
-            <span id="btn-next-carousel"><i className="fa fa-chevron-right" style={{fontSize: '30px', color: '#666'}} /></span>
-          </div>
-        </aside>
-        <aside className="aside-fb">
-          <div className="fb">
-            <img height="30px" width="30px" src="../images/fb.jpg" alt="" />
-            <a href style={{textAlign: 'center'}}>www.facebook.nlkids.com</a>
-          </div>
-        </aside>
-        <aside className="aside-youtube">
-          <div className="yt">
-            <img height="30px" width="30px" src="../images/youtube.png" alt="" />
-            <a href>https://www.youtube.com/channel/UCPeHKeg8RVHOBZWyZijoqow</a>
-          </div>
-        </aside>
+    const loginRegLink = (
+      <aside className="menu only-pc">
+      <div className="menu-home">
+        <a href><i className="fa fa-fw fa-home" />LỚP</a>
+        <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
+        <a href><i className="fa fa-fw fa-home" />TÀI LIỆU</a>
+        <a href><i className="fa fa-fw fa-home" />HỌC ONLINE</a>
+        <a href><i className="fa fa-fw fa-home" />HỌC &amp; CHƠI</a>
+        <a href><i className="fa fa-fw fa-home" />DIỄN ĐÀN</a>
+        <a href><i className="fa fa-fw fa-home" />GIỚI THIỆU</a>
+        <Link to="/login"><i className="fa fa-fw fa-home"/>ĐĂNG NHẬP</Link>
+        <Link to="/register"><i className="fa fa-fw fa-home"/>ĐĂNG KÝ</Link>
       </div>
+    </aside>
+    )
+    const userLink = (   
+       <aside className="menu only-pc">
+       <div className="menu-home">
+         <a href><i className="fa fa-fw fa-home" />LỚP</a>
+         <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
+         <a href><i className="fa fa-fw fa-home" />TÀI LIỆU</a>
+         <a href><i className="fa fa-fw fa-home" />HỌC ONLINE</a>
+         <a href><i className="fa fa-fw fa-home" />HỌC &amp; CHƠI</a>
+         <a href><i className="fa fa-fw fa-home" />DIỄN ĐÀN</a>
+         <a href><i className="fa fa-fw fa-home" />GIỚI THIỆU</a>
+         <a href="" onClick={this.logOut.bind(this)} className="nav-link"><i className="fa fa-fw fa-home" />
+            ĐĂNG XUẤT
+          </a>
+       </div>
+     </aside>
      
-    </div>
+    )
+    return (
+      <div>
+      <header className="only-pc">
+        <div className="header-content">
         
+            <Link className="logo" to="/">
+          <img height="55px" width="180px" src="../img/images/logo.png" alt="Logo" /> 
+        
+        </Link>
+          <form action className="search-site">
+            
+            <input type="text" placeholder="Bạn tìm gì..." />
+            <button className="btn-search">
+              <i className="fa_search" />
+            </button>
+          </form>
+          <nav className="nav-laptop">
+            <a href>
+              <i className="phone-icon" />
+              <div>
+                MÔN TOÁN
+              </div>
+            </a>
+            <a href>
+              <i className="table-icon" />
+              <div>TIẾNG ANH</div>
+            </a>
+            <a href="#" className="fa fa-facebook" style={{fontSize: '20px'}} />
+            <a href="#" className="fa fa-google" style={{fontSize: '20px'}} />
+          </nav>
+          <nav className="nav-destop">
+            <div className="menu-reponsive">
+            </div>
+          </nav>
+        </div>
+      </header>
+      <header className="only-sp">
+        <div className="js-nav Nav">
+          <div className="Nav-content">
+            <div className="Nav__logo">
+              <img src="../img/images/logo.png" alt="" />
+            </div>
+            <div className="Nav-search">
+              <div className="Nav-search-content">
+                <div className="Nav-search__input">
+                  <input type="text" placeholder="Tìm kiếm" />
+                </div>
+                <div className="Nav-search__btn">
+                  <i className="fa fa-search" />
+                </div>
+              </div>
+            </div>
+            <div className="Nav-hamburger">
+              <div className="js-navHamburger Nav-hamburger-content">
+                <span className="Nav-hamburger-content__ico" />
+                <span className="Nav-hamburger-content__ico" />
+                <span className="Nav-hamburger-content__ico" />
+              </div>
+            </div>
+          </div>
+          <div className="Nav-menu">
+            <div className="Nav-menu-content">
+              <div className="Nav-menu-content-list">
+                <p className="Nav-menu-content-item">Môn toán</p>
+                <p className="Nav-menu-content-item">Môn tiếng anh</p>
+                <p className="Nav-menu-content-item">Tài liệu</p>
+                <p className="Nav-menu-content-item">Học Online</p>
+                <p className="Nav-menu-content-item">Học&amp;chơi</p>
+                <p className="Nav-menu-content-item">Diễn Đàn</p>
+                <p className="Nav-menu-content-item">Giới thiệu</p>
+                <p className="Nav-menu-content-item"> <Link to="/login">Đăng nhập</Link></p>
+               
+         
+                <p className="Nav-menu-content-item"> <Link to="/register">Đăng ký</Link></p>
+                <p className="Nav-menu-content-item">Lớp</p>
+                <p className="Nav-menu-content-item">Kiểm tra</p>
+                <p className="Nav-menu-content-item">Tin tức</p>
+              </div>
+              <div className="Nav-menu-content-footer">
+                <div className="Nav-menu-content-footer-contact">
+                  <img src="/common/img/contact_free_ico.png" alt="" />
+                  <a href="tel:91919191919">091919191919</a>
+                </div>
+                <div className="Nav-menu-content-footer-location">
+                  <p>Tru so</p>
+                  <select>
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="hanoi">Hồ Chí Minh</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      {localStorage.usertoken ? userLink : loginRegLink}
+    </div>
+   
+      
     )
   }
 }
-
-export default Home;
+export default withRouter(HeaderNav)
