@@ -44,8 +44,6 @@ renderItem = () =>{
          <Item key={item._id}  item={item} index={index}  handleShowAlert={this.handleShowAlert}  handleEditItem = {this.handleEditItem}/>
        )
      })
-    
-   
    )
 }
   render() {

@@ -90,7 +90,7 @@ class Question extends Component {
         .catch(function (error) {
             // console.log(error);
         })
-}
+  }
       renderItem = () =>{   
         
         let {items,idEdit,nameEdit,levelEdit,persons} = this.state; 

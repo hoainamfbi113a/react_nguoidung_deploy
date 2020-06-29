@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link}  from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+import "./style.css"
 class HeaderNav extends Component {
   logOut(e) {
     e.preventDefault()
@@ -13,7 +14,19 @@ class HeaderNav extends Component {
       <div className="menu-home">
         <a href><i className="fa fa-fw fa-home" />LỚP</a>
         <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
-        <a href><i className="fa fa-fw fa-home" />TÀI LIỆU</a>
+        {/* <a href><i className="fa fa-fw fa-home" />TÀI LIỆU</a> */}
+        <Link to="/lession">
+          <div className="dropdown-container">
+            <label htmlFor="openDropdown" className="dropdown">
+              Tai lieu
+            </label>
+            <input type="checkbox" id="openDropdown" hidden />
+            <div className="dropdown-menu">
+              <span>Anh van</span>
+              <span>Toan</span>
+            </div>
+          </div>
+        </Link>
         <a href><i className="fa fa-fw fa-home" />HỌC ONLINE</a>
         <a href><i className="fa fa-fw fa-home" />HỌC &amp; CHƠI</a>
         <a href><i className="fa fa-fw fa-home" />DIỄN ĐÀN</a>
@@ -28,7 +41,20 @@ class HeaderNav extends Component {
        <div className="menu-home">
          <a href><i className="fa fa-fw fa-home" />LỚP</a>
          <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
-         <a href><i className="fa fa-fw fa-home" />TÀI LIỆU</a>
+         {/* <a href><i className="fa fa-fw fa-home" />TÀI LIỆU</a> */}
+            <div className="dropdown-container">
+            <label htmlFor="openDropdown" className="dropdown">
+              Tai lieu
+              <i className="fas fa-angle-down" />
+            </label>
+            <input type="checkbox" id="openDropdown" hidden />
+            <div className="dropdown-menu">
+              <span>Item 1</span>
+              <span>Item 2</span>
+              <span>Item 3</span>
+              <span>Item 4</span>
+            </div>
+          </div>
          <a href><i className="fa fa-fw fa-home" />HỌC ONLINE</a>
          <a href><i className="fa fa-fw fa-home" />HỌC &amp; CHƠI</a>
          <a href><i className="fa fa-fw fa-home" />DIỄN ĐÀN</a>
