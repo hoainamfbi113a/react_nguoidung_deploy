@@ -16,24 +16,16 @@ export default class LessionDetail extends Component {
         // this.setState({iddethi:window.location.href.slice(35)});
         this.setState({iddethi:this.props.match.params.id});
         const token = localStorage.usertoken
-        // const decoded = jwt_decode(token)//giai ma token
-        // console.log(decoded)
-        // this.setState({
-        //   // first_name: decoded.first_name,
-        //   memberid: decoded.memberLogin
-        // })
         axios.get('http://localhost:5000/admin/lession/'+this.props.match.params.id)
             .then(response => {
                 this.setState({persons: response.data});
                 console.log(response.data);
             })
             .catch(function (error) {
-                // console.log(error);
             })
       }
       
     render() {
-        // const htmlString = '<h1>Hello World! 👋</h1>';
         console.log(this.state.persons.lessionContentDetail)
         return (
             <div style={{width: '80%', margin: '0 auto'}}>
@@ -46,6 +38,8 @@ export default class LessionDetail extends Component {
                {/* dangerouslySetInnerHTML={blog.content} {this.state.persons.lessionContentDetail} */}
                {/* <div class="blog_content" dangerouslySetInnerHTML={this.state.persons.lessionContentDetail}  />; */}
             </div>
+          
         )
     }
 }
+

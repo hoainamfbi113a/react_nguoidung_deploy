@@ -10,6 +10,7 @@
     "react": "^16.5.2",
     "react-countdown-now": "^2.1.2",
     "react-dom": "^16.5.2",
+    "react-facebook-login": "^4.1.1",
     "react-html-parser": "^2.0.2",
     "react-router": "^5.0.1",
     "react-router-dom": "^4.3.1",

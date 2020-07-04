@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
 import ItemLesion from './ItemLesion'
 import axios from 'axios';
-export default class LessionContent extends Component {
+export default class LessionSubject extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -24,13 +24,31 @@ export default class LessionContent extends Component {
     }
     renderItem = () =>{
         let {items,idEdit,nameEdit,levelEdit,persons} = this.state;
-          return (
-            persons.map((item,index)=>{
-               return(
-                 <ItemLesion key={item._id}  item={item} index={index}  handleShowAlert={this.handleShowAlert}  handleEditItem = {this.handleEditItem}/>
-               )
-             })
-           )
+        let classId = this.props.match.params.subject;
+        let classFilter = "Anh văn 1"
+        if (classId === "lop1"){
+          classFilter === "Anh văn 1"
+        }
+        if (classId === "lop2"){
+          classFilter = "Anh văn 2"
+        }
+        if (classId === "lop3"){
+          classFilter = "Anh văn 3"
+        }
+        if (classId === "lop4"){
+          classFilter = "Anh văn 4"
+        }
+        if (classId === "lop5"){
+          classFilter = "Anh văn 5"
+        }
+        console.log(classId)
+        return (
+         persons.filter(item => item.lessionContentSubjects == classFilter ).map((item,index)=>{
+            return(
+              <ItemLesion key={item._id}  item={item} index={index}  handleShowAlert={this.handleShowAlert}  handleEditItem = {this.handleEditItem}/>
+            )
+          })
+        )
     }
     render() {
         return (

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { homedir } from 'os';
+import  LessonClass  from "./LessonClass/LessonClass";
 class Home extends Component {
   render() {
     return (
@@ -84,13 +85,7 @@ class Home extends Component {
           <img src="../img/imgs/quang.jpg" alt="" />
         </a>
       </div>
-      <div className="inf-class">
-        <a href><img src="../img/imgs/lop1.jpg" alt="lop 1" /></a>
-        <a href><img src="../img/imgs/lop2.jpg" alt="lop 2" /></a>
-        <a href><img src="../img/imgs/lop3.jpg" alt="lop 3" /></a>
-        <a href><img src="../img/imgs/lop4.jpg" alt="lop 4" /></a>
-        <a href><img src="../img/imgs/lop5.jpg" alt="lop 5" /></a>
-      </div>
+     <LessonClass/>
       <div className="top-user">
         <div className="thongbao"><a href="/?TopicId=9525ab2d-5a64-41ae-b53d-d4b9631adb36">TOP CÁC HỌC SINH CÓ THÀNH TÍCH TỐT</a>
           <a className="title" id="article3eb07392-457c-4d29-ac78-d5644a7867c9" style={{color: '#054690'}}>Xếp hạng lần thứ 14</a>
