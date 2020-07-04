@@ -9,7 +9,7 @@ button,form,input{
 }
 
 body{
-    background: #f0f0f0;
+    background-image: linear-gradient(#F5D0A9,#FBF8EF,#F5D0A9);
     font-family:Helvetica, sans-serif
 }
 a{
@@ -25,14 +25,15 @@ img {
 }
 header{
     /* height:55px; */
-    background:url('../img/back.jpg') repeat-x fixed center;
+    /* background:url('../img/back.jpg') repeat-x fixed center; */
+    background: #F5D0A9;
     display: grid;
     margin-bottom: -5px;
 }
 .content{
     z-index: 1;
     height:2000px;
-    background: #f0f0f0;
+    background: #FBF8EF;
     width: 79%;
     margin: 0 auto;
     display: grid;
@@ -109,7 +110,8 @@ header{
 
 footer{
     height: 152px;
-    background: aqua;
+    background: #F6E3CE;
+
 }
 .header-content{
     width: 78.9%;
@@ -119,7 +121,7 @@ footer{
     height: 100%;
 }
 .logo{
-    background: gold;
+    background: #F6E3CE;
 }
 
 .logo .logo_icon{
@@ -142,11 +144,11 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: black;
+    background: #F6E3CE;
     height: 55px;
 }
 .search-site{
-    background: black;
+    background: #F6E3CE;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -208,14 +210,20 @@ nav a div{
 }
 
 nav a .phone-icon{
-    width:16px;
+    border: 0px solid white;
+    width:25px;
     height:25px;
-    background: url(https://cdn.thegioididong.com/v2015/Content/desktop/images/V4/icondesktop@1x.png?v=001) 310px 0px;
+    background-image: url(../img/math.png);
+    background-size: cover;
+    /* background: url(https://cdn.thegioididong.com/v2015/Content/desktop/images/V4/icondesktop@1x.png?v=001) 310px 0px; */
 }
 nav a .table-icon{
-    width:33px;
-    height:22px;
-    background: url(https://cdn.thegioididong.com/v2015/Content/desktop/images/V4/icondesktop@1x.png?v=001) 292px 0px;
+    border: 0px solid white;
+    width:25px;
+    height:25px;
+    background-image: url(../img/eng.png);
+    background-size: cover;
+    /* background: url(https://cdn.thegioididong.com/v2015/Content/desktop/images/V4/icondesktop@1x.png?v=001) 292px 0px; */
 }
 
 .fa {
@@ -231,7 +239,7 @@ nav a .table-icon{
     /* opacity: 0.7; */
 }
 .fa-facebook {
-    background: #3B5998;
+    background: #5882FA;
     color: white;
 }
   
@@ -239,7 +247,7 @@ nav a .table-icon{
 
   
 .fa-google {
-    background: #dd4b39;
+    background: #FA5858;
     color: white;
 }
 nav a.text{
@@ -251,7 +259,7 @@ nav a.text{
 /* nav menu */
 .menu {
     grid-area: menu;
-    background-image: linear-gradient(to right, #274B74, #8233C5 , #E963FD);
+    background-image: linear-gradient(to right, #FAAC58, #F5DA81 , #FAAC58);
 }
 .menu-home {
     display: grid;
@@ -756,7 +764,7 @@ span#btn-prev-productnew{
     box-shadow: 0 0 4px 2px rgba(0,0,0,.29);
  }
  footer{
-     background: #fff;
+    background: #F6E3CE;
  }
  .footer-content{
      width: 79%;
