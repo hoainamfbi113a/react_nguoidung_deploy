@@ -395,6 +395,9 @@ div.menu-home a {
   .Banner-content__item:last-child {
     margin-bottom: 0;
   }
+  .inf-class a{
+      margin-bottom: 8px;
+  }
   @media screen and (max-width: 1024px) {
     .Banner {
       flex-direction: column;

@@ -6,12 +6,11 @@ export default class ItemLesion extends Component {
         return (
            
             <div>
-                 <Link to={"/lession/"+item._id}>
+                 <Link to={"/lession/detail/"+item._id}>
                  <ul className="banner0">
               <a href>
                 <img src={item.lessionContentImg} alt="Anh noi dung bai hoc" />
                 <h3>{item.lessionContentTitle}aaaaaa</h3>
-                {/* <span>19 phút trước</span> */}
               </a>
             </ul>
             </Link>

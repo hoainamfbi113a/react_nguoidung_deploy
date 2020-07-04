@@ -1,12 +1,35 @@
 import React, { Component } from 'react'
 import {Link}  from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+import FacebookLogin from 'react-facebook-login';
+import axios from 'axios';
 import "./style.css"
 class HeaderNav extends Component {
   logOut(e) {
     e.preventDefault()
     localStorage.removeItem('usertoken')
     this.props.history.push(`/`)
+  }
+   
+   responseFacebook = (response) => {
+    var r = this;
+    // e.preventDefault();//khong tu dong chuyen trang
+    axios.post('/users/loginfacebook', {
+      memberLogin: response.email,
+      memberPass: response.id
+    })
+    .then(function (response) {
+      if(response.data ==='User already exists')
+        alert('User already exists');
+      else{
+      localStorage.setItem('usertoken', response.data)
+      r.props.history.push('/');
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    // console.log(response);
   }
   render() {
     const loginRegLink = (
@@ -15,10 +38,10 @@ class HeaderNav extends Component {
         <a href><i className="fa fa-fw fa-home" />LỚP</a>
         <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
         {/* <a href><i className="fa fa-fw fa-home" />TÀI LIỆU</a> */}
-        <Link to="/lession">
+        <Link to="/lessions">
           <div className="dropdown-container">
             <label htmlFor="openDropdown" className="dropdown">
-              Tai lieu
+              TÀI LIỆU
             </label>
             <input type="checkbox" id="openDropdown" hidden />
             <div className="dropdown-menu">
@@ -93,7 +116,16 @@ class HeaderNav extends Component {
               <i className="table-icon" />
               <div>TIẾNG ANH</div>
             </a>
-            <a href="#" className="fa fa-facebook" style={{fontSize: '20px'}} />
+            {/* <a href="#" className="fa fa-facebook" style={{fontSize: '20px'}} /> */}
+          
+              <FacebookLogin
+                appId="3031314980250040"
+                autoLoad={false}
+                fields="name,email,picture"
+                callback={this.responseFacebook}
+                cssClass="my-facebook-button-class"
+                icon="fa-facebook"
+              />
             <a href="#" className="fa fa-google" style={{fontSize: '20px'}} />
           </nav>
           <nav className="nav-destop">
