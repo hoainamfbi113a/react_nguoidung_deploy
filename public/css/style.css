@@ -9,7 +9,7 @@ button,form,input{
 }
 
 body{
-    background-image: linear-gradient(#F5D0A9,#FBF8EF,#F5D0A9);
+    background-image: linear-gradient(#FBEFEF,#FFFFFF,#FBEFEF);
     font-family:Helvetica, sans-serif
 }
 a{
@@ -144,11 +144,11 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F6E3CE;
+    background: #F5D0A9;
     height: 55px;
 }
 .search-site{
-    background: #F6E3CE;
+    background: #F5D0A9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -262,10 +262,12 @@ nav a.text{
     background-image: linear-gradient(to right, #FAAC58, #F5DA81 , #FAAC58);
 }
 .menu-home {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(9,1fr);
     text-align: center;
-    margin-top: 5px;
+    margin-top: 5px; */
+    display: flex;
+    justify-content: space-around;
 }
 div.menu-home a {
     float: left;

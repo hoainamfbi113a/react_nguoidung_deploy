@@ -69,6 +69,11 @@
     display: flex;
     animation: openDropDown 0.4s ease;
   }
+  .my-facebook-button-class{
+    border: none;
+    background: none;
+    margin-top: 5px;
+  }
   
   @keyframes openDropDown {
     from { transform: rotateX(50deg); }

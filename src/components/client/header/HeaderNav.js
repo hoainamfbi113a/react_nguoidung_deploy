@@ -125,8 +125,10 @@ class HeaderNav extends Component {
                 callback={this.responseFacebook}
                 cssClass="my-facebook-button-class"
                 icon="fa-facebook"
+                textButton=""
+
               />
-            <a href="#" className="fa fa-google" style={{fontSize: '20px'}} />
+            <a href="#" className="fa fa-google" style={{fontSize: '13px',height:'43px',marginTop:'7px'}} />
           </nav>
           <nav className="nav-destop">
             <div className="menu-reponsive">
