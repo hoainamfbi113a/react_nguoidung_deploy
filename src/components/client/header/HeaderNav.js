@@ -118,21 +118,17 @@ class HeaderNav extends Component {
             </a>
             {/* <a href="#" className="fa fa-facebook" style={{fontSize: '20px'}} /> */}
           
-              {/* <FacebookLogin
+               <FacebookLogin
                 appId="704160490161968"
                 autoLoad={false}
                 fields="name,email,picture"
                 callback={this.responseFacebook}
                 cssClass="my-facebook-button-class"
                 icon="fa-facebook"
-              /> */}
-                  facebookData = (<FacebookLogin
-                appId="704160490161968"
-                autoLoad={true}
-                fields="name,picture"
-                onClick={this.componentClicked}
-                callback={this.responseFacebook} />);
-            <a href="#" className="fa fa-google" style={{fontSize: '20px'}} />
+                textButton=""
+
+              />
+            <a href="#" className="fa fa-google" style={{fontSize: '13px',height:'43px',marginTop:'7px'}} />
           </nav>
           <nav className="nav-destop">
             <div className="menu-reponsive">
