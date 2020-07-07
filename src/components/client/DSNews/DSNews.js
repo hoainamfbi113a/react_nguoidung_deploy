@@ -17,16 +17,11 @@ class DsNews extends Component {
   componentDidMount(){
     const token = localStorage.usertoken
     const decoded = jwt_decode(token)//giai ma token
-    // console.log(decoded)
-    // alert(decoded.memberClassId)
-    // memberid: decoded.memberLogin
-    axios.get('http://localhost:5000/admin/exam/list/'+decoded.memberClassId)
+    axios.get('http://localhost:5000/admin/exam/list/')
         .then(response => {
-            // console.log(response.data);
             this.setState({persons: response.data});
         })
         .catch(function (error) {
-            // console.log(error);
         })
         const script = document.createElement("script");
         script.style="text/jsx"

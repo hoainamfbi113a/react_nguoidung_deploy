@@ -118,14 +118,20 @@ class HeaderNav extends Component {
             </a>
             {/* <a href="#" className="fa fa-facebook" style={{fontSize: '20px'}} /> */}
           
-              <FacebookLogin
-                appId="3031314980250040"
+              {/* <FacebookLogin
+                appId="704160490161968"
                 autoLoad={false}
                 fields="name,email,picture"
                 callback={this.responseFacebook}
                 cssClass="my-facebook-button-class"
                 icon="fa-facebook"
-              />
+              /> */}
+                  facebookData = (<FacebookLogin
+                appId="704160490161968"
+                autoLoad={true}
+                fields="name,picture"
+                onClick={this.componentClicked}
+                callback={this.responseFacebook} />);
             <a href="#" className="fa fa-google" style={{fontSize: '20px'}} />
           </nav>
           <nav className="nav-destop">
@@ -195,8 +201,6 @@ class HeaderNav extends Component {
       </header>
       {localStorage.usertoken ? userLink : loginRegLink}
     </div>
-   
-      
     )
   }
 }

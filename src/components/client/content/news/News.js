@@ -19,11 +19,6 @@ class News extends Component {
       .catch(function (error){
         console.log(error +"loi ne");
       })
-      //  const script = document.createElement("script");
-      //  script.style="text/jsx"
-      //  script.src='js/content.js';
-      //  script.async=true;
-      //  document.body.appendChild(script);
   }
   renderItem=()=>{
     let{news}=this.state;
@@ -37,7 +32,6 @@ class News extends Component {
   }
   render() {
     let {news}=this.state;
-    //console.log(news+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     return (
         <div className="news">
         <aside className="aside3">
@@ -48,7 +42,6 @@ class News extends Component {
               </h2>
             </figure>
               {this.renderItem()}
-            
           </div>
         </aside>
       </div>

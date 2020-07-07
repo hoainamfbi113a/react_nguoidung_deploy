@@ -39,7 +39,7 @@ export default class LessionContent extends Component {
           <div>
             <figure style={{background: '#fff', height: '38px'}}>
               <h2>
-                <a href>Tin tức giáo dục</a> 
+                <a href>Các bài học của</a> 
               </h2>
             </figure>
            {this.renderItem()}
