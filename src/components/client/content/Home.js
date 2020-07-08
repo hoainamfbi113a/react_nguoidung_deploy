@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { homedir } from 'os';
 import  LessonClass  from "./LessonClass/LessonClass";
+import News from './news/News';
+import LessionNew from "./LessionNew/LessionNew"
 class Home extends Component {
   render() {
     return (
@@ -43,43 +45,7 @@ class Home extends Component {
           </div>
         </div>
       </aside>
-      <aside className="aside2">
-        <div>
-          <figure style={{background: '#fff', height: '38px'}}>
-            <h2>
-              <a href>Các bài giảng mới</a> 
-            </h2>
-          </figure>
-          <ul className="banner0">
-            <a href>
-              <img src="../img/imgs/bg1.jpg" alt="" />
-              <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-              <span>19 phút trước</span>
-            </a>
-          </ul>
-          <ul className="banner0">
-            <a href>
-              <img src="../img/imgs/bg2.jpg" alt="" />
-              <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-              <span>19 phút trước</span>
-            </a>
-          </ul>
-          <ul className="banner0">
-            <a href>
-              <img src="../img/imgs/bg3.jpg" alt="" />
-              <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-              <span>19 phút trước</span>
-            </a>
-          </ul>
-          <ul className="banner0">
-            <a href>
-              <img src="../img/imgs/bg4.jpg" alt="" />
-              <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-              <span>19 phút trước</span>
-            </a>
-          </ul>
-        </div>
-      </aside>
+      <LessionNew/>
       <div className="promotebanner">
         <a href>
           <img src="../img/imgs/quang.jpg" alt="" />
@@ -255,53 +221,8 @@ class Home extends Component {
           <span id="btn-next-productnew"><i className="fa fa-chevron-right" style={{fontSize: '30px', color: '#666'}} /></span>
         </div>
       </div>
-      <div className="news">
-        <aside className="aside3">
-          <div>
-            <figure style={{background: '#fff', height: '38px'}}>
-              <h2>
-                <a href>Tin tức giáo dục</a> 
-              </h2>
-            </figure>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/imgs//tintuc1.jpg" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/imgs//tintuc2.jpg" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/imgs//tintuc3.jpg" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/imgs//tintuc4.jpg" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/images/imgnew.png" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-          </div>
-        </aside>
-      </div>
-      <div className="hstieubieucuanuoc">
+      <News/>
+       <div className="hstieubieucuanuoc">
         <aside className="aside2">
           <div>
             <figure style={{background: '#fff', height: '38px'}}>
