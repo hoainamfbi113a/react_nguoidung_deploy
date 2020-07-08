@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { homedir } from 'os';
 import  LessonClass  from "./LessonClass/LessonClass";
 import News from './news/News';
-import LessionNew from "./LessionNew/LessionNew"
+import LessionNew from './LessionNew/LessionNew';
+import GoodStudent from "./GoodStudent/GoodStudent"
 class Home extends Component {
   render() {
     return (
@@ -46,7 +47,7 @@ class Home extends Component {
         </div>
       </aside>
       <LessionNew/>
-      <div className="promotebanner">
+     <div className="promotebanner">
         <a href>
           <img src="../img/imgs/quang.jpg" alt="" />
         </a>
@@ -222,67 +223,8 @@ class Home extends Component {
         </div>
       </div>
       <News/>
-       <div className="hstieubieucuanuoc">
-        <aside className="aside2">
-          <div>
-            <figure style={{background: '#fff', height: '38px'}}>
-              <h2>
-                <a href>Học sinh tiêu biểu</a> 
-              </h2>
-            </figure>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/imgs/hstb1.jfif" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/imgs/hstb2.jpg" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/imgs/hstb3.jpg" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/imgs/hstb4.jpg" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/images/imgnew.png" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/images/imgnew.png" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-            <ul className="banner0">
-              <a href>
-                <img src="../img/images/imgnew.png" alt="" />
-                <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                <span>19 phút trước</span>
-              </a>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </div>
+      <GoodStudent/>
+     </div>
    )
   }
 }
