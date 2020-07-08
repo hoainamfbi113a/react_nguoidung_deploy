@@ -4,11 +4,38 @@ export default class LessonClass extends Component {
     render() {
         return (
             <div className="inf-class">
-            <Link to={"/lession/"+"lop1"}><img src="../img/imgs/lop1.jpg" alt="lop 1" /></Link>
-            <Link to={"/lession/"+"lop2"}><img src="../img/imgs/lop2.jpg" alt="lop 2" /></Link>
-            <Link to={"/lession/"+"lop3"}><img src="../img/imgs/lop3.jpg" alt="lop 3" /></Link>
-            <Link to={"/lession/"+"lop4"}><img src="../img/imgs/lop4.jpg" alt="lop 4" /></Link>
-            <Link to={"/lession/"+"lop5"}><img src="../img/imgs/lop5.jpg" alt="lop 5" /></Link>
+                <div className="class">
+                <div className="toan1">
+                    <Link to={"/lession/"+"lop1"}><img src="../img/imgs/toan1.png" alt="lop 1" /></Link>
+                </div>
+                <div className="anh1">
+                    <Link to={"/lession/"+"lop1"}><img src="../img/imgs/anh1.png" alt="lop 1" /></Link>
+                </div>
+                <div className="toan1">
+                    <Link to={"/lession/"+"lop2"}><img src="../img/imgs/toan2.png" alt="lop 2" /></Link>
+                </div>
+                <div className="anh1">
+                    <Link to={"/lession/"+"lop2"}><img src="../img/imgs/anh2.png" alt="lop 2" /></Link>
+                </div>
+                <div className="toan1">
+                    <Link to={"/lession/"+"lop3"}><img src="../img/imgs/toan3.png" alt="lop 3" /></Link>
+                </div>
+                <div className="anh1">
+                    <Link to={"/lession/"+"lop3"}><img src="../img/imgs/anh3.png" alt="lop 3" /></Link>
+                </div>
+                <div className="toan1">
+                    <Link to={"/lession/"+"lop4"}><img src="../img/imgs/toan4.png" alt="lop 4" /></Link>
+                </div>
+                <div className="anh1">
+                    <Link to={"/lession/"+"lop4"}><img src="../img/imgs/anh4.png" alt="lop 4" /></Link>
+                </div>
+                <div className="toan1">
+                    <Link to={"/lession/"+"lop5"}><img src="../img/imgs/toan5.png" alt="lop 5" /></Link>
+                </div>
+                <div className="anh1">
+                    <Link to={"/lession/"+"lop5"}><img src="../img/imgs/anh5.png" alt="lop 5" /></Link>
+                </div>
+                </div>
           </div>
         )
     }
