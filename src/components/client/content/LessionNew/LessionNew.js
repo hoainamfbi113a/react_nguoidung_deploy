@@ -1,6 +1,33 @@
 import React, { Component } from 'react'
-
+import LessonNewItem from "./LessonNewItem";
+import axios from 'axios';
 export default class LessionNew extends Component {
+    constructor(props){
+        super(props)
+        this.state={
+          news:[]
+        }
+      }
+      componentDidMount =() =>
+      {
+        axios.get('http://localhost:5000/client/lesson/list/')
+          .then(response => {
+            this.setState({news:response.data})
+          })
+          .catch(function (error){
+            console.log(error +"loi ne");
+          })
+      }
+      renderItem=()=>{
+        let{news}=this.state;
+        return(
+          news.map((item,index)=>{
+            return(
+              <LessonNewItem key={item._id} item={item} index={index}></LessonNewItem>
+            )
+          })
+        )
+      }
     render() {
         return (
             <aside className="aside2">
@@ -10,34 +37,7 @@ export default class LessionNew extends Component {
                   <a href>Các bài giảng mới</a> 
                 </h2>
               </figure>
-              <ul className="banner0">
-                <a href>
-                  <img src="../img/imgs/bg1.jpg" alt="" />
-                  <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                  <span>19 phút trước</span>
-                </a>
-              </ul>
-              <ul className="banner0">
-                <a href>
-                  <img src="../img/imgs/bg2.jpg" alt="" />
-                  <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                  <span>19 phút trước</span>
-                </a>
-              </ul>
-              <ul className="banner0">
-                <a href>
-                  <img src="../img/imgs/bg3.jpg" alt="" />
-                  <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                  <span>19 phút trước</span>
-                </a>
-              </ul>
-              <ul className="banner0">
-                <a href>
-                  <img src="../img/imgs/bg4.jpg" alt="" />
-                  <h3>Unit 4. Caring for those in need. Lesson 3. Reading</h3>
-                  <span>19 phút trước</span>
-                </a>
-              </ul>
+             {this.renderItem()}
             </div>
           </aside>
         )
