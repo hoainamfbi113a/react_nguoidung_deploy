@@ -28,6 +28,7 @@ export default class LessionSubject extends Component {
         let subjectName = this.props.match.params.monhoc;
         let nameInPersons=''
         console.log("data in lession subject: ",subjectName);
+        alert(subjectName);
         let classFilter = "Anh văn 1"
         if (classId === "lop1"){
           classFilter = "Anh văn 1"

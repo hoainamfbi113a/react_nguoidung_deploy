@@ -14,7 +14,7 @@ class GoodStudent extends Component {
     axios.get('http://localhost:5000/client/news/listgoodstudent/')
       .then(response => {
         this.setState({goodStudent:response.data})
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch(function (error){
         console.log(error +"loi ne");
