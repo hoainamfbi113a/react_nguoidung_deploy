@@ -1,0 +1,13 @@
+.classItem{
+    height: 50%;
+    width: 50%;
+}
+.classLession{
+    display: flex;
+}
+.lessionItem{
+
+}
+.lessionItem a{
+    display: inline;
+}

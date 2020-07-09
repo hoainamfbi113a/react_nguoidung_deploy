@@ -25,27 +25,60 @@ export default class LessionSubject extends Component {
     renderItem = () =>{
         let {items,idEdit,nameEdit,levelEdit,persons} = this.state;
         let classId = this.props.match.params.subject;
+        let subjectName = this.props.match.params.monhoc;
+        let nameInPersons=''
+        console.log("data in lession subject: ",subjectName);
         let classFilter = "Anh văn 1"
         if (classId === "lop1"){
-          classFilter === "Anh văn 1"
+          classFilter = "Anh văn 1"
+          if(subjectName=='toan1'){
+            nameInPersons="Toán lớp 1"
+          }
+          if(subjectName=='anh1'){
+            nameInPersons="Anh văn 1"
+          }
         }
         if (classId === "lop2"){
           classFilter = "Anh văn 2"
+          if(subjectName=='toan2'){
+            nameInPersons="Toán lớp 2"
+          }
+          if(subjectName=='anh2'){
+            nameInPersons="Anh văn 2"
+          }
         }
         if (classId === "lop3"){
           classFilter = "Anh văn 3"
+          if(subjectName=='toan3'){
+            nameInPersons="Toán lớp 3"
+          }
+          if(subjectName=='anh3'){
+            nameInPersons="Anh văn 3"
+          }
         }
         if (classId === "lop4"){
           classFilter = "Anh văn 4"
+          if(subjectName=='toan4'){
+            nameInPersons="Toán lớp 4"
+          }
+          if(subjectName=='anh4'){
+            nameInPersons="Anh văn 4"
+          }
         }
         if (classId === "lop5"){
           classFilter = "Anh văn 5"
+          if(subjectName=='toan5'){
+            nameInPersons="Toán lớp 5"
+          }
+          if(subjectName=='anh5'){
+            nameInPersons="Anh văn 5"
+          }
         }
-        console.log(classId)
+        console.log(persons.filter(item => item.lessionContentSubjects === nameInPersons ))
         return (
-         persons.filter(item => item.lessionContentSubjects == classFilter ).map((item,index)=>{
+         persons.filter(item => item.lessionContentSubjects == nameInPersons).map((item)=>{
             return(
-              <ItemLesion key={item._id}  item={item} index={index}  handleShowAlert={this.handleShowAlert}  handleEditItem = {this.handleEditItem}/>
+              <ItemLesion key={item._id}  item={item}  />
             )
           })
         )

@@ -191,7 +191,7 @@ header{
     background: #fff;
     position: relative; */
     flex: 1 0 100%;
-    height: 300px;
+    height: 325px;
 }
 .news{
     /* grid-area: news;
@@ -786,19 +786,19 @@ div.menu-home a {
     margin-right:10px;
 }
 .product .productnew{
-    /* width: 100%; */
+    width: 100%;
     display: flex;
     /* flex: 1 0 100%; */
-
     /* display: grid; */
     /* grid-template-columns: repeat(5,1fr); */
     background: #fff;
     margin-top:5px;
+    justify-content: space-around;
 }
 .product .productnew .boxProduct{
     border: solid 1px #eee;
-    border-bottom: none;
-    padding-bottom: 9px;
+    /* border-bottom: none; */
+    /* padding-bottom: 9px; */
 }
 .product .productnew .boxProduct img{
     width: 180px;

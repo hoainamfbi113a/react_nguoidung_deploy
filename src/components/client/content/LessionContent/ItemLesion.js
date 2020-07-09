@@ -1,19 +1,22 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import './styleLession.css';
 export default class ItemLesion extends Component {
     render() {
-        let {item,index} = this.props;
+        let {item} = this.props;
+        console.log("item lession:",item )
         return (
-           
-            <div>
-                 <Link to={"/lession/detail/"+item._id}>
-                 <ul className="banner0">
-              <a href>
+            <div className="classLession">
+                <div className="lessionItem">
+                <Link to={"/lession/detail/"+item._id}>
+               
+                <div className="classItem">
                 <img src={`http://localhost:5000/${item.lessionContentImg}`} alt="Anh noi dung bai hoc" />
+                </div>
                 <h3>{item.lessionContentTitle}</h3>
-              </a>
-            </ul>
+           
             </Link>
+                </div>
             </div>
            
         )
