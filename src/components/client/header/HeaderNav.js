@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 import {Link}  from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import FacebookLogin from 'react-facebook-login';
+// import ItemLesion from './ItemLesion';
 import axios from 'axios';
 import "./style.css"
-class HeaderNav extends Component {
+ class HeaderNav extends Component {
+
+
   logOut(e) {
     e.preventDefault()
     localStorage.removeItem('usertoken')
@@ -106,16 +109,16 @@ class HeaderNav extends Component {
             </button>
           </form>
           <nav className="nav-laptop">
-            <a href>
+          <Link to="/lession/toan">
               <i className="phone-icon" />
               <div>
                 MÔN TOÁN
               </div>
-            </a>
-            <a href>
+            </Link>
+            <Link to="/lession/anh">
               <i className="table-icon" />
               <div>TIẾNG ANH</div>
-            </a>
+            </Link>
             {/* <a href="#" className="fa fa-facebook" style={{fontSize: '20px'}} /> */}
           
                <FacebookLogin

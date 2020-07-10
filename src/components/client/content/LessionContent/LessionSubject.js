@@ -74,14 +74,42 @@ export default class LessionSubject extends Component {
             nameInPersons="Anh văn 5"
           }
         }
+        if(classId=="toan")
+        {
+          nameInPersons="Toán";
+          return (
+            persons.filter(item => item.lessionContentSubjects.includes(nameInPersons)==true).map((item)=>{
+               return(
+                 <ItemLesion key={item._id}  item={item}  />
+               )
+             })
+           )
+        }
+        else
+        {
+          if(classId=="anh")
+          {
+            nameInPersons="Anh";
+          return (
+            persons.filter(item => item.lessionContentSubjects.includes(nameInPersons)==true).map((item)=>{
+               return(
+                 <ItemLesion key={item._id}  item={item}  />
+               )
+             })
+           )
+          }
+          else{
+          return (
+            persons.filter(item => item.lessionContentSubjects==nameInPersons).map((item)=>{
+               return(
+                 <ItemLesion key={item._id}  item={item}  />
+               )
+             })
+           )
+            }
+        }
         console.log(persons.filter(item => item.lessionContentSubjects === nameInPersons ))
-        return (
-         persons.filter(item => item.lessionContentSubjects == nameInPersons).map((item)=>{
-            return(
-              <ItemLesion key={item._id}  item={item}  />
-            )
-          })
-        )
+        
     }
     render() {
         return (

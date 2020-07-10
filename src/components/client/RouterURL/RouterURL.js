@@ -26,6 +26,7 @@ class RouterURL extends Component {
              <Route exact path="/login" component = {Login}></Route>
              <Route exact path="/register" component = {Register}></Route>
              <Route exact path="/lession/:subject/:monhoc" component = {LessionSubject}></Route>
+             <Route exact path="/lession/:subject" component = {LessionSubject}></Route>
              <Route exact path="/lessions" component = {LessionContent}></Route>
              <Route exact path="/lession/detail/:id" component = {LessionDetail}></Route>
              <PrivateRoute exact path="/profile" component = {Profile}/>
