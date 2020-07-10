@@ -36,61 +36,20 @@ import "./style.css"
   }
   render() {
     const loginRegLink = (
-      <aside className="menu only-pc">
-      <div className="menu-home">
-        <a href><i className="fa fa-fw fa-home" />LỚP</a>
-        <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
-        {/* <a href><i className="fa fa-fw fa-home" />TÀI LIỆU</a> */}
-        <Link to="/lessions">
-          <div className="dropdown-container">
-            <label htmlFor="openDropdown" className="dropdown">
-              TÀI LIỆU
-            </label>
-            <input type="checkbox" id="openDropdown" hidden />
-            <div className="dropdown-menu">
-              <span>Anh van</span>
-              <span>Toan</span>
-            </div>
-          </div>
-        </Link>
-        <a href><i className="fa fa-fw fa-home" />HỌC ONLINE</a>
-        <a href><i className="fa fa-fw fa-home" />HỌC &amp; CHƠI</a>
-        <a href><i className="fa fa-fw fa-home" />DIỄN ĐÀN</a>
-        <a href><i className="fa fa-fw fa-home" />GIỚI THIỆU</a>
+      <li style={{display: 'flex'}}>
+        <li>
         <Link to="/login"><i className="fa fa-fw fa-home"/>ĐĂNG NHẬP</Link>
+        </li>
+        <li>
         <Link to="/register"><i className="fa fa-fw fa-home"/>ĐĂNG KÝ</Link>
-      </div>
-    </aside>
+        </li>
+        </li>
     )
     const userLink = (   
-       <aside className="menu only-pc">
-       <div className="menu-home">
-         <a href><i className="fa fa-fw fa-home" />LỚP</a>
-         <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
-         {/* <a href><i className="fa fa-fw fa-home" />TÀI LIỆU</a> */}
-            <div className="dropdown-container">
-            <label htmlFor="openDropdown" className="dropdown">
-              Tai lieu
-              <i className="fas fa-angle-down" />
-            </label>
-            <input type="checkbox" id="openDropdown" hidden />
-            <div className="dropdown-menu">
-              <span>Item 1</span>
-              <span>Item 2</span>
-              <span>Item 3</span>
-              <span>Item 4</span>
-            </div>
-          </div>
-         <a href><i className="fa fa-fw fa-home" />HỌC ONLINE</a>
-         <a href><i className="fa fa-fw fa-home" />HỌC &amp; CHƠI</a>
-         <a href><i className="fa fa-fw fa-home" />DIỄN ĐÀN</a>
-         <a href><i className="fa fa-fw fa-home" />GIỚI THIỆU</a>
-         <a href="" onClick={this.logOut.bind(this)} className="nav-link"><i className="fa fa-fw fa-home" />
+        <li> <a href="" onClick={this.logOut.bind(this)} className="nav-link"><i className="fa fa-fw fa-home" />
             ĐĂNG XUẤT
           </a>
-       </div>
-     </aside>
-     
+        </li> 
     )
     return (
       <div>
@@ -198,7 +157,186 @@ import "./style.css"
           </div>
         </div>
       </header>
-      {localStorage.usertoken ? userLink : loginRegLink}
+      {/* {localStorage.usertoken ? userLink : loginRegLink} */}
+      <aside className="menu only-pc">
+      <div className="menu-home">
+        <ul className="nav-header">
+          <li>
+          <a href><i className="fa fa-fw fa-home fa-home-class" />TÀI LIỆU HỌC TẬP</a>
+        <div class="Menu-list-item-sub">
+                        <div class="Menu-list-item-sub-list">
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 1</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 2</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 4</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 5</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</a>
+                          </div>
+                         
+                        </div>
+                      </div>
+         
+          </li>
+       
+        <li>
+          <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
+          <div class="Menu-list-item-sub">
+          <div class="Menu-list-item-sub-list">
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 1</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 2</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 4</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 5</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</a>
+                          </div>
+                         
+                        </div>
+                      </div>
+        </li>
+        {/* <a href><i className="fa fa-fw fa-home" />TÀI LIỆU</a> */}
+        <li>
+          <Link to="/lessions">
+          </Link>
+          <div class="Menu-list-item-sub">
+          <div class="Menu-list-item-sub-list">
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 1</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 2</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 4</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 5</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</a>
+                          </div>
+                         
+                        </div>
+                      </div>
+        </li>
+        <li>
+        <a href><i className="fa fa-fw fa-home" />HỌC ONLINE</a>
+        <div class="Menu-list-item-sub">
+        <div class="Menu-list-item-sub-list">
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 1</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 2</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 4</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 5</a>
+                          </div>
+                          <div class="Menu-list-item-sub-item">
+                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</a>
+                          </div>
+                         
+                        </div>
+                      </div>
+        </li>
+        <li>
+        <a href><i className="fa fa-fw fa-home" />HỌC &amp; CHƠI</a>
+        </li>
+        <li>
+        <a href><i className="fa fa-fw fa-home" />DIỄN ĐÀN</a>
+        </li>
+        <li>
+        <a href><i className="fa fa-fw fa-home" />GIỚI THIỆU</a>
+        </li>
+        <li>
+        {/* <Link to="/login"><i className="fa fa-fw fa-home"/>ĐĂNG NHẬP</Link>
+        </li>
+        <li>
+        <Link to="/register"><i className="fa fa-fw fa-home"/>ĐĂNG KÝ</Link> */}
+          {localStorage.usertoken ? userLink : loginRegLink}
+        </li>
+        </ul>
+      </div>
+    </aside>
+   
     </div>
     )
   }
