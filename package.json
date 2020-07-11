@@ -14,16 +14,28 @@
     "react-html-parser": "^2.0.2",
     "react-router": "^5.0.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5",
+    "react-scripts": "^3.4.1",
     "react-xml-parser": "^1.1.6",
     "sweetalert-react": "^0.4.11",
     "xml2js": "^0.4.23"
   },
   "scripts": {
-    "start": "HTTPS=true&&react-scripts start",
+    "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
