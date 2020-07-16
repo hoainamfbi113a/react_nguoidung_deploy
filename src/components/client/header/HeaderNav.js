@@ -321,7 +321,8 @@ import "./style.css"
         <a href><i className="fa fa-fw fa-home" />HỌC &amp; CHƠI</a>
         </li>
         <li>
-        <a href><i className="fa fa-fw fa-home" />DIỄN ĐÀN</a>
+        {/* <a href><i className="fa fa-fw fa-home" />DIỄN ĐÀN</a> */}
+        <Link to="/forumquestion"><i className="fa fa-fw fa-home"/>DIỄN ĐÀN</Link>
         </li>
         <li>
         <a href><i className="fa fa-fw fa-home" />GIỚI THIỆU</a>
