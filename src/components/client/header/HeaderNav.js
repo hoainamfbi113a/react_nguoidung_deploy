@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link}  from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+import jwt_decode from 'jwt-decode'
 import FacebookLogin from 'react-facebook-login';
 // import ItemLesion from './ItemLesion';
 import axios from 'axios';
@@ -36,6 +37,11 @@ import "./style.css"
     // console.log(response);
   }
   render() {
+    let decoded =""
+    if(localStorage.usertoken){
+    const token = localStorage.usertoken
+    decoded = jwt_decode(token)//giai ma token
+    }     
     const loginRegLink = (
       <li style={{display: 'flex'}}>
         <li>
@@ -47,10 +53,16 @@ import "./style.css"
         </li>
     )
     const userLink = (   
+      <li style={{display: 'flex'}}>
         <li> <a href="" onClick={this.logOut.bind(this)} className="nav-link"><i className="fa fa-fw fa-home" />
             ĐĂNG XUẤT
           </a>
         </li> 
+        <li> <a href=""className="nav-link"><i className="fa fa-fw fa-home" />
+            {decoded.memberLogin}
+          </a>
+        </li> 
+         </li>
     )
     return (
       <div>
@@ -167,34 +179,34 @@ import "./style.css"
         <div class="Menu-list-item-sub">
                         <div class="Menu-list-item-sub-list">
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 1</a>
+                          <Link to="/lessionclass/toán lớp 1" class="Menu-list-item-sub-item__txt"> Toán Lớp 1</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</a>
+                            <Link to="/lessionclass/anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 2</a>
+                            <Link to="/lessionclass/toán lớp 2" class="Menu-list-item-sub-item__txt">Toán Lớp 2</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</a>
+                            <Link to="/lessionclass/anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </a>
+                            <Link to="/lessionclass/toán lớp 3" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</a>
+                            <Link to="/lessionclass/anh văn 3" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 4</a>
+                            <Link to="/lessionclass/toán lớp 4" class="Menu-list-item-sub-item__txt">Toán Lớp 4</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</a>
+                            <Link to="/lessionclass/anh văn 4" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 5</a>
+                            <Link to="/lessionclass/toán lớp 5" class="Menu-list-item-sub-item__txt">Toán Lớp 5</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</a>
+                            <Link to="/lessionclass/anh văn 5" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</Link>
                           </div>
                          
                         </div>
@@ -240,7 +252,6 @@ import "./style.css"
                         </div>
                       </div>
         </li>
-        {/* <a href><i className="fa fa-fw fa-home" />TÀI LIỆU</a> */}
         <li>
           <Link to="/lessions">
           </Link>
