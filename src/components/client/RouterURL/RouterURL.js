@@ -10,6 +10,7 @@ import LessionContent from '../content/LessionContent/LessionContent'
 import LessionSubject from '../content/LessionContent/LessionSubject'
 import LessionClass from '../content/LessonClass/LessonClass'
 import LessionDetail from '../content/LessionContent/LessionDetails/LessionDetail'
+import ListQuestionForum from '../content/forum/list_question_forum/ListQuestionForum';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
@@ -29,6 +30,7 @@ class RouterURL extends Component {
              <Route exact path="/lession/:subject" component = {LessionSubject}></Route>
              <Route exact path="/lessions" component = {LessionContent}></Route>
              <Route exact path="/lession/detail/:id" component = {LessionDetail}></Route>
+             <Route exact path="/forumquestion" component = {ListQuestionForum}></Route>
              <PrivateRoute exact path="/profile" component = {Profile}/>
              <PrivateRoute exact path="/exam" component = {Dsdethi}/>
              {/* <Route exact path="/examquestion" component = {Question}></Route> */}
