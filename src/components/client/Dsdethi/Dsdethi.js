@@ -22,7 +22,7 @@ class Dsdethi extends Component {
     // memberid: decoded.memberLogin
     axios.get('http://localhost:5000/admin/exam/list/'+decoded.memberClassId)
         .then(response => {
-            // console.log(response.data);
+            console.log(response.data);
             this.setState({persons: response.data});
         })
         .catch(function (error) {
