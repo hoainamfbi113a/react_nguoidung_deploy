@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
 import ItemLesion from './ItemLesion'
 import axios from 'axios';
+import { withRouter } from 'react-router-dom'
 export default class LessionSubject extends Component {
     constructor(props){
         super(props)
@@ -12,9 +13,10 @@ export default class LessionSubject extends Component {
           refresh:true
         }
       }
-    componentDidMount(){
-        const token = localStorage.usertoken
-        axios.get('http://localhost:5000/admin/lession/list/')
+    fetchProfile() {
+         // const token = localStorage.usertoken
+        let classId = this.props.match.params.subjects;
+        axios.get('http://localhost:5000/admin/lession/list/'+classId)
             .then(response => {
                 console.log(response.data);
                 this.setState({persons: response.data});
@@ -22,96 +24,32 @@ export default class LessionSubject extends Component {
             .catch(function (error) {
             });
     }
+    componentDidUpdate(prevProps) {
+      // const {pathname} = this.props.location;
+      // let url= "" ;
+      // if (url !== pathname) {
+      //    url =pathname;
+      //   // fetch or other component tasks necessary for rendering
+      //   this.fetchProfile();
+      // }
+      if (this.props.match.params.subjects !== prevProps.match.params.subjects) {
+        // fetch or other component tasks necessary for rendering
+        this.fetchProfile();
+      }
+    }
+    componentDidMount(){
+        this.fetchProfile()
+    }
     renderItem = () =>{
-        let {items,idEdit,nameEdit,levelEdit,persons} = this.state;
-        let classId = this.props.match.params.subject;
-        let subjectName = this.props.match.params.monhoc;
-        let nameInPersons=''
-        console.log("data in lession subject: ",subjectName);
-        console.log(`${classId} and ${subjectName}`)
-        let classFilter = "Anh văn 1"
-        if (classId === "lop1"){
-          classFilter = "Anh văn 1"
-          if(subjectName=='toan1'){
-            nameInPersons="Toán lớp 1"
-          }
-          if(subjectName=='anh1'){
-            nameInPersons="Anh văn 1"
-          }
-        }
-        if (classId === "lop2"){
-          classFilter = "Anh văn 2"
-          if(subjectName=='toan2'){
-            nameInPersons="Toán lớp 2"
-          }
-          if(subjectName=='anh2'){
-            nameInPersons="Anh văn 2"
-          }
-        }
-        if (classId === "lop3"){
-          classFilter = "Anh văn 3"
-          if(subjectName=='toan3'){
-            nameInPersons="Toán lớp 3"
-          }
-          if(subjectName=='anh3'){
-            nameInPersons="Anh văn 3"
-          }
-        }
-        if (classId === "lop4"){
-          classFilter = "Anh văn 4"
-          if(subjectName=='toan4'){
-            nameInPersons="Toán lớp 4"
-          }
-          if(subjectName=='anh4'){
-            nameInPersons="Anh văn 4"
-          }
-        }
-        if (classId === "lop5"){
-          classFilter = "Anh văn 5"
-          if(subjectName=='toan5'){
-            nameInPersons="Toán lớp 5"
-          }
-          if(subjectName=='anh5'){
-            nameInPersons="Anh văn 5"
-          }
-        }
-        if(classId=="toan")
-        {
-          nameInPersons="Toán";
-          console.log("gia tri persons: ",persons);
-          return (
-            persons.filter(item => item.lessionContentSubjects!==undefined && item.lessionContentSubjects.includes(nameInPersons)==true).map((item)=>{
-               return(
-                 <ItemLesion key={item._id}  item={item}  />
-               )
-             })
-           )
-        }
-        else
-        {
-          if(classId=="anh")
-          {
-            nameInPersons="Anh";
-            console.log("persons: ",persons);
-          return (
-            persons.filter(item =>item.lessionContentSubjects!==undefined && item.lessionContentSubjects.includes(nameInPersons)==true).map((item)=>{
-               return(
-                 <ItemLesion key={item._id}  item={item}  />
-               )
-             })
-           )
-          }
-          else{
-          return (
-            persons.filter(item => item.lessionContentSubjects!==undefined && item.lessionContentSubjects==nameInPersons).map((item)=>{
-               return(
-                 <ItemLesion key={item._id}  item={item}  />
-               )
-             })
-           )
-            }
-        }
-        console.log(persons.filter(item => item.lessionContentSubjects === nameInPersons ))
+      let{persons}=this.state;
+      console.log(persons)
+      return(
+        persons.map((item,index)=>{
+          return(
+            <ItemLesion key={item._id}  item={item}  />
+          )
+        })
+      )
         
     }
     render() {

@@ -142,12 +142,16 @@ class Home extends Component {
         <div className="navigat">
           <h2>Các bài học nổi bật</h2>
           <div className="viewwallcart">
-            <a href>Toán 1</a>
-            <a href>Toán 2</a>
-            <a href>Toán 3</a>
-            <a href>Toán 4</a>
-            <a href>Toán 5</a>
-            <a href>Tiếng anh 1</a>
+             <Link to="/lessionclass/Toán lớp 1" class="Menu-list-item-sub-item__txt">Toán 1</Link>
+             <Link to="/lessionclass/Toán lớp 2" class="Menu-list-item-sub-item__txt">Toán 2</Link>
+             <Link to="/lessionclass/Toán lớp 3" class="Menu-list-item-sub-item__txt">Toán 3</Link>
+             <Link to="/lessionclass/Toán lớp 4" class="Menu-list-item-sub-item__txt">Toán 4</Link>
+             <Link to="/lessionclass/Toán lớp 5" class="Menu-list-item-sub-item__txt">Toán 5</Link>
+             <Link to="/lessionclass/Anh văn 1" class="Menu-list-item-sub-item__txt">Tiếng anh 1</Link>
+             <Link to="/lessionclass/Anh văn 2" class="Menu-list-item-sub-item__txt">Tiếng anh 2</Link>
+             <Link to="/lessionclass/Anh văn 3" class="Menu-list-item-sub-item__txt">Tiếng anh 3</Link>
+             <Link to="/lessionclass/Anh văn 4" class="Menu-list-item-sub-item__txt">Tiếng anh 4</Link>
+             <Link to="/lessionclass/Anh văn 5" class="Menu-list-item-sub-item__txt">Tiếng anh 5</Link>
           </div>
         </div>
         <div className="khoi-product-new">

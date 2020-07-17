@@ -17,6 +17,7 @@ export default class ItemLesion extends Component {
            
             </Link>
                 </div>
+                {/* <h1>Xin chao cau</h1> */}
             </div>
            
         )
