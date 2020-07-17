@@ -15,6 +15,7 @@ import "./style.css"
   }
    
    responseFacebook = (response) => {
+     console.log(response);
     var r = this;
     // e.preventDefault();//khong tu dong chuyen trang
     axios.post('/users/loginfacebook', {
