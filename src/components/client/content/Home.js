@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Slider from "react-slick";
 import { homedir } from 'os';
 import  LessonClass  from "./LessonClass/LessonClass";
 import News from './news/News';
@@ -7,12 +8,22 @@ import LessionNew from './LessionNew/LessionNew';
 import GoodStudent from "./GoodStudent/GoodStudent"
 class Home extends Component {
   render() {
+    var settings = {
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      pauseOnHover: true
+    };
     return (
       <div className="content ">
       <aside className="aside1">
         <div className="js-carousel Carousel">
           <div className="js-carouselCtx Carousel-content">
             <div className="js-carouselList Carousel-content-list">
+            <Slider style={{width: '785px'}} {...settings}>
               <div className="Carousel-content-item" id="carousel1">
                 <img src="../img/imgs/slide1.jpg" alt="" />
               </div>
@@ -25,14 +36,15 @@ class Home extends Component {
               <div className="Carousel-content-item" id="carousel4">
                 <img src="../img/imgs/slide4.jpg" alt="" />
               </div>
+              </Slider>
             </div>
-            <div className="js-carouselBtn Carousel-content__btn" />
-            <div className="js-carouselBtn Carousel-content__btn Carousel-content__btn--right" />
+            {/* <div className="js-carouselBtn Carousel-content__btn" /> */}
+            {/* <div className="js-carouselBtn Carousel-content__btn Carousel-content__btn--right" /> */}
           </div>
         </div>
-        <div className="Carousel-nav">
+        {/* <div className="Carousel-nav">
           <div className="js-carouselNavItem Carousel-nav-item Carousel-nav-item--active" data-index={1}>
-            {/* <p class="only-pc Carousel-nav-item__txt">1</p> */}
+            <p class="only-pc Carousel-nav-item__txt">1</p>
             <p>Cùng gia đình Shin<br /> Đến NLKid học thôi</p>
           </div>
           <div className="js-carouselNavItem Carousel-nav-item" data-index={2}>
@@ -44,7 +56,7 @@ class Home extends Component {
           <div className="js-carouselNavItem Carousel-nav-item" data-index={4}>
             <p>Cùng gia đình Shin<br /> Đến NLKid học thôi</p>
           </div>
-        </div>
+        </div> */}
       </aside>
       <LessionNew/>
      <div className="promotebanner">
@@ -217,10 +229,10 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="nut-slide-productnew">
+        {/* <div className="nut-slide-productnew">
           <span id="btn-prev-productnew"><i className="fa fa-chevron-left" style={{fontSize: '30px', color: '#666'}} /></span>
           <span id="btn-next-productnew"><i className="fa fa-chevron-right" style={{fontSize: '30px', color: '#666'}} /></span>
-        </div>
+        </div> */}
       </div>
       <News/>
       <GoodStudent/>
