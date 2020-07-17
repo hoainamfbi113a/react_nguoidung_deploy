@@ -20,7 +20,7 @@ class Dsdethi extends Component {
     // console.log(decoded)
     // alert(decoded.memberClassId)
     // memberid: decoded.memberLogin
-    axios.get('http://localhost:5000/admin/exam/list/'+decoded.memberClassId)
+    axios.get('http://localhost:5000/admin/exam/list/')
         .then(response => {
             console.log(response.data);
             this.setState({persons: response.data});

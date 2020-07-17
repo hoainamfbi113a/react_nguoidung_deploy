@@ -5,7 +5,8 @@ import QuestionItem from './QuestionItem'
 import jwt_decode from 'jwt-decode'
 import Countdown from 'react-countdown-now';
 import Swal from 'sweetalert-react';
-import 'sweetalert/dist/sweetalert.css';
+//import 'sweetalert/dist/sweetalert.css';
+import './styleQuestion.css';
 
 
 // Renderer callback with condition
@@ -107,11 +108,11 @@ class Question extends Component {
                     <div className="question-text">
                       <h5>{item.questionName}</h5>
                     </div>
-                    <div className="question-images">
+                    {/* <div className="question-images">
                       <img src="../img/images/banner1.jpg" />
                       <input type="hidden" className="form-control" id="inputPassword3" 
                       placeholder="Số câu dễ"  name="dapan2" value="aaaaaaaaaaaaaaaa"/>
-                    </div>
+                    </div> */}
                     
                   </div>
                   <div className="answer">
@@ -158,17 +159,19 @@ class Question extends Component {
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
               <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
               <title>Document</title>
-              <style dangerouslySetInnerHTML={{__html: "\n\n*{\n    margin: 0;\n    padding:0;\n    box-sizing: border-box;\n}\nbutton,form,input{\n    box-sizing: border-box;\n}\nbody{\n    background: #f0f0f0;\n    font-family:Helvetica, sans-serif\n}\na{\n    text-decoration: none;\n}\n.web-content{\n    display: grid;\n    grid-gap: 10px;\n}\nheader{\n    height:55px;\n    background: rgb(218, 216, 216);\n    display: grid;\n}\n.header-content{\n    width: 90%;\n    margin: auto;\n    display: grid;\n    grid-template-columns: 20% 60% 20%;\n}\n.content{\n    z-index: 1;\n    background: #f0f0f0;\n    width: 90%;\n    margin: 0 auto;\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    grid-template-rows: 60px 60px 1540px 50px;\n    grid-template-areas:'menu menu menu'\n                        'aside-tree aside-tree aside-tree'\n                        'aside-main aside-main aside-main'\n                        'aside-fb aside-youtube aside-youtube';\n    grid-gap:10px;\n    overflow: hidden;\n}\n.menu{\n    grid-area: menu;\n    background: rgb(144, 144, 245);\n}\n.aside-tree{\n    grid-area: aside-tree;\n    background: rgb(136, 188, 248);\n}\n.aside-main{\n    grid-area: aside-main;\n    background: rgb(191, 226, 247);\n    display: grid;\n    grid-auto-rows: repeat(5,1fr);\n    z-index: 2;\n    grid-gap: 10px;\n}\n.socau{\n    background: turquoise;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 40px;\n    width: 90px;\n    padding: 5px 10px;\n}\n.socau.num{\n    font-size: 20px;\n    width: 90;\n    vertical-align: top;\n}\n.test{\n    \n    margin-bottom: 15px;\n    padding: 20px 0 0;\n}\n.test .question{\n    \n    display: flex;\n    /* justify-content: center; */\n    align-items: center;\n    flex-direction: column;\n    margin-bottom: 15px;\n    padding: 20px 0 0;\n}\n.question.question-text{\n    height: 200px;\n    margin: 10px 10px 10px 10px;\n    text-align: center;\n    \n}\n.question.question-images{\n    height: 600px;\n    margin: 10px 10px 10px 10px;\n}\n.test .answer{\n    height: 60px;\n    display: flex;\n    margin: 10px 10px 10px 10px;\n}\n.answer .answer-item{\n    height: 60px;\n    margin: 0 auto;\n    text-align: center;\n}\n\n \n\t" }} />
+              {/* <style dangerouslySetInnerHTML={{__html: "\n\n*{\n    margin: 0;\n    padding:0;\n    box-sizing: border-box;\n}\nbutton,form,input{\n    box-sizing: border-box;\n}\nbody{\n    background: #f0f0f0;\n    font-family:Helvetica, sans-serif\n}\na{\n    text-decoration: none;\n}\n.web-content{\n    display: grid;\n    grid-gap: 10px;\n}\nheader{\n    height:55px;\n    background: rgb(218, 216, 216);\n    display: grid;\n}\n.header-content{\n    width: 90%;\n    margin: auto;\n    display: grid;\n    grid-template-columns: 20% 60% 20%;\n}\n.content{\n    z-index: 1;\n    background: #f0f0f0;\n    width: 90%;\n    margin: 0 auto;\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    grid-template-rows: 60px 60px 1540px 50px;\n    grid-template-areas:'menu menu menu'\n                        'aside-tree aside-tree aside-tree'\n                        'aside-main aside-main aside-main'\n                        'aside-fb aside-youtube aside-youtube';\n    grid-gap:10px;\n    overflow: hidden;\n}\n.menu{\n    grid-area: menu;\n    background: rgb(144, 144, 245);\n}\n.aside-tree{\n    grid-area: aside-tree;\n    background: rgb(136, 188, 248);\n}\n.aside-main{\n    grid-area: aside-main;\n    background: rgb(191, 226, 247);\n    display: grid;\n    grid-auto-rows: repeat(5,1fr);\n    z-index: 2;\n    grid-gap: 10px;\n}\n.socau{\n    background: turquoise;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 40px;\n    width: 90px;\n    padding: 5px 10px;\n}\n.socau.num{\n    font-size: 20px;\n    width: 90;\n    vertical-align: top;\n}\n.test{\n    \n    margin-bottom: 15px;\n    padding: 20px 0 0;\n}\n.test .question{\n    \n    display: flex;\n    /* justify-content: center; //////\n    align-items: center;\n    flex-direction: column;\n    margin-bottom: 15px;\n    padding: 20px 0 0;\n}\n.question.question-text{\n    height: 200px;\n    margin: 10px 10px 10px 10px;\n    text-align: center;\n    \n}\n.question.question-images{\n    height: 600px;\n    margin: 10px 10px 10px 10px;\n}\n.test .answer{\n    height: 60px;\n    display: flex;\n    margin: 10px 10px 10px 10px;\n}\n.answer .answer-item{\n    height: 60px;\n    margin: 0 auto;\n    text-align: center;\n}\n\n \n\t" }} /> */}
              
       <aside className="aside-main">
+      <div className="count">
       <Countdown
               date={this.state.date} 
               renderer={renderer}
                />   
+      </div>
       <form  onSubmit={this.onSubmit}>
       {this.renderItem()}
       {/* <input type="submit" class="btn btn-primary" value="Nộp bài"/> */}
-      <input ref={input => this.inputElement = input} style={{background: '#999', padding: '5px 5px', marginLeft: '650px'}} type="submit" name="" value="Nộp bài" ref={input => this.inputElement = input}/>
+      <input ref={input => this.inputElement = input} style={{background: '#999', padding: '5px 5px', marginLeft: '50%'}} type="submit" name="" value="Nộp bài" ref={input => this.inputElement = input}/>
       </form>
       </aside>
       </div>
