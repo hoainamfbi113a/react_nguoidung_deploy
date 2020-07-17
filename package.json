@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@tinymce/tinymce-react": "^3.6.0",
+    "add": "^2.0.6",
     "axios": "^0.18.0",
     "html-react-parser": "^0.13.0",
     "jwt-decode": "^2.2.0",
@@ -19,10 +20,11 @@
     "react-xml-parser": "^1.1.6",
     "slick-carousel": "^1.8.1",
     "sweetalert-react": "^0.4.11",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "yarn": "^1.22.4"
   },
   "scripts": {
-    "start": "HTTPS=true react-scripts start",
+    "start": "set HTTPS=true&& react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

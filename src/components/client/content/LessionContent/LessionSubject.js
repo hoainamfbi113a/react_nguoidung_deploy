@@ -28,7 +28,7 @@ export default class LessionSubject extends Component {
         let subjectName = this.props.match.params.monhoc;
         let nameInPersons=''
         console.log("data in lession subject: ",subjectName);
-        alert(subjectName);
+        console.log(`${classId} and ${subjectName}`)
         let classFilter = "Anh văn 1"
         if (classId === "lop1"){
           classFilter = "Anh văn 1"
@@ -78,8 +78,9 @@ export default class LessionSubject extends Component {
         if(classId=="toan")
         {
           nameInPersons="Toán";
+          console.log("gia tri persons: ",persons);
           return (
-            persons.filter(item => item.lessionContentSubjects.includes(nameInPersons)==true).map((item)=>{
+            persons.filter(item => item.lessionContentSubjects!==undefined && item.lessionContentSubjects.includes(nameInPersons)==true).map((item)=>{
                return(
                  <ItemLesion key={item._id}  item={item}  />
                )
@@ -91,8 +92,9 @@ export default class LessionSubject extends Component {
           if(classId=="anh")
           {
             nameInPersons="Anh";
+            console.log("persons: ",persons);
           return (
-            persons.filter(item => item.lessionContentSubjects.includes(nameInPersons)==true).map((item)=>{
+            persons.filter(item =>item.lessionContentSubjects!==undefined && item.lessionContentSubjects.includes(nameInPersons)==true).map((item)=>{
                return(
                  <ItemLesion key={item._id}  item={item}  />
                )
@@ -101,7 +103,7 @@ export default class LessionSubject extends Component {
           }
           else{
           return (
-            persons.filter(item => item.lessionContentSubjects==nameInPersons).map((item)=>{
+            persons.filter(item => item.lessionContentSubjects!==undefined && item.lessionContentSubjects==nameInPersons).map((item)=>{
                return(
                  <ItemLesion key={item._id}  item={item}  />
                )
