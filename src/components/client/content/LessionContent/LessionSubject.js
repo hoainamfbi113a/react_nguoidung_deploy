@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
 import ItemLesion from './ItemLesion'
 import axios from 'axios';
+import './styleLession.css';
 export default class LessionSubject extends Component {
     constructor(props){
         super(props)
@@ -116,10 +117,10 @@ export default class LessionSubject extends Component {
     }
     render() {
         return (
-            <div className="news">
+            <div className="lessonContent">
         <aside className="aside3">
           <div>
-            <figure style={{background: '#fff', height: '38px'}}>
+            <figure >
               <h2>
                 <a href>Nội dung bài học</a> 
               </h2>

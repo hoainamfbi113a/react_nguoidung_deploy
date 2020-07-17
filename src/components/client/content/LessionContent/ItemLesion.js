@@ -13,7 +13,9 @@ export default class ItemLesion extends Component {
                 <div className="classItem">
                 <img src={`http://localhost:5000/${item.lessionContentImg}`} alt="Anh noi dung bai hoc" />
                 </div>
-                <h3>{item.lessionContentTitle}</h3>
+                <div className="textLesson">
+                    <h3>{item.lessionContentTitle}</h3>
+                </div>
            
             </Link>
                 </div>
