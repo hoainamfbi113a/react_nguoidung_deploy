@@ -14,13 +14,8 @@ class Dsdethi extends Component {
       refresh:true
     }
   }
-  componentDidMount(){
-    // const token = localStorage.usertoken
-    // const decoded = jwt_decode(token)//giai ma token
-    // console.log(decoded)
-    // alert(decoded.memberClassId)
-    // memberid: decoded.memberLogin
-    axios.get('http://localhost:5000/admin/exam/list/')
+  fetchProfile() {
+    axios.get('http://localhost:5000/admin/exam/list/'+this.props.match.params.subject)
         .then(response => {
             console.log(response.data);
             this.setState({persons: response.data});
@@ -28,7 +23,16 @@ class Dsdethi extends Component {
         .catch(function (error) {
             // console.log(error);
         })
-}
+  }
+  componentDidUpdate(prevProps) {
+  if (this.props.match.params.subject !== prevProps.match.params.subject) {
+  // fetch or other component tasks necessary for rendering
+    this.fetchProfile();
+  }
+  }
+  componentDidMount(){
+    this.fetchProfile()
+  }
 renderItem = () =>{
       
   let {items,idEdit,nameEdit,levelEdit,persons} = this.state; 

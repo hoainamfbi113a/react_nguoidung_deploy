@@ -35,7 +35,7 @@
 .lessionItem .textLesson{
     flex: 1 0 60%;
 }
-figure {
+.lessionItemfigure {
     background-color: orange;
     width: 20%;
     margin: 10px;

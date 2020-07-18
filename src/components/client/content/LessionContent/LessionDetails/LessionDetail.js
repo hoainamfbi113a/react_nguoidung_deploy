@@ -16,7 +16,7 @@ export default class LessionDetail extends Component {
         // this.setState({iddethi:window.location.href.slice(35)});
         this.setState({iddethi:this.props.match.params.id});
         const token = localStorage.usertoken
-        axios.get('http://localhost:5000/admin/lession/'+this.props.match.params.id)
+        axios.get('http://localhost:5000/admin/exam/list/'+this.props.match.params.subject)
             .then(response => {
                 this.setState({persons: response.data});
                 console.log(response.data);

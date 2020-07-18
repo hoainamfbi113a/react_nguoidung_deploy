@@ -37,7 +37,7 @@ export default class LessionContent extends Component {
             <div className="news">
         <aside className="aside3">
           <div>
-            <figure style={{background: '#fff', height: '38px'}}>
+            <figure className="lessionItemfigure"  style={{background: '#fff', height: '38px'}}>
               <h2>
                 <a href>Các bài học của</a> 
               </h2>

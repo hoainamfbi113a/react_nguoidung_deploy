@@ -37,6 +37,10 @@ ul li {
     margin: 0 auto;
     
 }
+.web_content{
+    position:relative; 
+  min-height: 100vh;
+}
 header{
     /* height:55px; */
     /* background:url('../img/back.jpg') repeat-x fixed center; */
@@ -213,6 +217,11 @@ header{
 footer{
     height: 152px;
     background: #F6E3CE;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:100px;
 
 }
 .header-content{
