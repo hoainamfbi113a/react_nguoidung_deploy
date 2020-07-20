@@ -1,0 +1,355 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+button,form,input{
+    box-sizing: border-box;
+}
+body{
+    background: #f0f0f0;
+    font-family:Helvetica, sans-serif
+}
+a{
+    text-decoration: none;
+}
+.web-content{
+    display: grid;
+    grid-gap: 10px;
+}
+header{
+    height:85px;
+    margin-bottom: 45px;
+}
+.header-content{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    background: rgb(218, 216, 216);
+}
+.content{
+    z-index: 1;
+    background: #f0f0f0;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:  300px 500px 200px 200px 200px 200px 50px;
+    grid-template-areas:
+                        'aside-show aside-show aside-banner'
+                        'aside-main aside-main aside-topdiem'
+                        'aside-carousel aside-carousel aside-carousel'
+                        'aside-quangcao aside-quangcao aside-quangcao'
+                        'aside-topquestion aside-topquestion aside-topquestion'
+                        'aside-tintuc aside-tintuc aside-tintuc'
+                        'aside-fb aside-youtube aside-youtube';
+    grid-gap:10px;
+    overflow: hidden;
+}
+.menu{
+    grid-area: menu;
+    background: rgb(144, 144, 245);
+}
+.aside-show{
+    grid-area: aside-show;
+    background: #f0f0f0;
+    position: relative;
+   
+}
+.aside-banner{
+    grid-area: aside-banner;
+    background:white;
+    display: grid;
+    grid-auto-rows: repeat(3,1fr);
+    z-index: 2;
+    grid-gap: 10px;
+}
+
+.aside-main{
+    grid-area: aside-main;
+    background: red;
+    display: grid;
+    grid-auto-rows: repeat(5,1fr);
+    z-index: 2;
+    grid-gap: 10px;
+}
+.aside-topdiem{
+    grid-area: aside-topdiem;
+    background: violet;
+    position: relative;
+}
+.aside-carousel{
+    grid-area: aside-carousel;
+    background: brown;
+}
+.aside-quangcao{
+    grid-area: aside-quangcao;
+    background: blue
+}
+.aside-topquestion{
+    grid-area: aside-topquestion;
+    background: #fed700;
+}
+.aside-tintuc{
+    grid-area: aside-tintuc;
+    background: grey;
+}
+.aside-fb{
+    grid-area: aside-fb;
+    background: grey;
+    z-index: 13;
+    text-align: center;
+}
+.aside-fb .fb{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.aside-youtube{
+    grid-area: aside-youtube;
+    background: grey;
+    z-index: 13;
+    text-align: center;
+}
+.aside-youtube .yt{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+footer{
+    height: 100px;
+    background: black;
+   
+}
+.footer-content{
+    margin-left: 50px;
+    margin-top: 10px;
+    text-align: left;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:rgb(218, 216, 216);
+    position: relative;
+}
+.search-site{
+    background: rgb(218, 216, 216);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -6px;
+}
+.search-site input{
+    max-width: 200px;
+    padding: 10px 42px 9px 17.5px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    font-size: 13px;
+    margin-left: 8px;
+}
+.search-site button{
+    position: relative;
+    background: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding-top:8px;
+    padding-bottom: 7px;
+    padding-right: 10px;
+}
+.search-site button .fa_search{
+    display: block;
+    z-index: 999;
+    width:20px;
+    height:20px;
+    background:url(https://cdn.thegioididong.com/v2015/Content/desktop/images/V4/icondesktop@1x.png?v=001) -160px 0px;
+}
+nav.nav-laptop{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+nav.nav-laptop a{
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+nav.nav-laptop a:hover{
+    background: #eee;
+    cursor:pointer;
+}
+
+nav.nav-laptop a i{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+nav.nav-laptop a div{
+   font-size: 12px;
+}
+nav.nav-laptop a .toan-icon{
+    width:20px;
+    height:40px;
+}
+nav.nav-laptop a .eng-icon{
+    width:20px;
+    height:40px;
+}
+.menu-home{
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    text-align: center;
+    margin-top: 5px;
+}
+div.menu-home a{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+}
+div a:hover{
+    background: #eee;
+    cursor:pointer;
+}
+.inf-class{
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    text-align: center;
+}
+.carousel{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    background: #fff;
+    margin-top:0px;
+}
+.boxcarousel{
+    border: solid 1px #eee;
+    border-bottom: none;
+    padding-bottom: 9px;
+}
+
+.destation{
+    font-size:12px;
+    color: #555;
+    margin: 0 5px 10px 5px;
+}
+.carousel{
+    opacity: 0;
+    position: absolute;
+}
+.active_carousel{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.slideshow {
+    width: 100%;
+    height: 700px;
+    border: 1px;
+    position: relative;
+    
+ }
+ .slide {
+    
+    top: 0px;
+    left: 0px;
+    
+    
+    
+ }
+ 
+ .nut-slide span{
+    color: black;
+    font-size: 60px;
+    opacity: 0.6;
+ }
+ span#btn-prev{
+    text-transform: uppercase;
+    position: absolute;
+    top: 30%;
+    left: 0%;
+    
+ }
+ span#btn-next{
+    text-transform: uppercase;
+    position: absolute;
+    top: 30%;
+    right: 0%;
+   
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+ form.login {
+    box-sizing: border-box;
+    width: 350px;
+    margin: 100px auto ;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    padding-bottom: 40px;
+    border-radius: 3px;
+  }
+  form.login div{
+      margin-left: 50px;
+  }
+  form.login div h1 {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  input.login {
+    margin: 40px 25px;
+    width: 200px;
+    display: block;
+    border: none;
+    padding: 10px 0;
+    border-bottom: solid 1px #1abc9c;
+    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+    background-position: -200px 0;
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    color: #0e6252;
+  }
+  input.login:focus, input:valid {
+    box-shadow: none;
+    outline: none;
+    background-position: 0 0;
+  }
+  
+  
+  button.login {
+    border: none;
+    background: #1abc9c;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 6px;
+    width: 200px;
+    color: white;
+    margin-left: 25px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+  button.login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+    cursor:pointer;
+  }
+
+ 

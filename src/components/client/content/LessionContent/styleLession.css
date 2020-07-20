@@ -1,0 +1,47 @@
+.lessionItem .classItem{
+    height: auto;
+    /* display: flex; */
+    /* justify-content: space-around; */
+    padding: 5px 20px;
+    flex: 1 0 40%;
+}
+.classLession{
+    display: flex;
+}
+.lessionItem{
+    display: flex;
+    border-bottom: solid 1px gray;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.lessionItem a {
+    display: flex;
+    margin: 10px 10px;
+    width: 100%;
+}
+.lessonContent {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.classLession {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.lessionItem .textLesson{
+    flex: 1 0 60%;
+}
+.lessionItemfigure {
+    background-color: orange;
+    width: 20%;
+    margin: 10px;
+    text-align: center;
+    padding: 7px;
+    height: auto;
+    /* align-items: center; */
+    border: solid 1px gray;
+}
