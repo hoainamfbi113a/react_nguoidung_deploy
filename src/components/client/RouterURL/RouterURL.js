@@ -14,6 +14,7 @@ import LessionClass from '../content/LessonClass/LessonClass'
 import LessionDetail from '../content/LessionContent/LessionDetails/LessionDetail'
 import ListQuestionForum from '../content/forum/list_question_forum/ListQuestionForum';
 import VideoLearning from '../content/video-learning/VideoLearning';
+// import ListQuestionForum from '../content/video-learning/ListQuestionForum';
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
      localStorage.usertoken

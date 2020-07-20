@@ -208,7 +208,6 @@ header{
     display: flex;
     flex-direction: column; */
     flex: 1 0 70%;
-    margin-top: 50px;
 }
 .hstieubieucuanuoc{
     flex: 1 0 30%;
@@ -748,11 +747,12 @@ div.menu-home a {
     text-align: center;
 }
 .thongbao {
-    background: url('../img/images/title_2.png') no-repeat;
+    background: url(../img/images/title_2.png) no-repeat;
     width: 325px;
     height: 49px;
     margin-left: -11px;
-    margin-top: 15px;
+    margin-top: 0px;
+    margin-bottom: 25px;
 }
 .thongbao a {
     float: left;
@@ -884,7 +884,7 @@ span#btn-prev-productnew{
     background: #F6E3CE;
  }
  .footer-content{
-     width: 79%;
+     /* width: 79%; */
      margin: 0 auto;
      /* display: grid; */
      /* grid-template-columns: repeat(3,1fr); */
