@@ -179,34 +179,34 @@ import "./style.css"
         <div class="Menu-list-item-sub">
                         <div class="Menu-list-item-sub-list">
                           <div class="Menu-list-item-sub-item">
-                          <Link to="/lessionclass/toán lớp 1" class="Menu-list-item-sub-item__txt"> Toán Lớp 1</Link>
+                          <Link to="/lessionclass/Toán lớp 1" class="Menu-list-item-sub-item__txt"> Toán Lớp 1</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</Link>
+                            <Link to="/lessionclass/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/toán lớp 2" class="Menu-list-item-sub-item__txt">Toán Lớp 2</Link>
+                            <Link to="/lessionclass/Toán lớp 2" class="Menu-list-item-sub-item__txt">Toán Lớp 2</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</Link>
+                            <Link to="/lessionclass/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/toán lớp 3" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </Link>
+                            <Link to="/lessionclass/Toán lớp 3" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/anh văn 3" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</Link>
+                            <Link to="/lessionclass/Anh văn 3" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/toán lớp 4" class="Menu-list-item-sub-item__txt">Toán Lớp 4</Link>
+                            <Link to="/lessionclass/Toán lớp 4" class="Menu-list-item-sub-item__txt">Toán Lớp 4</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/anh văn 4" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</Link>
+                            <Link to="/lessionclass/Anh văn 4" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/toán lớp 5" class="Menu-list-item-sub-item__txt">Toán Lớp 5</Link>
+                            <Link to="/lessionclass/Toán lớp 5" class="Menu-list-item-sub-item__txt">Toán Lớp 5</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/anh văn 5" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</Link>
+                            <Link to="/lessionclass/Anh văn 5" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</Link>
                           </div>
                          
                         </div>
@@ -218,35 +218,35 @@ import "./style.css"
           <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
           <div class="Menu-list-item-sub">
           <div class="Menu-list-item-sub-list">
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 1</a>
+          <div class="Menu-list-item-sub-item">
+                          <Link to="/exam/Toán lớp 1" class="Menu-list-item-sub-item__txt"> Toán Lớp 1</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</a>
+                            <Link to="/exam/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 2</a>
+                            <Link to="/exam/Toán lớp 2" class="Menu-list-item-sub-item__txt">Toán Lớp 2</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</a>
+                            <Link to="/exam/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </a>
+                            <Link to="/exam/Toán lớp 3" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</a>
+                            <Link to="/exam/Anh văn 3" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 4</a>
+                            <Link to="/exam/Toán lớp 4" class="Menu-list-item-sub-item__txt">Toán Lớp 4</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</a>
+                            <Link to="/exam/Anh văn 4" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 5</a>
+                            <Link to="/exam/Toán lớp 5" class="Menu-list-item-sub-item__txt">Toán Lớp 5</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</a>
+                            <Link to="/exam/Anh văn 5" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</Link>
                           </div>
                          
                         </div>
@@ -295,35 +295,35 @@ import "./style.css"
         <a href><i className="fa fa-fw fa-home" />HỌC ONLINE</a>
         <div class="Menu-list-item-sub">
         <div class="Menu-list-item-sub-list">
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 1</a>
+        <div class="Menu-list-item-sub-item">
+                          <Link to="/videolearning/Toán lớp 1" class="Menu-list-item-sub-item__txt"> Toán Lớp 1</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</a>
+                            <Link to="/videolearning/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 2</a>
+                            <Link to="/videolearning/Toán lớp 2" class="Menu-list-item-sub-item__txt">Toán Lớp 2</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</a>
+                            <Link to="/videolearning/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </a>
+                            <Link to="/videolearning/Toán lớp 3" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</a>
+                            <Link to="/videolearning/Anh văn 3" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 4</a>
+                            <Link to="/videolearning/Toán lớp 4" class="Menu-list-item-sub-item__txt">Toán Lớp 4</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</a>
+                            <Link to="/videolearning/Anh văn 4" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 5</a>
+                            <Link to="/videolearning/Toán lớp 5" class="Menu-list-item-sub-item__txt">Toán Lớp 5</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</a>
+                            <Link to="/videolearning/Anh văn 5" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</Link>
                           </div>
                          
                         </div>

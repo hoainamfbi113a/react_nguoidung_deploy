@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import './styleLession.css';
-export default class ItemLesion extends Component {
+// import '../LessonCl';
+export default class VideoLearningItem extends Component {
     render() {
         let {item} = this.props;
         console.log("item lession:",item )

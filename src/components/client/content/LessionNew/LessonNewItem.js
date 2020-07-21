@@ -22,7 +22,6 @@ export default class LessonNewItem extends Component {
               {/* <span>19 phút trước</span> */}
             </a>
           </ul>
-           
         )
     }
 }

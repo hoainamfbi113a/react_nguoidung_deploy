@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
-import ItemLesion from './ItemLesion'
+import VideoLearningItem from './VideoLearningItem'
 import axios from 'axios';
-import { withRouter } from 'react-router-dom'
-export default class LessionSubject extends Component {
+export default class VideoLearning extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -15,8 +14,8 @@ export default class LessionSubject extends Component {
       }
     fetchProfile() {
          // const token = localStorage.usertoken
-        let classId = this.props.match.params.subjects;
-        axios.get('http://localhost:5000/admin/lession/list/'+classId)
+        let classId = this.props.match.params.subject;
+        axios.get('http://localhost:5000/admin/videolearning/list/'+classId)
             .then(response => {
                 console.log(response.data);
                 this.setState({persons: response.data});
@@ -25,7 +24,7 @@ export default class LessionSubject extends Component {
             });
     }
     componentDidUpdate(prevProps) {
-      if (this.props.match.params.subjects !== prevProps.match.params.subjects) {
+      if (this.props.match.params.subject !== prevProps.match.params.subject) {
         // fetch or other component tasks necessary for rendering
         this.fetchProfile();
       }
@@ -39,11 +38,10 @@ export default class LessionSubject extends Component {
       return(
         persons.map((item,index)=>{
           return(
-            <ItemLesion key={item._id}  item={item}  />
+            <VideoLearningItem key={item._id}  item={item}  />
           )
         })
       )
-        
     }
     render() {
         return (
@@ -52,9 +50,8 @@ export default class LessionSubject extends Component {
           <div>
             <figure style={{background: '#fff', height: '38px'}}>
               <h2>
-                <a href>Nội dung bài học</a> 
+                <a href>Nội dung video</a> 
               </h2>
-
             </figure>
            {this.renderItem()}
           </div>

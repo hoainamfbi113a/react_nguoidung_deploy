@@ -6,6 +6,7 @@ import  LessonClass  from "./LessonClass/LessonClass";
 import News from './news/News';
 import LessionNew from './LessionNew/LessionNew';
 import GoodStudent from "./GoodStudent/GoodStudent"
+import LesonFeatured from "./LessonFeatured/LessonFeatured"
 class Home extends Component {
   render() {
     var settings = {
@@ -142,93 +143,19 @@ class Home extends Component {
         <div className="navigat">
           <h2>Các bài học nổi bật</h2>
           <div className="viewwallcart">
-            <a href>Toán 1</a>
-            <a href>Toán 2</a>
-            <a href>Toán 3</a>
-            <a href>Toán 4</a>
-            <a href>Toán 5</a>
-            <a href>Tiếng anh 1</a>
+             <Link to="/lessionclass/Toán lớp 1" class="Menu-list-item-sub-item__txt">Toán 1</Link>
+             <Link to="/lessionclass/Toán lớp 2" class="Menu-list-item-sub-item__txt">Toán 2</Link>
+             <Link to="/lessionclass/Toán lớp 3" class="Menu-list-item-sub-item__txt">Toán 3</Link>
+             <Link to="/lessionclass/Toán lớp 4" class="Menu-list-item-sub-item__txt">Toán 4</Link>
+             <Link to="/lessionclass/Toán lớp 5" class="Menu-list-item-sub-item__txt">Toán 5</Link>
+             <Link to="/lessionclass/Anh văn 1" class="Menu-list-item-sub-item__txt">Tiếng anh 1</Link>
+             <Link to="/lessionclass/Anh văn 2" class="Menu-list-item-sub-item__txt">Tiếng anh 2</Link>
+             <Link to="/lessionclass/Anh văn 3" class="Menu-list-item-sub-item__txt">Tiếng anh 3</Link>
+             <Link to="/lessionclass/Anh văn 4" class="Menu-list-item-sub-item__txt">Tiếng anh 4</Link>
+             <Link to="/lessionclass/Anh văn 5" class="Menu-list-item-sub-item__txt">Tiếng anh 5</Link>
           </div>
         </div>
-        <div className="khoi-product-new">
-          <div className="productnew active_product">
-            <div className="boxProduct">
-              <img src="../img/imgs/bg1.jpg" alt="" />
-              <h3>Tiêu đề</h3>
-              <div className="destation">
-                Nội dung của bài học xxxxxxxxxxx
-              </div>
-            </div>
-            <div className="boxProduct">
-              <img src="../img/imgs/bg2.jpg" alt="" />
-              <h3>Tiêu đề</h3>
-              <div className="destation">
-                Nội dung của bài học xxxxxxxxxxx
-              </div>
-            </div>
-            <div className="boxProduct">
-              <img src="../img/imgs/bg3.jpg" alt="" />
-              <h3>Tiêu đề</h3>
-              <div className="destation">
-                Nội dung của bài học xxxxxxxxxxx
-              </div>
-            </div>
-            <div className="boxProduct">
-              <img src="../img/imgs/bg4.jpg" alt="" />
-              <h3>Tiêu đề</h3>
-              <div className="destation">
-                Nội dung của bài học xxxxxxxxxxx
-              </div>
-            </div>
-            <div className="boxProduct">
-              <img src="../img/imgs/bg5.jpg" alt="" />
-              <h3>Tiêu đề</h3>
-              <div className="destation">
-                Nội dung của bài học xxxxxxxxxxx
-              </div>
-            </div>
-          </div>
-          {/* product-new 2 */}
-          <div className="productnew  ">
-            <div className="boxProduct">
-              <img src="../img/imgs/bg7.jpg" alt="" />
-              <h3>Tiêu đề</h3>
-              <div className="destation">
-                Nội dung của bài học xxxxxxxxxxx
-              </div>
-            </div>
-            <div className="boxProduct">
-              <img src="../img/imgs/bg7.jpg" alt="" />
-              <h3>Tiêu đề</h3>
-              <div className="destation">
-                Nội dung của bài học xxxxxxxxxxx
-              </div>
-            </div>
-            <div className="boxProduct">
-              <img src="../img/imgs/bg7.jpg" alt="" />
-              <h3>Tiêu đề</h3>
-              <div className="destation">
-                Nội dung của bài học xxxxxxxxxxx
-              </div>
-            </div>
-            <div className="boxProduct">
-              <img src="../img/imgs/bg7.jpg" alt="" />
-              {/* <h3>Tiêu đề</h3>
-                         <p>6.490.000d</p> */}
-              <span>5.200.000d</span>
-              <div className="destation">
-                Nội dung của bài học xxxxxxxxxxx
-              </div>
-            </div>
-            <div className="boxProduct">
-              <img src="../img/imgs/bg7.jpg" alt="" />
-              <h3>Tiêu đề</h3>
-              <div className="destation">
-                Nội dung của bài học xxxxxxxxxxx
-              </div>
-            </div>
-          </div>
-        </div>
+        <LesonFeatured/>
         {/* <div className="nut-slide-productnew">
           <span id="btn-prev-productnew"><i className="fa fa-chevron-left" style={{fontSize: '30px', color: '#666'}} /></span>
           <span id="btn-next-productnew"><i className="fa fa-chevron-right" style={{fontSize: '30px', color: '#666'}} /></span>

@@ -5,6 +5,7 @@ import Login from '../login/Login';
 import Register from '../register/Register';
 import Profile from '../profile/Profile';
 import Dsdethi from '../Dsdethi/Dsdethi';
+import Dsdethisubject from '../Dsdethi/DsdethiSubject';
 import Question from '../question/Question'
 import LessionContent from '../content/LessionContent/LessionContent'
 import LessionSubject from '../content/LessionContent/LessionSubject'
@@ -12,7 +13,9 @@ import LessionSubjects from '../content/LessionContent/LessionSubjects'
 import LessionClass from '../content/LessonClass/LessonClass'
 import LessionDetail from '../content/LessionContent/LessionDetails/LessionDetail'
 import ListQuestionForum from '../content/forum/list_question_forum/ListQuestionForum';
-
+import VideoLearning from '../content/video-learning/VideoLearning';
+import NewsItemDetail from '../content/NewsItemDetail/NewsItemDetail';
+// import ListQuestionForum from '../content/video-learning/ListQuestionForum';
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
      localStorage.usertoken
@@ -34,9 +37,13 @@ class RouterURL extends Component {
              <Route exact path="/lession/detail/:id" component = {LessionDetail}></Route>
              <Route exact path="/forumquestion" component = {ListQuestionForum}></Route>
              <PrivateRoute exact path="/profile" component = {Profile}/>
-             <PrivateRoute exact path="/exam" component = {Dsdethi}/>
+             <Route exact path="/exam" component = {Dsdethi}/>
+             <Route exact path="/exam/:subject" component = {Dsdethisubject}/>
+             <Route exact path="/news-item/:id" component = {NewsItemDetail}/>
              {/* <Route exact path="/examquestion" component = {Question}></Route> */}
              <PrivateRoute exact path="/examquestion/:id" component = {Question}/>
+
+             <Route exact path="/videolearning/:subject" component = {VideoLearning}/>
          </div>
     )
   }
