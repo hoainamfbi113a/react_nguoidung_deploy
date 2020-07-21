@@ -35,7 +35,7 @@
 .lessionItem .textLesson{
     flex: 1 0 60%;
 }
-.lessionItemfigure {
+.lessonContent figure {
     background-color: orange;
     width: 20%;
     margin: 10px;
@@ -43,5 +43,5 @@
     padding: 7px;
     height: auto;
     /* align-items: center; */
-    border: solid 1px gray;
+    border: solid 1px gray; 
 }

@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
-import { Link} from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import { Route } from 'react-router-dom';
 
 class NewsItem extends Component {
     render() {
         let {item,index}=this.props;
         return (
-            <ul className="banner0">
-            <a href>
+          // <ul className="banner0">
+              <NavLink onClick={() => {}} to="/">
+            {/* <a href> */}
               <img src={`http://localhost:5000/${item.images}`} alt="" />
-              <h3>{item.title}</h3>
               {/* <span>19 phút trước</span> */}
-            </a>
-          </ul>
+            {/* </a> */}
+            <h3>{item.title}</h3>
+            </NavLink>
+          // </ul>
         );
     }
 }
