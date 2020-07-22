@@ -25,6 +25,9 @@ export default class AddQuestionForum extends Component {
           default:
             this.setState({ [e.target.name]: e.target.value });
         }
+        const token = localStorage.usertoken
+        const decoded = jwt_decode(token)//giai ma token
+        console.log(decoded)
       }
       handleEditorChange = (content, editor) => {
         // console.log('Content was updated:', content);
@@ -70,7 +73,7 @@ export default class AddQuestionForum extends Component {
     render() {
         return (
           // <h1>xin chao</h1>
-            <div className="ListQuestionForum-content content">
+            <div className="ListQuestionForum-content content" >
                 <div className="ListQuestionForum-inf">
                     <div className="ListQuestionForum-inf">
                         <img className>
