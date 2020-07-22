@@ -8,7 +8,8 @@ class NewsItem extends Component {
             <NavLink to={`/news-item/${item._id}`}>
               <ul className="banner0">
                 <a href>
-                  <img src="../img/imgs//tintuc1.jpg" alt="" />
+                  {/* <img src="../img/imgs//tintuc1.jpg" alt="" /> */}
+                  <img src={item.images}></img>
                   <h3>{item.title}</h3>
                   <span>{item.timeUpdate}</span>
                 </a>
