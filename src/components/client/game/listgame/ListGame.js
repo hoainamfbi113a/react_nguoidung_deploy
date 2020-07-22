@@ -29,7 +29,6 @@ renderItem = () =>{
   let {listquestionGame} = this.state;
     for(var i=0 ;i< listquestionGame.length;i++)  {
         if(listquestionGame.categoryvocabulary) {
-            
         }
     }  
 //    console.log(listquestionGame);

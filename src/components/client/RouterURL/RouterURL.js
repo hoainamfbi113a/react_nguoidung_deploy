@@ -14,12 +14,9 @@ import LessionClass from '../content/LessonClass/LessonClass'
 import LessionDetail from '../content/LessionContent/LessionDetails/LessionDetail'
 import ListQuestionForum from '../content/forum/list_question_forum/ListQuestionForum';
 import VideoLearning from '../content/video-learning/VideoLearning';
-<<<<<<< HEAD
 import AddQuestionForum from '../content/forum/add_question_forum/AddQuestionForum';
 
-=======
 import NewsItemDetail from '../content/NewsItemDetail/NewsItemDetail';
->>>>>>> c5b877d33c21dbd57e09ac77afeb2a1a0d02d193
 // import ListQuestionForum from '../content/video-learning/ListQuestionForum';
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
