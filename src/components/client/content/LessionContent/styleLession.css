@@ -1,9 +1,10 @@
 .lessionItem .classItem{
+    flex: 1 0 40%;
     height: auto;
     /* display: flex; */
     /* justify-content: space-around; */
     padding: 5px 20px;
-    flex: 1 0 40%;
+    
 }
 .classLession{
     display: flex;
@@ -34,6 +35,7 @@
 
 .lessionItem .textLesson{
     flex: 1 0 60%;
+    padding-right: 20px;
 }
 .lessonContent figure {
     background-color: orange;

@@ -111,9 +111,7 @@ export default class LessionSubject extends Component {
              })
            )
             }
-        }
-        console.log(persons.filter(item => item.lessionContentSubjects === nameInPersons ))
-        
+        }        
     }
     render() {
         return (
@@ -124,7 +122,6 @@ export default class LessionSubject extends Component {
               <h2>
                 <a href>Nội dung bài học</a> 
               </h2>
-
             </figure>
            {this.renderItem()}
           </div>

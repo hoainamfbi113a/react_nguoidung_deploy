@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { homedir } from 'os';
 import jwt_decode from 'jwt-decode'
-import Item from './DsdeNewsItem'
+import Item from './DsNewsItem'
 import axios from 'axios';
 class DsNews extends Component {
   constructor(props){
@@ -45,7 +45,7 @@ renderItem = () =>{
     return (
       <div className="news">
       <aside className="aside3">
-        <div>
+        <div >
           <figure style={{background: 'rgb(255, 255, 255)', height: '38px'}}>
             <h2><a>Danh sách tin tức</a></h2></figure>
             {this.renderItem()}

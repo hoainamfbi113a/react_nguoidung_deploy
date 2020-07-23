@@ -13,20 +13,22 @@ export default class LessionDetail extends Component {
         }
       }
     componentDidMount(){
+        const { id } = this.props.match.params;
+        console.log("id in lesson detail ", id);
         // this.setState({iddethi:window.location.href.slice(35)});
         this.setState({iddethi:this.props.match.params.id});
         const token = localStorage.usertoken
-        axios.get('http://localhost:5000/admin/exam/list/'+this.props.match.params.subject)
+        // axios.get('http://localhost:5000/admin/exam/list/'+ this.props.match.params.subject)
+        axios.get('http://localhost:5000/client/lesson/'+ id)
             .then(response => {
                 this.setState({persons: response.data});
-                console.log(response.data);
+                console.log('HAIBO : ' + JSON.stringify(response.data));
             })
             .catch(function (error) {
             })
       }
       
     render() {
-        console.log(this.state.persons.lessionContentDetail)
         return (
             <div style={{width: '80%', margin: '0 auto'}}>
                    {parse(`${this.state.persons.lessionContentDetail}`)}

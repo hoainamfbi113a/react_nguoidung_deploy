@@ -211,6 +211,8 @@ header{
     display: flex;
     flex-direction: column; */
     flex: 1 0 70%;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 .hstieubieucuanuoc{
     flex: 1 0 30%;
@@ -219,12 +221,11 @@ header{
 footer{
     height: 152px;
     background: #F6E3CE;
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     left: 0;
     right: 0;
     height:100px;
-
 }
 .header-content{
     width: 78.9%;
@@ -704,7 +705,7 @@ div.menu-home a {
     line-height: 1.3rem;
     display: block;
     overflow: hidden;
-    height: 36px;
+    /* height: 36px; */
     color: #333;
     margin: 9px 3px;
 }

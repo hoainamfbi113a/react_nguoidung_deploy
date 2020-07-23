@@ -1,0 +1,40 @@
+*{
+
+}
+.newsDetail {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.newsTitle {
+    width: 100%;
+    height: auto;
+    text-transform: uppercase;
+    /* margin: 30px 20px; */
+    font-size: larger;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.newsTimeUpdate {
+    color: gray;
+    font-size: medium;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.newsImg {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.newsContents {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+}
