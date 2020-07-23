@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { homedir } from 'os';
 import jwt_decode from 'jwt-decode'
-import Item from './DsdeNewsItem'
 import axios from 'axios';
 class DsNews extends Component {
   constructor(props){
@@ -15,8 +14,8 @@ class DsNews extends Component {
     }
   }
   componentDidMount(){
-    const token = localStorage.usertoken
-    const decoded = jwt_decode(token)//giai ma token
+    // const token = localStorage.usertoken
+    // const decoded = jwt_decode(token)//giai ma token
     axios.get('http://localhost:5000/admin/game/list/')
         .then(response => {
             this.setState({listquestionGame: response.data});
@@ -25,21 +24,12 @@ class DsNews extends Component {
         })
 }
 renderItem = () =>{
-  let questionGameCategory = [];
+  // let questionGameCategory = [];
   let {listquestionGame} = this.state;
     for(var i=0 ;i< listquestionGame.length;i++)  {
         if(listquestionGame.categoryvocabulary) {
-            
         }
     }  
-//    console.log(listquestionGame);
-//    return (
-//     listquestion.map((item,index)=>{
-//        return(
-//          <Item key={item._id}  item={item} index={index}  handleShowAlert={this.handleShowAlert}  handleEditItem = {this.handleEditItem}/>
-//        )
-//      })
-//    )
 }
   render() {
     return (
@@ -47,8 +37,37 @@ renderItem = () =>{
       <aside className="aside3">
         <div>
           <figure style={{background: 'rgb(255, 255, 255)', height: '38px'}}>
-            <h2><a>Danh sách tin tức</a></h2></figure>
-            {this.renderItem()}
+            <h2><a>Danh sách trò chơi</a></h2></figure>
+                    <div style={{marginRight: '50px'}} className="news">
+              <aside style={{marginRight: '50px'}} className="aside3">
+                <div>
+                  <ul className="banner0">
+                  <Link to={"/gamequestion/"+"con nguoi"} style={{marginLeft: '200px'}}><img src="../img/images/imgnew.png" alt="" />
+                      <h3>con người</h3><span></span></Link>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+                    <div style={{marginRight: '50px'}} className="news">
+              <aside style={{marginRight: '50px'}} className="aside3">
+                <div>
+                  <ul className="banner0">
+                  <Link to={"/gamequestion/"+"thien nhien"} style={{marginLeft: '200px'}}><img src="../img/images/imgnew.png" alt="" />
+                      <h3>thiên nhiên</h3><span></span></Link>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+                    <div style={{marginRight: '50px'}} className="news">
+              <aside style={{marginRight: '50px'}} className="aside3">
+                <div>
+                  <ul className="banner0">
+                  <Link to={"/gamequestion/"+"hoa qua"} style={{marginLeft: '200px'}}><img src="../img/images/imgnew.png" alt="" />
+                      <h3>hoa quả</h3><span></span></Link>
+                  </ul>
+                </div>
+              </aside>
+            </div>
         </div>
       </aside>
     </div>

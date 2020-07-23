@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import RouterURL from './components/client/RouterURL/RouterURL';
 import HeaderNav from './components/client/header/HeaderNav';
 import Foot from './components/client/footer/Foot';
+import GameItem from "./components/client/game/gameItem/GameItem";
 class App extends Component {
   
   render() {
@@ -11,7 +12,8 @@ class App extends Component {
       <div>
         <div className="web_content">
           <HeaderNav></HeaderNav>
-          <RouterURL></RouterURL>
+          <RouterURL></RouterURL> 
+          {/* <GameItem></GameItem> */}
           <Foot></Foot>
         </div>
       </div>

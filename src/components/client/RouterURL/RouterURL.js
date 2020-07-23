@@ -16,6 +16,8 @@ import ListQuestionForum from '../content/forum/list_question_forum/ListQuestion
 import VideoLearning from '../content/video-learning/VideoLearning';
 import AddQuestionForum from '../content/forum/add_question_forum/AddQuestionForum';
 
+import ListGame from "../game/listgame/ListGame";
+
 import NewsItemDetail from '../content/NewsItemDetail/NewsItemDetail';
 // import ListQuestionForum from '../content/video-learning/ListQuestionForum';
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -42,6 +44,7 @@ class RouterURL extends Component {
              <Route exact path="/exam" component = {Dsdethi}/>
              <Route exact path="/exam/:subject" component = {Dsdethisubject}/>
              <Route exact path="/news-item/:id" component = {NewsItemDetail}/>
+             <Route exact path="/list-game" component = {ListGame}/>
              {/* <Route exact path="/examquestion" component = {Question}></Route> */}
              <PrivateRoute exact path="/examquestion/:id" component = {Question}/>
 
