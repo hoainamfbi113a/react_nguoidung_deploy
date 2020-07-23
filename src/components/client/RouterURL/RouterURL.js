@@ -15,7 +15,9 @@ import LessionDetail from '../content/LessionContent/LessionDetails/LessionDetai
 import ListQuestionForum from '../content/forum/list_question_forum/ListQuestionForum';
 import VideoLearning from '../content/video-learning/VideoLearning';
 import AddQuestionForum from '../content/forum/add_question_forum/AddQuestionForum';
+
 import ListGame from "../game/listgame/ListGame";
+
 import NewsItemDetail from '../content/NewsItemDetail/NewsItemDetail';
 // import ListQuestionForum from '../content/video-learning/ListQuestionForum';
 const PrivateRoute = ({ component: Component, ...rest }) => (

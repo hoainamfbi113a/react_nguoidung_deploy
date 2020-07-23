@@ -10,7 +10,7 @@ export default class LessionNew extends Component {
       }
       componentDidMount =() =>
       {
-        axios.get('http://localhost:5000/client/lesson/list/')
+        axios.get('http://localhost:5000/client/lesson/list3/')
           .then(response => {
             this.setState({news:response.data})
           })

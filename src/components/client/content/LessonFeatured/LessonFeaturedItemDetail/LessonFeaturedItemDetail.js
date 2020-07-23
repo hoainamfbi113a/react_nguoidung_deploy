@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import axios from 'axios';
 import './styleItemNews.css'
 
-class LessonItemDetail extends Component {
+class LessonFeaturedItemDetail extends Component {
     constructor() {
         super();
         this.state = {
@@ -12,7 +12,7 @@ class LessonItemDetail extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/client/lesson/list/')
+        axios.get('http://localhost:5000/client/lesson/list5/')
         .then(response => {
         this.setState({news:response.data})
             const id = this.props.match.params.id;
@@ -42,7 +42,7 @@ class LessonItemDetail extends Component {
                         <img src="http://localhost:5000/${this.state.new.images" alt="" />
                     </div>
                     <div className="newsContents">
-                        <p>{this.state.new.contents}</p>
+                        <p>{this.state.new.lessonContent}</p>
                     </div>
                 {/* </a> */}
             </div>
@@ -51,4 +51,4 @@ class LessonItemDetail extends Component {
     }
 }
 
-export default LessonItemDetail;
+export default LessonFeaturedItemDetail;

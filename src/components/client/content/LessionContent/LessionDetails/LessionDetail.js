@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import parse from 'html-react-parser';
+import '../styleLession.css'
 export default class LessionDetail extends Component {
     constructor() {//Ham khoi tao
         super()
@@ -13,6 +14,10 @@ export default class LessionDetail extends Component {
         // this.setState({iddethi:this.props.match.params.id});
         axios.get('http://localhost:5000/client/lesson/'+ id)
             .then(response => {
+
+                this.setState({persons: response.data});
+                console.log('LIEN : ' + JSON.stringify(response.data));
+
                 this.setState({
                     persons: response.data
                 });
@@ -23,6 +28,16 @@ export default class LessionDetail extends Component {
       
     render() {
         return (
+            <div className="lessonDetail">
+                    <div className="lesson-title">
+                        {parse(`${this.state.persons.lessionContentTitle}`)}
+                    </div>
+                    <div className="lesson-img">
+                        <img src={"http://localhost:5000/"+this.state.persons.lessionContentImg}></img>
+                    </div>
+                    <div className="lesson-content-detial">
+                        {parse(`${this.state.persons.lessionContentDetail}`)}
+                    </div>
             <div style={{width: '80%', margin: '0 auto'}}>
                 {/* <h1>{this.state.persons.lessionContentDetail}</h1> */}
                    {parse(`${this.state.persons.lessionContentDetail}`)}
