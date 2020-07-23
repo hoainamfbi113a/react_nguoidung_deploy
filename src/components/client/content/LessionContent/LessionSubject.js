@@ -17,7 +17,7 @@ export default class LessionSubject extends Component {
         const token = localStorage.usertoken
         axios.get('http://localhost:5000/admin/lession/list/')
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 this.setState({persons: response.data});
             })
             .catch(function (error) {
@@ -28,8 +28,8 @@ export default class LessionSubject extends Component {
         let classId = this.props.match.params.subject;
         let subjectName = this.props.match.params.monhoc;
         let nameInPersons=''
-        console.log("data in lession subject: ",subjectName);
-        console.log(`${classId} and ${subjectName}`)
+        // console.log("data in lession subject: ",subjectName);
+        // console.log(`${classId} and ${subjectName}`)
         let classFilter = "Anh văn 1"
         if (classId === "lop1"){
           classFilter = "Anh văn 1"

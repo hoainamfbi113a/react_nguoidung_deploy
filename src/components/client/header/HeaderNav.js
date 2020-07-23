@@ -182,7 +182,7 @@ import "./style.css"
                           <Link to="/lessionclass/Toán lớp 1" class="Menu-list-item-sub-item__txt"> Toán Lớp 1</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</Link>
+                            <Link to="/lessionclass/Anh văn 1" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</Link>
                           </div>
                           <div class="Menu-list-item-sub-item">
                             <Link to="/lessionclass/Toán lớp 2" class="Menu-list-item-sub-item__txt">Toán Lớp 2</Link>
