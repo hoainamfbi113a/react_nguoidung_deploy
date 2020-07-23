@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import ReactHtmlParser from 'react-html-parser';
-import ReactDomServer from 'react-dom/server';
-import {Editor} from '@tinymce/tinymce-react';
-import {parseString} from 'xml2js'
 import parse from 'html-react-parser';
 export default class LessionDetail extends Component {
     constructor() {//Ham khoi tao
@@ -14,16 +10,12 @@ export default class LessionDetail extends Component {
       }
     componentDidMount(){
         const { id } = this.props.match.params;
-        console.log("id in lesson detail ", id);
         // this.setState({iddethi:this.props.match.params.id});
         axios.get('http://localhost:5000/client/lesson/'+ id)
             .then(response => {
-                console.log(response.data);
-                console.log("xin chao Nam")
                 this.setState({
                     persons: response.data
                 });
-                console.log('HAIBO : ' + JSON.stringify(response.data));
             })
             .catch(function (error) {
             })
