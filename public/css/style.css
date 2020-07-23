@@ -26,6 +26,9 @@ img {
 ul li {
     list-style-type: none;
 }
+footer{
+    margin-bottom: -100px;
+}
 .web-content{
     /* grid-gap: 10px; */
     display: flex;

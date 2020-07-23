@@ -12,8 +12,8 @@ class App extends Component {
       <div>
         <div className="web_content">
           <HeaderNav></HeaderNav>
-          {/* <RouterURL></RouterURL>  */}
-          <GameItem></GameItem>
+          <RouterURL></RouterURL> 
+          {/* <GameItem></GameItem> */}
           <Foot></Foot>
         </div>
       </div>

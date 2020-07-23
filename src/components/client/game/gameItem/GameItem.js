@@ -55,7 +55,7 @@ class MainQuiz extends React.Component {
   }
   //check answer
   checkAnswer = answer => {
-    alert(answer)
+    // alert(answer)
     this.setState({ myAnswer: answer, disabled: false });
   };
   finishHandler = () => {

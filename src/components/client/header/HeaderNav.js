@@ -330,10 +330,10 @@ import "./style.css"
                       </div>
         </li>
         <li>
-        <a href><i className="fa fa-fw fa-home" />HỌC &amp; CHƠI</a>
+        <a href><i className="fa fa-fw fa-home" /></a>
+        <Link to="/list-game"><i className="fa fa-fw fa-home"/>HỌC &amp; CHƠI</Link>
         </li>
         <li>
-        {/* <a href><i className="fa fa-fw fa-home" />DIỄN ĐÀN</a> */}
         <Link to="/forumquestion"><i className="fa fa-fw fa-home"/>DIỄN ĐÀN</Link>
         </li>
         <li>
