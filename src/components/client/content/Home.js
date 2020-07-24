@@ -7,6 +7,15 @@ import News from './news/News';
 import LessionNew from './LessionNew/LessionNew';
 import GoodStudent from "./GoodStudent/GoodStudent"
 import LesonFeatured from "./LessonFeatured/LessonFeatured"
+
+
+function NullArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div/>
+  );
+}
+
 class Home extends Component {
   render() {
     var settings = {
@@ -16,7 +25,9 @@ class Home extends Component {
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 2000,
-      pauseOnHover: true
+      pauseOnHover: true,
+      nextArrow: <NullArrow/>,
+      prevArrow: <NullArrow />
     };
     return (
       <div className="content ">
@@ -24,23 +35,21 @@ class Home extends Component {
         <div className="js-carousel Carousel">
           <div className="js-carouselCtx Carousel-content">
             <div className="js-carouselList Carousel-content-list">
-            <Slider style={{width: '785px'}} {...settings}>
-              <div className="Carousel-content-item" id="carousel1">
-                <img src="../img/imgs/slide1.jpg" alt="" />
-              </div>
-              <div className="Carousel-content-item" id="carousel2">
-                <img src="../img/imgs/slide2.jpg" alt="" />
-              </div>
-              <div className="Carousel-content-item" id="carousel3">
-                <img src="../img/imgs/slide3.jpg" alt="" />
-              </div>
-              <div className="Carousel-content-item" id="carousel4">
-                <img src="../img/imgs/slide4.jpg" alt="" />
-              </div>
+              <Slider style={{width: '700px'}} {...settings}>
+                <div className="Carousel-content-item" id="carousel1">
+                  <img src="../img/imgs/slide1.jpg" alt="" />
+                </div>
+                <div className="Carousel-content-item" id="carousel2">
+                  <img src="../img/imgs/slide2.jpg" alt="" />
+                </div>
+                <div className="Carousel-content-item" id="carousel3">
+                  <img src="../img/imgs/slide3.jpg" alt="" />
+                </div>
+                <div className="Carousel-content-item" id="carousel4">
+                  <img src="../img/imgs/slide4.jpg" alt="" />
+                </div>
               </Slider>
             </div>
-            {/* <div className="js-carouselBtn Carousel-content__btn" /> */}
-            {/* <div className="js-carouselBtn Carousel-content__btn Carousel-content__btn--right" /> */}
           </div>
         </div>
         {/* <div className="Carousel-nav">
@@ -161,6 +170,7 @@ class Home extends Component {
           <span id="btn-next-productnew"><i className="fa fa-chevron-right" style={{fontSize: '30px', color: '#666'}} /></span>
         </div> */}
       </div>
+
       <News/>
       <GoodStudent/>
      </div>

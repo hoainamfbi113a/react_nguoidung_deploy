@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import LessonFeaturedItem from "./LessonFeaturedItem";
 import axios from 'axios';
-export default class LesonFeatured extends Component {
+import Slider from "react-slick";
+export default class LessonFeatured extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -28,12 +29,30 @@ export default class LesonFeatured extends Component {
         )
     }
     render() {
+        var settings = {
+            dots: true,
+            infinite: true,
+            slidesToShow: 4,
+            className: "center",
+            centerMode: true,
+            infinite: true,
+            centerPadding: "40px",
+            slidesToScroll: 4,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            pauseOnHover: true,
+
+          };   
         return (
+            
             <div className="khoi-product-new">
-                <div className="productnew active_product">
-                    {this.renderItem()}
-                </div>
+                    <div className="productnew active_product">
+                        <Slider style={{width: '90%'}} {...settings}>
+                                {this.renderItem()}
+                        </Slider>
+                    </div>
             </div>
         )
     }
 }
+

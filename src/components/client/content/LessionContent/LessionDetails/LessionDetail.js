@@ -5,6 +5,7 @@ import ReactDomServer from 'react-dom/server';
 import {Editor} from '@tinymce/tinymce-react';
 import {parseString} from 'xml2js'
 import parse from 'html-react-parser';
+import '../styleLession.css'
 export default class LessionDetail extends Component {
     constructor() {//Ham khoi tao
         super()
@@ -22,7 +23,7 @@ export default class LessionDetail extends Component {
         axios.get('http://localhost:5000/client/lesson/'+ id)
             .then(response => {
                 this.setState({persons: response.data});
-                console.log('HAIBO : ' + JSON.stringify(response.data));
+                console.log('LIEN : ' + JSON.stringify(response.data));
             })
             .catch(function (error) {
             })
@@ -30,8 +31,16 @@ export default class LessionDetail extends Component {
       
     render() {
         return (
-            <div style={{width: '80%', margin: '0 auto'}}>
-                   {parse(`${this.state.persons.lessionContentDetail}`)}
+            <div className="lessonDetail">
+                    <div className="lesson-title">
+                        {parse(`${this.state.persons.lessionContentTitle}`)}
+                    </div>
+                    <div className="lesson-img">
+                        <img src={"http://localhost:5000/"+this.state.persons.lessionContentImg}></img>
+                    </div>
+                    <div className="lesson-content-detial">
+                        {parse(`${this.state.persons.lessionContentDetail}`)}
+                    </div>
                    {/* {parse(`<p><audio class="audio-for-speech"></audio></p><div class="translate-tooltip-mtz hidden"><div class="header"><div class="header-controls">&nbsp;</div></div></div><p>I. CẤU TR&Uacute;C</p><p><u>1. C&acirc;u khẳng định</u></p><div class="table-responsive2"><table class="table table-bordered table-striped" border="1" cellspacing="0" cellpadding="0"><tbody><tr><td>&nbsp;</td><td><p align="center">Động từ tobe</p></td><td><p align="center">Động từ thường</p></td></tr><tr><td><p>Cấu tr&uacute;c</p></td><td><p align="center">S + will + &nbsp;be + N/Adj</p></td><td><p align="center">S + will +&nbsp; V(nguy&ecirc;n thể)</p></td></tr><tr><td><p>Lưu &yacute;</p></td><td colspan="2"><p align="center">will = &lsquo;ll</p></td></tr><tr><td><p>V&iacute; dụ</p></td><td><p>-&nbsp;<em>She&lsquo;ll be fine.</em><em>&nbsp;(C&ocirc; ấy sẽ ổn th&ocirc;i.)</em></p><p><em>-&nbsp;You will be mine soon&nbsp;(Anh sẽ sớm thuộc về em th&ocirc;i.)</em></p></td><td><p><em>-&nbsp;I will always love you. (Em sẽ lu&ocirc;n lu&ocirc;n y&ecirc;u anh.)</em></p><p><em>-&nbsp;No worries, I will take care of the children for you. (Đừng lo, em sẽ chăm s&oacute;c bọn trẻ gi&uacute;p chị.)</em></p></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></div>`)} */}
                 {/* {@html.Raw(htmlString)} */}
                 {/* {parseString(this.state.persons.lessionContentDetail)} */}
