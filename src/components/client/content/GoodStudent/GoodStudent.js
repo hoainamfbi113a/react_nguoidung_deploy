@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import GoodStudentItem from './GoodStudentItem';
-
+import "./style.css";
 class GoodStudent extends Component {
   constructor(props){
     super(props)
@@ -48,7 +48,7 @@ class GoodStudent extends Component {
     //   </div>
     <div className="hstieubieucuanuoc">
     <aside className="aside2">
-      <div>
+      <div className="goodstudent-container">
         <figure style={{background: '#fff', height: '38px'}}>
           <h2>
             <a href>Học sinh tiêu biểu</a> 

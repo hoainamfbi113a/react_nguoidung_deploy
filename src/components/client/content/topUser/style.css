@@ -1,0 +1,9 @@
+.d-flex-topuser{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.d-flex-topuser div{
+   margin: 10px;
+
+}

@@ -7,7 +7,7 @@ import News from './news/News';
 import LessionNew from './LessionNew/LessionNew';
 import GoodStudent from "./GoodStudent/GoodStudent"
 import LesonFeatured from "./LessonFeatured/LessonFeatured"
-
+import TopUser from "./topUser/TopUser"
 
 function NullArrow(props) {
   const { className, style, onClick } = props;
@@ -35,7 +35,7 @@ class Home extends Component {
         <div className="js-carousel Carousel">
           <div className="js-carouselCtx Carousel-content">
             <div className="js-carouselList Carousel-content-list">
-              <Slider style={{width: '700px'}} {...settings}>
+              <Slider style={{width: '786px'}} {...settings}>
                 <div className="Carousel-content-item" id="carousel1">
                   <img src="../img/imgs/slide1.jpg" alt="" />
                 </div>
@@ -76,76 +76,8 @@ class Home extends Component {
       </div>
       <div className="home-main">
       <LessonClass/>
-      <div className="top-user">
-        <div className="thongbao"><a href="/?TopicId=9525ab2d-5a64-41ae-b53d-d4b9631adb36">TOP CÁC HỌC SINH CÓ THÀNH TÍCH TỐT</a>
-          <a className="title" id="article3eb07392-457c-4d29-ac78-d5644a7867c9" style={{color: '#054690'}}>Xếp hạng lần thứ 14</a>
-        </div>
-        <div className="d-flex">
-          <h3 style={{width: '22px'}}>2</h3>
-          <div className>
-            <img alt="Hứa Hoàng Danh" src="https://api.adorable.io/avatars/55/Hứa Hoàng Danh" />
-          </div>
-          <h4 className="nameusertop">Hứa Hoàng Danh</h4>
-          <h4 className="ml-auto">1853</h4>
-        </div>
-        <div className="d-flex">
-          <h3 style={{width: '22px'}}>2</h3>
-          <div className>
-            <img alt="Hứa Hoàng Danh" src="https://api.adorable.io/avatars/55/Hứa Hoàng Danh" />
-          </div>
-          <h4 className="nameusertop">Hứa Hoàng Danh</h4>
-          <h4 className="ml-auto">1853</h4>
-        </div>
-        <div className="d-flex">
-          <h3 style={{width: '22px'}}>3</h3>
-          <div className>
-            <img alt="Hứa Hoàng Danh" src="https://api.adorable.io/avatars/55/Hứa Hoàng Danh" />
-          </div>
-          <h4 className="nameusertop">Hứa Hoàng Danh</h4>
-          <h4 className="ml-auto">1853</h4>
-        </div>
-        <div className="d-flex">
-          <h3 style={{width: '22px'}}>4</h3>
-          <div className>
-            <img alt="Hứa Hoàng Danh" src="https://api.adorable.io/avatars/55/Hứa Hoàng Danh" />
-          </div>
-          <h4 className="nameusertop">Hứa Hoàng Danh</h4>
-          <h4 className="ml-auto">1853</h4>
-        </div>
-        <div className="d-flex">
-          <h3 style={{width: '22px'}}>5</h3>
-          <div className>
-            <img alt="Hứa Hoàng Danh" src="https://api.adorable.io/avatars/55/Hứa Hoàng Danh" />
-          </div>
-          <h4 className="nameusertop">Hứa Hoàng Danh</h4>
-          <h4 className="ml-auto">1853</h4>
-        </div>
-        <div className="d-flex">
-          <h3 style={{width: '22px'}}>6</h3>
-          <div className>
-            <img alt="Hứa Hoàng Danh" src="https://api.adorable.io/avatars/55/Hứa Hoàng Danh" />
-          </div>
-          <h4 className="nameusertop">Hứa Hoàng Danh</h4>
-          <h4 className="ml-auto">1853</h4>
-        </div>
-        <div className="d-flex">
-          <h3 style={{width: '22px'}}>7</h3>
-          <div className>
-            <img alt="Hứa Hoàng Danh" src="https://api.adorable.io/avatars/55/Hứa Hoàng Danh" />
-          </div>
-          <h4 className="nameusertop">Hứa Hoàng Danh</h4>
-          <h4 className="ml-auto">1853</h4>
-        </div>
-        <div className="d-flex">
-          <h3 style={{width: '22px'}}>7</h3>
-          <div className>
-            <img alt="Hứa Hoàng Danh" src="https://api.adorable.io/avatars/55/Hứa Hoàng Danh" />
-          </div>
-          <h4 className="nameusertop">Hứa Hoàng Danh</h4>
-          <h4 className="ml-auto">1853</h4>
-        </div>
-      </div>
-     
+      
+     <TopUser/>
       </div>
  
     <div className="product">

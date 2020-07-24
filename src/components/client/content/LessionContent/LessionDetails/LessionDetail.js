@@ -11,12 +11,11 @@ export default class LessionDetail extends Component {
       }
     componentDidMount(){
         const { id } = this.props.match.params;
-        // this.setState({iddethi:this.props.match.params.id});
         axios.get('http://localhost:5000/client/lesson/'+ id)
             .then(response => {
 
                 this.setState({persons: response.data});
-                console.log('LIEN : ' + JSON.stringify(response.data));
+                // console.log('LIEN : ' + JSON.stringify(response.data));
 
                 this.setState({
                     persons: response.data
@@ -32,9 +31,9 @@ export default class LessionDetail extends Component {
                     <div className="lesson-title">
                         {parse(`${this.state.persons.lessionContentTitle}`)}
                     </div>
-                    <div className="lesson-img">
+                    {/* <div className="lesson-img">
                         <img src={"http://localhost:5000/"+this.state.persons.lessionContentImg}></img>
-                    </div>
+                    </div> */}
                     <div className="lesson-content-detial">
                         {parse(`${this.state.persons.lessionContentDetail}`)}
                     </div>
@@ -48,6 +47,7 @@ export default class LessionDetail extends Component {
                 {/* <div dangerouslySetInnerHTML={{ __html: this.state.persons.lessionContentDetail }} /> */}
                {/* dangerouslySetInnerHTML={blog.content} {this.state.persons.lessionContentDetail} */}
                {/* <div class="blog_content" dangerouslySetInnerHTML={this.state.persons.lessionContentDetail}  />; */}
+            </div>
             </div>
           
         )

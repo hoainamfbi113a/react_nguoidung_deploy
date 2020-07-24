@@ -1,0 +1,7 @@
+.img-good-student{
+    width: 60px;
+}
+.goodstudent-container{
+    display: flex;
+    flex-direction: column;
+}

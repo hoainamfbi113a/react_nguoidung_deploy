@@ -1,32 +1,59 @@
 import React from "react";
-import { quizData } from "./quizData";
+// import { persons } from "./persons";
 import "./style.css";
+import ReactCardFlip from 'react-card-flip';
+import axios from 'axios';
 class MainQuiz extends React.Component {
   state = {
     currentQuestion: 0,
     myAnswer: null,
     options: [],
+    ans1:"",
+    ans2:"",
+    ans3:"",
+    ans1img:"",
+    ans2img:"",
+    ans3img:"",
     score: 0,
     disabled: true,
-    isEnd: false
+    isEnd: false,
+    isFlipped: false,
+    persons:[],
   };
-
-  loadQuizData = () => {
+  handleClick = (e) => {
+    e.preventDefault();
+    this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+  }
+  loadpersons = () => {
 
     this.setState(() => {
       return {
-        questions: quizData[this.state.currentQuestion].question,
-        answer: quizData[this.state.currentQuestion].answer,
-        options: quizData[this.state.currentQuestion].options
+        questions: this.state.persons[this.state.currentQuestion].vocabularygame,
+        answer: this.state.persons[this.state.currentQuestion].vocabularygame,
+        // options: persons[this.state.currentQuestion].options
+        ans1:this.state.persons[this.state.currentQuestion].questionResultA.meaningA,
+        ans2:this.state.persons[this.state.currentQuestion].questionResultB.meaningB,
+        ans3:this.state.persons[this.state.currentQuestion].questionResultC.meaningC,
+        ans1img:this.state.persons[this.state.currentQuestion].questionResultA.ImgQuestionA,
+        ans2img:this.state.persons[this.state.currentQuestion].questionResultB.ImgQuestionB,
+        ans3img:this.state.persons[this.state.currentQuestion].questionResultC.ImgQuestionC,
       };
     });
   };
 
-  componentDidMount() {
-    this.loadQuizData();
+ async componentDidMount() {
+    // alert("xin chao")
+   await axios.get('http://localhost:5000/admin/game/list/'+this.props.match.params.subject)
+        .then(response => {
+            console.log(response.data);
+            this.setState({persons: response.data});
+        })
+        .catch(function (error) {
+            // console.log(error);
+        })
+      this.loadpersons();
   }
   nextQuestionHandler = () => {
-    // console.log('test')
     const { myAnswer, answer, score } = this.state;
 
     if (myAnswer === answer) {
@@ -46,9 +73,15 @@ class MainQuiz extends React.Component {
       this.setState(() => {
         return {
           disabled: true,
-          questions: quizData[this.state.currentQuestion].question,
-          options: quizData[this.state.currentQuestion].options,
-          answer: quizData[this.state.currentQuestion].answer
+          questions: this.state.persons[this.state.currentQuestion].vocabularygame,
+          // options: persons[this.state.currentQuestion].options,
+          answer: this.state.persons[this.state.currentQuestion].vocabularygame,
+          ans1:this.state.persons[this.state.currentQuestion].questionResultA.meaningA,
+          ans2:this.state.persons[this.state.currentQuestion].questionResultB.meaningB,
+          ans3:this.state.persons[this.state.currentQuestion].questionResultC.meaningC,
+          ans1img:this.state.persons[this.state.currentQuestion].questionResultA.ImgQuestionA,
+          ans2img:this.state.persons[this.state.currentQuestion].questionResultB.ImgQuestionB,
+          ans3img:this.state.persons[this.state.currentQuestion].questionResultC.ImgQuestionC,
         };
       });
     }
@@ -59,7 +92,7 @@ class MainQuiz extends React.Component {
     this.setState({ myAnswer: answer, disabled: false });
   };
   finishHandler = () => {
-    if (this.state.currentQuestion === quizData.length - 1) {
+    if (this.state.currentQuestion === this.state.persons.length - 1) {
       this.setState({
         isEnd: true
       });
@@ -71,8 +104,8 @@ class MainQuiz extends React.Component {
     }
   };
   render() {
-    const { options, myAnswer, currentQuestion, isEnd } = this.state;
-
+    const { options, myAnswer, currentQuestion, isEnd,ans1,ans2,ans3,ans1img,ans2img,ans3img } = this.state;
+    // alert(ans2)
     if (isEnd) {
       return (
         <div className="result">
@@ -80,9 +113,9 @@ class MainQuiz extends React.Component {
           <div>
             The correct answer's for the questions was
             <ul>
-              {quizData.map((item, index) => (
+              {this.state.persons.map((item, index) => (
                 <li className="ui floating message options" key={index}>
-                  {item.answer}
+                  {item.vocabularygame}
                 </li>
               ))}
             </ul>
@@ -93,9 +126,9 @@ class MainQuiz extends React.Component {
       return (
         <div className="App">
           <h1>{this.state.questions} </h1>
-          <span>{`Questions ${currentQuestion}  out of ${quizData.length -
+          <span>{`Questions ${currentQuestion}  out of ${this.state.persons.length -
             1} remaining `}</span>
-          {options.map(option => (
+          {/* {options.map(option => (
             <p
               key={option.id}
               className={`ui floating message options
@@ -105,8 +138,11 @@ class MainQuiz extends React.Component {
             >
               {option}
             </p>
-          ))}
-          {currentQuestion < quizData.length - 1 && (
+          ))} */}
+          <img  onClick={() => this.checkAnswer(ans1)} className="img-game" src={`http://localhost:5000/${ans1img}`}></img>
+          <img onClick={() => this.checkAnswer(ans2)} className="img-game" src={`http://localhost:5000/${ans2img}`}></img>
+          <img onClick={() => this.checkAnswer(ans3)} className="img-game" src={`http://localhost:5000/${ans3img}`}></img>
+          {currentQuestion < this.state.persons.length - 1 && (
             <button
               className="ui inverted button btnNext" style={{background: 'red'}}
               disabled={this.state.disabled}
@@ -116,7 +152,7 @@ class MainQuiz extends React.Component {
             </button>
           )}
           {/* //adding a finish button */}
-          {currentQuestion === quizData.length - 1 && (
+          {currentQuestion === this.state.persons.length - 1 && (
             <button className="ui inverted button btnNext" onClick={this.finishHandler}>
               Finish
             </button>

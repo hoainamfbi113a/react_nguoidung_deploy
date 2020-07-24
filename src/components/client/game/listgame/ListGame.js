@@ -42,7 +42,7 @@ renderItem = () =>{
               <aside style={{marginRight: '50px'}} className="aside3">
                 <div>
                   <ul className="banner0">
-                  <Link to={"/gamequestion/"+"con nguoi"} style={{marginLeft: '200px'}}><img src="../img/images/imgnew.png" alt="" />
+                  <Link to={"/gamequestion/"+"con người"} style={{marginLeft: '200px'}}><img src="../img/images/imgnew.png" alt="" />
                       <h3>con người</h3><span></span></Link>
                   </ul>
                 </div>
@@ -52,7 +52,7 @@ renderItem = () =>{
               <aside style={{marginRight: '50px'}} className="aside3">
                 <div>
                   <ul className="banner0">
-                  <Link to={"/gamequestion/"+"thien nhien"} style={{marginLeft: '200px'}}><img src="../img/images/imgnew.png" alt="" />
+                  <Link to={"/gamequestion/"+"thiên nhiên"} style={{marginLeft: '200px'}}><img src="../img/images/imgnew.png" alt="" />
                       <h3>thiên nhiên</h3><span></span></Link>
                   </ul>
                 </div>
@@ -62,7 +62,7 @@ renderItem = () =>{
               <aside style={{marginRight: '50px'}} className="aside3">
                 <div>
                   <ul className="banner0">
-                  <Link to={"/gamequestion/"+"hoa qua"} style={{marginLeft: '200px'}}><img src="../img/images/imgnew.png" alt="" />
+                  <Link to={"/gamequestion/"+"hoa quả"} style={{marginLeft: '200px'}}><img src="../img/images/imgnew.png" alt="" />
                       <h3>hoa quả</h3><span></span></Link>
                   </ul>
                 </div>

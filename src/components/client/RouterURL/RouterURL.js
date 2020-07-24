@@ -17,9 +17,12 @@ import VideoLearning from '../content/video-learning/VideoLearning';
 import AddQuestionForum from '../content/forum/add_question_forum/AddQuestionForum';
 
 import ListGame from "../game/listgame/ListGame";
-
+import GameItem from "../game/gameItem/GameItem";
 import NewsItemDetail from '../content/NewsItemDetail/NewsItemDetail';
 // import ListQuestionForum from '../content/video-learning/ListQuestionForum';
+// import ListQuestionForum from '../content/video-learning/ListQuestionForum';
+import VideoLearningAll from "../content/video-learning/VideoLearningAll";
+import VideoLearningDetail from "../content/video-learning/VideoLearningDetail";
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
      localStorage.usertoken
@@ -49,8 +52,12 @@ class RouterURL extends Component {
              <PrivateRoute exact path="/examquestion/:id" component = {Question}/>
 
              <Route exact path="/videolearning/:subject" component = {VideoLearning}/>
+             {/* <Route exact path="/videolearning" component = {VideoLearning}/> */}
              <PrivateRoute exact path="/ForumQuestion/add" component = {AddQuestionForum}/>
              {/* <PrivateRoute exact path="/ForumQuestion/ans/:id_question" component = {AddQuestionForum}/> */}
+             <Route exact path="/gamequestion/:subject" component = {GameItem}/>
+             <Route exact path="/videolearning" component = {VideoLearningAll}/>
+             <Route exact path="/videolearning/detail/:id" component = {VideoLearningDetail}/>
          </div>
     )
   }

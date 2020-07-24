@@ -9,6 +9,7 @@
     "html-react-parser": "^0.13.0",
     "jwt-decode": "^2.2.0",
     "react": "^16.5.2",
+    "react-card-flip": "^1.0.11",
     "react-countdown-now": "^2.1.2",
     "react-dom": "^16.5.2",
     "react-facebook-login": "^4.1.1",

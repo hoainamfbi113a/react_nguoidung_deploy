@@ -8,13 +8,13 @@ export default class VideoLearningItem extends Component {
         return (
             <div className="classLession">
                 <div className="lessionItem">
-                <Link to={"/lession/detail/"+item._id}>
+                <Link to={"/videolearning/detail/"+item._id}>
                
                 <div className="classItem">
-                <img src={`http://localhost:5000/${item.lessionContentImg}`} alt="Anh noi dung bai hoc" />
+                {/* <img src={`http://localhost:5000/${item.lessionContentImg}`} alt="Anh noi dung bai hoc" /> */}
                 </div>
                 <div className="textLesson">
-                    <h3>{item.lessionContentTitle}</h3>
+                    <h3>{item.videoContentTitle}</h3>
                 </div>
            
             </Link>
