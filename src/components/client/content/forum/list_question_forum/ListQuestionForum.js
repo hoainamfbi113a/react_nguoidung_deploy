@@ -11,6 +11,9 @@ class ListQuestionForum extends Component {
       questionForum:[],
       isShowAns:false,
       active: false,
+      currentPage: 1,
+      newsPerPage: 4,
+      filterlist:"",
     }
   }
   componentDidMount =() =>
@@ -23,37 +26,88 @@ class ListQuestionForum extends Component {
         console.log(error +"loi ne");
       })
   }
-  
-  renderItem=()=>{
-    let{questionForum}=this.state;
-    // console.log(questionForum)
-    return(
-        questionForum.map((item,index)=>{
-        return(
-          <ListQuestionForumItem id_question={item._id} key={item._id} item={item} index={index}></ListQuestionForumItem>
-        )
-      })
-    )
+  chosePage = (event) => {
+    this.setState({
+      currentPage: Number(event.target.id)
+    });
   }
+  select = (event) => {
+    this.setState({
+      newsPerPage: event.target.value
+    })
+  }
+  filterList = (event) => {
+    this.setState({
+      filterlist: event.target.value
+    })
+  }
+  // renderItem=()=>{
+  //   let{questionForum}=this.state;
+  //   // console.log(questionForum)
+  //   return(
+  //       questionForum.map((item,index)=>{
+  //       return (
+  //         <ListQuestionForumItem id_question={item._id} key={item._id} item={item} index={index}></ListQuestionForumItem>
+  //       )
+  //     })
+  //   )
+  // }
   render() {
+    let{questionForum}=this.state;
+    let filterList = this.state.filterlist;
+    questionForum = questionForum.filter(function(item) {
+        return item.titleForumQuestion && item.titleForumQuestion.toLowerCase().search(filterList.toLowerCase()) !== -1;
+      });
+    const currentPage = this.state.currentPage;
+    const newsPerPage = this.state.newsPerPage;
+    const indexOfLastNews = currentPage * newsPerPage;
+    const indexOfFirstNews = indexOfLastNews - newsPerPage;
+    const currentTodos = questionForum.slice(indexOfFirstNews, indexOfLastNews);
+    const renderTodos = currentTodos.map((todo, index) => {
+      return <ListQuestionForumItem stt={index + 1 + (currentPage - 1)*newsPerPage} key={index} item={todo} id_question={todo._id} />;
+    });
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(questionForum.length / newsPerPage); i++) {
+      pageNumbers.push(i);
+    }
     return (
     <div className="hstieubieucuanuoc">
     <aside className="aside2">
       <div>
-        <figure style={{background: '#fff', height: '38px'}}>
+        <figure className="list-forum-list-add" style={{background: '#fff', height: '38px'}}>
           <h2>
-            <a href>Danh sach cau hoi</a> 
+            <a href>DANH SÁCH CÂU HỎI</a> 
           </h2>
-          <div className="box-header">
-                  <Link to="ForumQuestion/add"><button className="btn btn-primary"><i className="fa fa-fw fa-home" />Thêm câu hỏi diễn đàn</button></Link>
+          <div className="wrap">
+                  <Link to="ForumQuestion/add"><button className="button"><i />Thêm câu hỏi diễn đàn</button></Link>
           </div>
         </figure>
-        {/* {this.renderEditor()} */}
-        {/* <h1>Xin chao cau</h1> */}
-        {this.renderItem()}
+        {renderTodos}
         
        
       </div>
+      <div className="pagination-custom">
+                  <ul id="page-numbers">
+                    {
+                      pageNumbers.map(number => {
+                        if (this.state.currentPage === number) {
+                          return (
+                            <li key={number} id={number} className="active">
+                              {number}
+                            </li>
+                          )
+                        }
+                        else {
+                          return (
+                            <li key={number} id={number} onClick={this.chosePage} >
+                              {number}
+                            </li>
+                          )
+                        }
+                      })
+                    }
+                  </ul>
+                </div>
     </aside>
   </div>
     )

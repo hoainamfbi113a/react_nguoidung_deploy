@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Editor } from '@tinymce/tinymce-react';
 import axios from 'axios';
-import jwt_decode from 'jwt-decode'
+import jwt_decode from 'jwt-decode';
+import "./style.css"
 export default class AddQuestionForum extends Component {
     constructor(props) {//khởi tạo giá trị
         super(props)
@@ -40,16 +41,17 @@ export default class AddQuestionForum extends Component {
         e.preventDefault();
         const token = localStorage.usertoken
         const decoded = jwt_decode(token)//giai ma token
-        console.log(decoded)
+        // console.log(decoded)
         await this.setState({
-          // first_name: decoded.first_name,
+          memberForumQuestionAvatarContentImg:decoded.avatarContentImg,
           memberForumQuestionMemberName: decoded.memberLogin
         })
-        const { classForumQuestion, titleForumQuestion, memberForumQuestionMemberName} = this.state;
+        const { classForumQuestion, titleForumQuestion, memberForumQuestionMemberName,memberForumQuestionAvatarContentImg} = this.state;
         let formData = {
           
         }
         formData.memberForumQuestionMemberName= memberForumQuestionMemberName;
+        formData.memberForumQuestionAvatarContentImg= memberForumQuestionAvatarContentImg;
         formData.classForumQuestion= classForumQuestion;
         formData.titleForumQuestion= titleForumQuestion;
         // alert(memberForumQuestionMemberName);
@@ -59,14 +61,14 @@ export default class AddQuestionForum extends Component {
             if(response.data ==='User already exists')
               alert('User already exists');
             else{
-            r.props.history.push('/')
+            r.props.history.push('/forumquestion')
             }
           })
           .catch(function (error) {
             console.log(error);
           });
           setTimeout(()=>{
-            r.props.history.push('/')
+            r.props.history.push('/forumquestion')
           },400)
        
       }
@@ -74,24 +76,24 @@ export default class AddQuestionForum extends Component {
         return (
           // <h1>xin chao</h1>
             <div className="ListQuestionForum-content content" >
-                <div className="ListQuestionForum-inf">
+                <div className="ListQuestionForum-inf" style={{marginLeft: '15%'}}>
                     <div className="ListQuestionForum-inf">
                         <img className>
 
                         </img>
-                        <p>
-                            Xin chaochao user
-                        </p>
-                        <p>
+                        <h2 className="addquestion-title">
+                            Xin chào
+                        </h2>
+                        <h4 className="addquestion-title">
                             Để đăng câu hỏi mới hãy nhập nội dung câu hỏi vào khung soạn thảo dưới đây:
-                        </p>
+                        </h4>
                         
                     </div>
                                 <form className="form-horizontal" noValidate onSubmit={this.onSubmit}>
                                 <div className="box-body">
                                     <div className="form-group">
                                     <label style={{textAlign: 'left'}} htmlFor="inputEmail3" className="col-sm-2 control-label">Môn học</label>
-                                    <div className="col-sm-10" style={{marginLeft: '-5%'}} >
+                                    <div className="col-sm-10"  >
                                         <input type="hidden" className="form-control"  placeholder="text" onChange={this.onChange} name="_id" value={this.state._id}/>
                                         <select className="form-control"  onChange={this.onChange}  name="classForumQuestion" >
                                         <option value="Anh văn 1">Anh văn lớp 1</option>
@@ -109,7 +111,7 @@ export default class AddQuestionForum extends Component {
                                     </div>
                                     <div className="form-group">
                                     <label style={{textAlign: 'left'}} htmlFor="inputPassword3" className="col-sm-2 control-label">Nội dung câu hỏi</label>
-                                    <div className="col-sm-10" style={{marginLeft: '-5%'}}>
+                                    <div className="col-sm-10" >
                                     
                                     <Editor
                                         name="titleForumQuestion"

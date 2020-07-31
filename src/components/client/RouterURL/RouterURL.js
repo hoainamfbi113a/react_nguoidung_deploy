@@ -23,6 +23,7 @@ import NewsItemDetail from '../content/NewsItemDetail/NewsItemDetail';
 // import ListQuestionForum from '../content/video-learning/ListQuestionForum';
 import VideoLearningAll from "../content/video-learning/VideoLearningAll";
 import VideoLearningDetail from "../content/video-learning/VideoLearningDetail";
+import Introducestatic from "../introduce/Introducestatic";
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
      localStorage.usertoken
@@ -58,6 +59,7 @@ class RouterURL extends Component {
              <Route exact path="/gamequestion/:subject" component = {GameItem}/>
              <Route exact path="/videolearning" component = {VideoLearningAll}/>
              <Route exact path="/videolearning/detail/:id" component = {VideoLearningDetail}/>
+             <Route exact path="/introduce" component = {Introducestatic}/>
          </div>
     )
   }

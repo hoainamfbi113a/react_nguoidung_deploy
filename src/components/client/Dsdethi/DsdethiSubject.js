@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { homedir } from 'os';
-import jwt_decode from 'jwt-decode'
 import Item from './DsdethiItem'
 import axios from 'axios';
 class Dsdethi extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, Link } from "react-router-dom";
 import axios from 'axios';
 import './styleItemNews.css'
-
+import parse from 'html-react-parser';
 class LessonItemDetail extends Component {
     constructor() {
         super();
@@ -42,9 +42,9 @@ class LessonItemDetail extends Component {
                         <img src="http://localhost:5000/${this.state.new.images" alt="" />
                     </div>
                     <div className="newsContents">
-                        <p>{this.state.new.contents}</p>
+                        {/* <p>{this.state.new.contents}</p> */}
+                        <p>{parse(`${this.state.new.contents}`)}</p>
                     </div>
-                {/* </a> */}
             </div>
             : null
         )

@@ -7,8 +7,61 @@ import FacebookLogin from 'react-facebook-login';
 import axios from 'axios';
 import "./style.css"
  class HeaderNav extends Component {
-
-
+  constructor(props) {//khởi tạo giá trị
+    super(props)
+    this.state = {
+      classObject: [],
+    }
+  }
+  componentDidMount =() =>
+      {
+        axios.get('http://localhost:5000/admin/classsubject/list/')
+          .then(response => {
+            this.setState({classObject:response.data})
+          })
+          .catch(function (error){
+            console.log(error +"loi ne");
+          })
+  }
+  renderClass = (url) =>{
+    let{classObject}=this.state;
+    return ( <div class="Menu-list-item-sub">
+                <div class="Menu-list-item-sub-list">
+                  <div class="Menu-list-item-sub-item">
+                  <Link to={`/${url}/Toán lớp 1`} class="Menu-list-item-sub-item__txt"> Toán Lớp 1</Link>
+                  </div>
+                  <div class="Menu-list-item-sub-item">
+                    <Link to={`/${url}/Anh văn 1`} class="Menu-list-item-sub-item__txt">Anh văn lớp 1</Link>
+                  </div>
+                  <div class="Menu-list-item-sub-item">
+                    <Link to={`/${url}/Toán lớp 2`} class="Menu-list-item-sub-item__txt">Toán Lớp 2</Link>
+                  </div>
+                  <div class="Menu-list-item-sub-item">
+                    <Link to={`/${url}/Anh văn 2`} class="Menu-list-item-sub-item__txt">Anh văn lớp 2</Link>
+                  </div>
+                  <div class="Menu-list-item-sub-item">
+                    <Link to={`/${url}/Toán lớp 3`} class="Menu-list-item-sub-item__txt">Toán Lớp 3 </Link>
+                  </div>
+                  <div class="Menu-list-item-sub-item">
+                    <Link to={`/${url}/Anh văn 3`} class="Menu-list-item-sub-item__txt">Anh văn lớp 3</Link>
+                  </div>
+                  <div class="Menu-list-item-sub-item">
+                    <Link to={`/${url}/Toán lớp 4`} class="Menu-list-item-sub-item__txt">Toán Lớp 4</Link>
+                  </div>
+                  <div class="Menu-list-item-sub-item">
+                    <Link to={`/${url}/Anh văn 4`} class="Menu-list-item-sub-item__txt">Anh văn lớp 4</Link>
+                  </div>
+                  <div class="Menu-list-item-sub-item">
+                    <Link to={`/${url}/Toán lớp 5`} class="Menu-list-item-sub-item__txt">Toán Lớp 5</Link>
+                  </div>
+                  <div class="Menu-list-item-sub-item">
+                    <Link to={`/${url}/Anh văn 5`} class="Menu-list-item-sub-item__txt">Anh văn lớp 5</Link>
+                  </div>
+                
+                </div>
+              </div>
+    )
+  }
   logOut(e) {
     e.preventDefault()
     localStorage.removeItem('usertoken')
@@ -19,6 +72,7 @@ import "./style.css"
      console.log(response);
     var r = this;
     // e.preventDefault();//khong tu dong chuyen trang
+    alert(response.email)
     axios.post('/users/loginfacebook', {
       memberLogin: response.email,
       memberPass: response.id
@@ -94,7 +148,7 @@ import "./style.css"
             {/* <a href="#" className="fa fa-facebook" style={{fontSize: '20px'}} /> */}
           
                <FacebookLogin
-                appId="704160490161968"
+                appId="3080483592020932"
                 autoLoad={false}
                 fields="name,email,picture"
                 callback={this.responseFacebook}
@@ -176,168 +230,29 @@ import "./style.css"
         <ul className="nav-header">
           <li>
           <a href><i className="fa fa-fw fa-home fa-home-class" />TÀI LIỆU HỌC TẬP</a>
-        <div class="Menu-list-item-sub">
-                        <div class="Menu-list-item-sub-list">
-                          <div class="Menu-list-item-sub-item">
-                          <Link to="/lessionclass/Toán lớp 1" class="Menu-list-item-sub-item__txt"> Toán Lớp 1</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/Anh văn 1" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/Toán lớp 2" class="Menu-list-item-sub-item__txt">Toán Lớp 2</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/Toán lớp 3" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/Anh văn 3" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/Toán lớp 4" class="Menu-list-item-sub-item__txt">Toán Lớp 4</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/Anh văn 4" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/Toán lớp 5" class="Menu-list-item-sub-item__txt">Toán Lớp 5</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/lessionclass/Anh văn 5" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</Link>
-                          </div>
-                         
-                        </div>
-                      </div>
+                     {this.renderClass("lessionclass")}
          
           </li>
        
         <li>
           <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
-          <div class="Menu-list-item-sub">
-          <div class="Menu-list-item-sub-list">
-          <div class="Menu-list-item-sub-item">
-                          <Link to="/exam/Toán lớp 1" class="Menu-list-item-sub-item__txt"> Toán Lớp 1</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/exam/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/exam/Toán lớp 2" class="Menu-list-item-sub-item__txt">Toán Lớp 2</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/exam/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/exam/Toán lớp 3" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/exam/Anh văn 3" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/exam/Toán lớp 4" class="Menu-list-item-sub-item__txt">Toán Lớp 4</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/exam/Anh văn 4" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/exam/Toán lớp 5" class="Menu-list-item-sub-item__txt">Toán Lớp 5</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/exam/Anh văn 5" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</Link>
-                          </div>
-                         
-                        </div>
-                      </div>
+          {this.renderClass("exam")}
         </li>
-        <li>
-          <Link to="/lessions">
-          </Link>
-          <div class="Menu-list-item-sub">
-          <div class="Menu-list-item-sub-list">
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 1</a>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</a>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 2</a>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</a>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </a>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</a>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 4</a>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</a>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Toán Lớp 5</a>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <a href="#" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</a>
-                          </div>
-                         
-                        </div>
-                      </div>
-        </li>
+       
         <li>
         <Link to="/videolearning"><i className="fa fa-fw fa-home" />HỌC ONLINE</Link>
-        <div class="Menu-list-item-sub">
-        <div class="Menu-list-item-sub-list">
-        <div class="Menu-list-item-sub-item">
-                          <Link to="/videolearning/Toán lớp 1" class="Menu-list-item-sub-item__txt"> Toán Lớp 1</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/videolearning/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 1</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/videolearning/Toán lớp 2" class="Menu-list-item-sub-item__txt">Toán Lớp 2</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/videolearning/Anh văn 2" class="Menu-list-item-sub-item__txt">Anh văn lớp 2</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/videolearning/Toán lớp 3" class="Menu-list-item-sub-item__txt">Toán Lớp 3 </Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/videolearning/Anh văn 3" class="Menu-list-item-sub-item__txt">Anh văn lớp 3</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/videolearning/Toán lớp 4" class="Menu-list-item-sub-item__txt">Toán Lớp 4</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/videolearning/Anh văn 4" class="Menu-list-item-sub-item__txt">Anh văn lớp 4</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/videolearning/Toán lớp 5" class="Menu-list-item-sub-item__txt">Toán Lớp 5</Link>
-                          </div>
-                          <div class="Menu-list-item-sub-item">
-                            <Link to="/videolearning/Anh văn 5" class="Menu-list-item-sub-item__txt">Anh văn lớp 5</Link>
-                          </div>
-                         
-                        </div>
-                      </div>
+        {this.renderClass("videolearning")}
+       
         </li>
         <li>
-        <a href><i className="fa fa-fw fa-home" /></a>
+        {/* <a href><i className="fa fa-fw fa-home" /></a> */}
         <Link to="/list-game"><i className="fa fa-fw fa-home"/>HỌC &amp; CHƠI</Link>
         </li>
         <li>
         <Link to="/forumquestion"><i className="fa fa-fw fa-home"/>DIỄN ĐÀN</Link>
         </li>
         <li>
-        <a href><i className="fa fa-fw fa-home" />GIỚI THIỆU</a>
+        <Link to="/introduce"><i className="fa fa-fw fa-home" />GIỚI THIỆU</Link>
         </li>
         <li>
         {/* <Link to="/login"><i className="fa fa-fw fa-home"/>ĐĂNG NHẬP</Link>

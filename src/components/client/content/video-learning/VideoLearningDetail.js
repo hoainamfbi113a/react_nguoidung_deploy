@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import "./style.css"
 export default class VideoLearningDetail extends Component {
     constructor() {
         super();
@@ -21,11 +22,11 @@ export default class VideoLearningDetail extends Component {
     render() {
         // var {new} = this.state;
         return (
-            <div>
+            <div className="video-youtube">
                 {/* <video controls="true">
                     <source src={this.state.new.videoContentVideo} type="video/mp4" />
                 </video> */}
-                <iframe width="420" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k">
+                <iframe width="920" height="545" src={this.state.new.videoContentVideo}>
 </iframe>
                 {/* <iframe width="420" height="345" src={this.state.new.videoContentVideo}>
 </iframe> */}

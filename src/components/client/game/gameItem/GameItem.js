@@ -4,24 +4,31 @@ import "./style.css";
 import ReactCardFlip from 'react-card-flip';
 import axios from 'axios';
 class MainQuiz extends React.Component {
-  state = {
-    currentQuestion: 0,
-    myAnswer: null,
-    options: [],
-    ans1:"",
-    ans2:"",
-    ans3:"",
-    ans1img:"",
-    ans2img:"",
-    ans3img:"",
-    score: 0,
-    disabled: true,
-    isEnd: false,
-    isFlipped: false,
-    persons:[],
-  };
-  handleClick = (e) => {
-    e.preventDefault();
+  constructor() {
+    super();
+      this.state = {
+        currentQuestion: 0,
+        myAnswer: null,
+        options: [],
+        ans1:"",
+        ans2:"",
+        ans3:"",
+        ans1img:"",
+        ans2img:"",
+        ans3img:"",
+        score: 0,
+        disabled: true,
+        isEnd: false,
+        isFlipped: false,
+        persons:[],
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  // state = {
+    
+  // };
+  handleClick(e) {
+    // e.preventDefault();
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
   }
   loadpersons = () => {
@@ -54,6 +61,7 @@ class MainQuiz extends React.Component {
       this.loadpersons();
   }
   nextQuestionHandler = () => {
+    this.handleClick();
     const { myAnswer, answer, score } = this.state;
 
     if (myAnswer === answer) {
@@ -90,8 +98,10 @@ class MainQuiz extends React.Component {
   checkAnswer = answer => {
     // alert(answer)
     this.setState({ myAnswer: answer, disabled: false });
+    this.handleClick();
   };
   finishHandler = () => {
+    this.handleClick();
     if (this.state.currentQuestion === this.state.persons.length - 1) {
       this.setState({
         isEnd: true
@@ -108,11 +118,11 @@ class MainQuiz extends React.Component {
     // alert(ans2)
     if (isEnd) {
       return (
-        <div className="result">
+        <div className="game-result">
           <h3>Game Over your Final score is {this.state.score} points </h3>
           <div>
             The correct answer's for the questions was
-            <ul>
+            <ul className="game-question-right">
               {this.state.persons.map((item, index) => (
                 <li className="ui floating message options" key={index}>
                   {item.vocabularygame}
@@ -124,7 +134,7 @@ class MainQuiz extends React.Component {
       );
     } else {
       return (
-        <div className="App">
+        <div className="App game-container">
           <h1>{this.state.questions} </h1>
           <span>{`Questions ${currentQuestion}  out of ${this.state.persons.length -
             1} remaining `}</span>
@@ -139,9 +149,23 @@ class MainQuiz extends React.Component {
               {option}
             </p>
           ))} */}
+          <div className="game-list-img">
+          <ReactCardFlip isFlipped={this.state.isFlipped} >
+          <div>
           <img  onClick={() => this.checkAnswer(ans1)} className="img-game" src={`http://localhost:5000/${ans1img}`}></img>
+          {/* <button onClick={this.handleClick}>Click to flip</button> */}
+          </div>
+          <div>{ans1}</div>
+          </ReactCardFlip>
+          <ReactCardFlip isFlipped={this.state.isFlipped} >
           <img onClick={() => this.checkAnswer(ans2)} className="img-game" src={`http://localhost:5000/${ans2img}`}></img>
+          <div>{ans2}</div>
+          </ReactCardFlip>
+          <ReactCardFlip isFlipped={this.state.isFlipped} >
           <img onClick={() => this.checkAnswer(ans3)} className="img-game" src={`http://localhost:5000/${ans3img}`}></img>
+          <div>{ans3}</div>
+          </ReactCardFlip>
+          </div>
           {currentQuestion < this.state.persons.length - 1 && (
             <button
               className="ui inverted button btnNext" style={{background: 'red'}}

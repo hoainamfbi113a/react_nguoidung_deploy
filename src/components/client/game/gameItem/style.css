@@ -11,3 +11,35 @@
     width: 70px;
     margin:30px
 }
+.game-list-img{
+    display: flex;
+    justify-content: space-between;
+}
+.game-list-img img{
+    width: 150px;
+    height: 150px;
+    object-fit:contain;
+}
+.game-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.game-result{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.game-result div{
+    margin-top: 100px;
+    
+}
+.game-question-right li{
+    margin: 10px;
+}
+.game-list-img div{
+    margin: 10px;
+} 
