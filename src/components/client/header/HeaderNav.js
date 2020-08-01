@@ -148,7 +148,7 @@ import "./style.css"
             {/* <a href="#" className="fa fa-facebook" style={{fontSize: '20px'}} /> */}
           
                <FacebookLogin
-                appId="3080483592020932"
+                appId="339113407489283"
                 autoLoad={false}
                 fields="name,email,picture"
                 callback={this.responseFacebook}
@@ -229,11 +229,10 @@ import "./style.css"
       <div className="menu-home">
         <ul className="nav-header">
           <li>
-          <a href><i className="fa fa-fw fa-home fa-home-class" />TÀI LIỆU HỌC TẬP</a>
+          <Link to="/lession"><i className="fa fa-fw fa-home" />TÀI LIỆU HỌC TẬP</Link>
                      {this.renderClass("lessionclass")}
          
           </li>
-       
         <li>
           <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
           {this.renderClass("exam")}

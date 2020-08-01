@@ -8,6 +8,7 @@ import Dsdethi from '../Dsdethi/Dsdethi';
 import Dsdethisubject from '../Dsdethi/DsdethiSubject';
 import Question from '../question/Question'
 import LessionContent from '../content/LessionContent/LessionContent'
+import DSLession from '../content/LessionContent/DSLession'
 import LessionSubject from '../content/LessionContent/LessionSubject'
 import LessionSubjects from '../content/LessionContent/LessionSubjects'
 import LessionClass from '../content/LessonClass/LessonClass'
@@ -42,6 +43,7 @@ class RouterURL extends Component {
              <Route exact path="/lession/:subject" component = {LessionSubject}></Route>
              <Route exact path="/lessionclass/:subjects" component = {LessionSubjects}></Route>
              <Route exact path="/lessions" component = {LessionContent}></Route>
+             <Route exact path="/lession" component = {DSLession}></Route>
              <Route exact path="/lession/detail/:id" component = {LessionDetail}></Route>
              <Route exact path="/forumquestion" component = {ListQuestionForum}></Route>
              <PrivateRoute exact path="/profile" component = {Profile}/>
