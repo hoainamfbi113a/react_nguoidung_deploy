@@ -41,17 +41,6 @@ class ListQuestionForum extends Component {
       filterlist: event.target.value
     })
   }
-  // renderItem=()=>{
-  //   let{questionForum}=this.state;
-  //   // console.log(questionForum)
-  //   return(
-  //       questionForum.map((item,index)=>{
-  //       return (
-  //         <ListQuestionForumItem id_question={item._id} key={item._id} item={item} index={index}></ListQuestionForumItem>
-  //       )
-  //     })
-  //   )
-  // }
   render() {
     let{questionForum}=this.state;
     let filterList = this.state.filterlist;

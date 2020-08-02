@@ -4,6 +4,7 @@ import { Editor } from '@tinymce/tinymce-react';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
 import parse from 'html-react-parser';
+import { useHistory } from "react-router-dom";
 class ListQuestionForumItem extends Component {
           constructor(props){
             super(props)
@@ -99,8 +100,12 @@ class ListQuestionForumItem extends Component {
         }
         
         handleShowAns =() =>{
-        const currentState = this.state.active;
-        this.setState({ active: !currentState });
+        if(!localStorage.usertoken)
+        {
+          this.props.history.push('/login')
+        }
+          const currentState = this.state.active;
+          this.setState({ active: !currentState });
         }
         renderAns = (questionAns) =>{
           console.log(questionAns);

@@ -11,6 +11,7 @@ import "./style.css"
     super(props)
     this.state = {
       classObject: [],
+      keywordSearch:""
     }
   }
   componentDidMount =() =>
@@ -90,6 +91,10 @@ import "./style.css"
     });
     // console.log(response);
   }
+  onChange = (e) =>{
+    alert(e.target.value);
+    this.setState({ [e.target.name]: e.target.value });
+  }
   render() {
     let decoded =""
     if(localStorage.usertoken){
@@ -118,6 +123,7 @@ import "./style.css"
         </li> 
          </li>
     )
+   
     return (
       <div>
       <header className="only-pc">
@@ -129,7 +135,11 @@ import "./style.css"
         </Link>
           <form action className="search-site">
             
-            <input type="text" placeholder="Bạn tìm gì..." />
+            <input type="text" placeholder="Mời bạn nhập tên bài học cần tìm" 
+              name ="keyword"
+              value="keyword"
+              onChange={this.onChange}
+            />
             <button className="btn-search">
               <i className="fa_search" />
             </button>
