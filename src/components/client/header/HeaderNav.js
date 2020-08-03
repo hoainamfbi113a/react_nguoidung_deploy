@@ -108,26 +108,25 @@ import "./style.css"
     const loginRegLink = (
       <li style={{display: 'flex'}}>
         <li>
-        <Link to="/login"><i className="fa fa-fw fa-home"/>ĐĂNG NHẬP</Link>
+        <Link to="/login"><i className="fa fa-fw fa-power-off"/>ĐĂNG NHẬP</Link>
         </li>
         <li>
-        <Link to="/register"><i className="fa fa-fw fa-home"/>ĐĂNG KÝ</Link>
+        <Link to="/register"><i className="fa fa-fw fa-sign-in"/>ĐĂNG KÝ</Link>
         </li>
         </li>
     )
     const userLink = (   
       <li style={{display: 'flex'}}>
-        <li> <a href="" onClick={this.logOut.bind(this)} className="nav-link"><i className="fa fa-fw fa-home" />
+        <li> <a href="" onClick={this.logOut.bind(this)} className="nav-link"><i className="fa fa-fw fa-sign-out" />
             ĐĂNG XUẤT
           </a>
         </li> 
-        <li> <a href=""className="nav-link"><i className="fa fa-fw fa-home" />
-            {decoded.memberLogin}
-          </a>
+        <li> <Link to="/updateuser" className="nav-link"><i className="fa fa-fw fa-user-circle" />
+           Xin chào: {decoded.memberLogin}
+          </Link>
         </li> 
          </li>
     )
-   
     return (
       <div>
       <header className="only-pc">
@@ -244,29 +243,29 @@ import "./style.css"
       <div className="menu-home">
         <ul className="nav-header">
           <li>
-          <Link to="/lession"><i className="fa fa-fw fa-home" />TÀI LIỆU HỌC TẬP</Link>
+          <Link to="/lession"><i className="fa fa-fw fa-book" />TÀI LIỆU HỌC TẬP</Link>
                      {this.renderClass("lessionclass")}
          
           </li>
         <li>
-          <Link to="/exam"><i className="fa fa-fw fa-home" />KIỂM TRA</Link>
+          <Link to="/exam"><i className="fa fa-fw fa-columns" />KIỂM TRA</Link>
           {this.renderClass("exam")}
         </li>
        
         <li>
-        <Link to="/videolearning"><i className="fa fa-fw fa-home" />HỌC ONLINE</Link>
+        <Link to="/videolearning"><i className="fa fa-fw fa-windows" />HỌC ONLINE</Link>
         {this.renderClass("videolearning")}
        
         </li>
         <li>
         {/* <a href><i className="fa fa-fw fa-home" /></a> */}
-        <Link to="/list-game"><i className="fa fa-fw fa-home"/>HỌC &amp; CHƠI</Link>
+        <Link to="/list-game"><i className="fa fa-fw fa-gamepad"/>HỌC &amp; CHƠI</Link>
         </li>
         <li>
-        <Link to="/forumquestion"><i className="fa fa-fw fa-home"/>DIỄN ĐÀN</Link>
+        <Link to="/forumquestion"><i className="fa fa-fw fa-list-alt"/>DIỄN ĐÀN</Link>
         </li>
         <li>
-        <Link to="/introduce"><i className="fa fa-fw fa-home" />GIỚI THIỆU</Link>
+        <Link to="/introduce"><i className="fa fa-fw fa-address-book" />GIỚI THIỆU</Link>
         </li>
         <li>
         {/* <Link to="/login"><i className="fa fa-fw fa-home"/>ĐĂNG NHẬP</Link>

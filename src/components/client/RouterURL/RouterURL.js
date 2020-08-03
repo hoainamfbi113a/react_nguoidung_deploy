@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route,Redirect } from 'react-router-dom'
 import Home from '../content/Home';
 import Login from '../login/Login';
 import Register from '../register/Register';
+import UpdateUser from '../updateuser/UpdateUser';
 import Profile from '../profile/Profile';
 import Dsdethi from '../Dsdethi/Dsdethi';
 import Dsdethisubject from '../Dsdethi/DsdethiSubject';
@@ -41,6 +42,7 @@ class RouterURL extends Component {
              <Route exact path="/login" component = {Login}></Route>
              {/* <Route exact path="/login/:a" component = {Login}></Route> */}
              <Route exact path="/register" component = {Register}></Route>
+             <Route exact path="/updateuser" component = {UpdateUser}></Route>
              <Route exact path="/lession/:subject/:monhoc" component = {LessionSubject}></Route>
              <Route exact path="/lession/:subject" component = {LessionSubject}></Route>
              <Route exact path="/lessionclass/:subjects" component = {LessionSubjects}></Route>

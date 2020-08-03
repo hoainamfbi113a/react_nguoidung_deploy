@@ -26,11 +26,6 @@ class DSLession extends Component {
 renderItem = () =>{
     let keyword = this.props.match.params.search;
       let {persons} = this.state;
-          //  return persons.filter(item => item.lessionContentSubjects==keyword).map((item,index)=>{
-          //     return(
-          //       <Item key={item._id}  item={item} index={index}/>
-          //     )
-          //   })
           persons = persons.filter(function(item) {
             return item.lessionContentSubjects && item.lessionContentSubjects.toLowerCase().search(keyword.toLowerCase()) !== -1 ||
             item.lessionContentTitle && item.lessionContentTitle.toLowerCase().search(keyword.toLowerCase()) !== -1;
