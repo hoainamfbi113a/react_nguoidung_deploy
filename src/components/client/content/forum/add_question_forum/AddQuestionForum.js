@@ -35,6 +35,9 @@ export default class AddQuestionForum extends Component {
         this.setState({
           titleForumQuestion:content
         })
+        const token = localStorage.usertoken
+        const decoded = jwt_decode(token)//giai ma token
+        console.log(decoded);
       }
       async onSubmit(e)  {
         var r = this;

@@ -92,8 +92,12 @@ import "./style.css"
     // console.log(response);
   }
   onChange = (e) =>{
-    alert(e.target.value);
     this.setState({ [e.target.name]: e.target.value });
+  }
+  onSearch = (e) =>{
+    e.preventDefault();
+    this.props.history.push('/lessionsearch/'+this.state.keywordSearch);
+    console.log(this.state);
   }
   render() {
     let decoded =""
@@ -136,14 +140,15 @@ import "./style.css"
           <form action className="search-site">
             
             <input type="text" placeholder="Mời bạn nhập tên bài học cần tìm" 
-              name ="keyword"
-              value="keyword"
+              name ="keywordSearch"
+              value={this.state.keywordSearch}
               onChange={this.onChange}
             />
-            <button className="btn-search">
+            <button className="btn-search" onClick={this.onSearch}>
               <i className="fa_search" />
             </button>
           </form>
+          
           <nav className="nav-laptop">
           <Link to="/lession/toan">
               <i className="phone-icon" />

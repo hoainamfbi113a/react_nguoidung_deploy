@@ -16,6 +16,7 @@ class DSLession extends Component {
     }
   }
   componentDidMount(){
+    alert(this.props.match.params.search);
     axios.get('http://localhost:5000/admin/classsubject/list/')
         .then(response => {
             // console.log(response.data);
