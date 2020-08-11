@@ -136,8 +136,7 @@ class MainQuiz extends React.Component {
       return (
         <div className="App game-container">
           <h1>{this.state.questions} </h1>
-          <span>{`Questions ${currentQuestion}  out of ${this.state.persons.length -
-            1} remaining `}</span>
+          <span>{`Questions ${currentQuestion+1}  out of ${this.state.persons.length} remaining `}</span>
           {/* {options.map(option => (
             <p
               key={option.id}

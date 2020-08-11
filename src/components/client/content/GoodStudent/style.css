@@ -5,3 +5,18 @@
     display: flex;
     flex-direction: column;
 }
+.img-good-student{
+width: 150px;
+height: 90px;
+float: left;
+margin-right: 15px;
+}
+.title-good-student{
+    font-size: 17px;
+    line-height: 1.7rem;
+    display: block;
+    overflow: hidden;
+    /* height: 40px; */
+    color: #333;
+    margin: 12px 5px;
+}

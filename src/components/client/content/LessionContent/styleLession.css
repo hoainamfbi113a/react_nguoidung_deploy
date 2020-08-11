@@ -3,7 +3,7 @@
     height: auto;
     /* display: flex; */
     /* justify-content: space-around; */
-    padding: 5px 20px;
+    padding: 5px 10px;
     
 }
 .classLession{
@@ -30,7 +30,7 @@
     flex-direction: row;
 }
 .lessionItem .textLesson{
-    flex: 1 0 60%;
+    flex: 1 0 59%;
     padding-right: 20px;
 }
 .lessonContent figure {

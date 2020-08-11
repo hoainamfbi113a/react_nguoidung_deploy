@@ -14,7 +14,6 @@ class News extends Component {
     axios.get('http://localhost:5000/client/news/listneweducation')
       .then(response => {
         this.setState({news:response.data})
-        // console.log(response.data);
       })
       .catch(function (error){
         console.log(error +"loi ne");
@@ -35,13 +34,15 @@ class News extends Component {
     return (
         <div className="news">
         <aside className="aside3">
-          <div>
+          <div  style={{display: 'flex',flexDirection: 'column'}}>
             <figure style={{background: '#fff', height: '38px'}}>
               <h2>
                 <a href>Tin tức giáo dục</a> 
               </h2>
             </figure>
               {this.renderItem()}
+              {/* {this.renderItem()} */}
+             
           </div>
         </aside>
       </div>

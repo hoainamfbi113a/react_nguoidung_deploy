@@ -12,6 +12,7 @@ class LessonItemDetail extends Component {
     }
 
     componentDidMount() {
+        // alert("a")
         axios.get('http://localhost:5000/client/lesson/list/')
         .then(response => {
         this.setState({news:response.data})
@@ -38,9 +39,9 @@ class LessonItemDetail extends Component {
                     <div className="newsTimeUpdate">
                         <span>{this.state.new.timeUpdate}</span>
                     </div>
-                    <div className="newsImg">
+                    {/* <div className="newsImg">
                         <img src="http://localhost:5000/${this.state.new.images" alt="" />
-                    </div>
+                    </div> */}
                     <div className="newsContents">
                         {/* <p>{this.state.new.contents}</p> */}
                         <p>{parse(`${this.state.new.contents}`)}</p>

@@ -12,7 +12,7 @@ class NewsItem extends Component {
               <img className="img-good-student" src={`http://localhost:5000/${item.images}`} alt="" />
               {/* <span>19 phút trước</span> */}
             {/* </a> */}
-            <h3>{item.title}</h3>
+            <h3 className="title-good-student">{item.title}</h3>
             </NavLink>
           // </ul>
         );

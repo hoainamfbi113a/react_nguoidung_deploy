@@ -28,16 +28,13 @@ export default class LessionDetail extends Component {
                     <div className="lesson-title">
                         {parse(`${this.state.persons.lessionContentTitle}`)}
                     </div>
-                    {/* <div className="lesson-img">
-                        <img src={"http://localhost:5000/"+this.state.persons.lessionContentImg}></img>
-                    </div> */}
-                    <div className="lesson-content-detial">
+                    <div className="lesson-content-detial" style={{width: '60%', margin: '31px auto'}}>
                         {parse(`${this.state.persons.lessionContentDetail}`)}
                     </div>
-            <div style={{width: '80%', margin: '31px auto'}}>
-                   {parse(`${this.state.persons.lessionContentDetail}`)}
-  
-            </div>
+                    {/* <div style={{width: '60%', margin: '31px auto'}}>
+                        {parse(`${this.state.persons.lessionContentDetail}`)}
+                       
+                    </div> */}
             </div>
           
         )

@@ -64,10 +64,10 @@ export default class UpdateUser extends Component {
           formData.append('memberDate', memberDate);
           formData.append('memberSex', memberSex);
           formData.append('memberAddress', memberAddress);
-          axios.post('http://localhost:5000/admin/member', formData)
+          axios.post('http://localhost:5000/admin/exam/excel', formData)
           .then(res => console.log(res.data));
           alert("Cập nhật thành công")
-          this.props.history.push('/');
+        //   this.props.history.push('/');
     }
     render() {
         return (
@@ -102,7 +102,7 @@ export default class UpdateUser extends Component {
                 </div>
                 <div className="form-login">
                   <button className="update-user-button">Cập nhật</button>
-                  <p>Already Have account? <a className="updateuser-login" href="#">Login</a></p>
+                  {/* <p>Already Have account? <a className="updateuser-login" href="#">Login</a></p> */}
                 </div>
               </form>
             </div>

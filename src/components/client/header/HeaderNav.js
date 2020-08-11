@@ -96,6 +96,10 @@ import "./style.css"
   }
   onSearch = (e) =>{
     e.preventDefault();
+    // alert("xin chao")
+    this.setState({
+      keywordSearch: ""
+    })
     this.props.history.push('/lessionsearch/'+this.state.keywordSearch);
     console.log(this.state);
   }
@@ -242,20 +246,20 @@ import "./style.css"
       <aside className="menu only-pc">
       <div className="menu-home">
         <ul className="nav-header">
-          <li>
-          <Link to="/lession"><i className="fa fa-fw fa-book" />TÀI LIỆU HỌC TẬP</Link>
-                     {this.renderClass("lessionclass")}
-         
+          <li class="menu-item">
+          {/* <Link to="/lession"><i className="fa fa-fw fa-book" />TÀI LIỆU HỌC TẬP</Link> */}
+          <a><i className="fa fa-fw fa-book" />TÀI LIỆU HỌC TẬP</a>
+           {this.renderClass("lessionclass")}
           </li>
         <li>
-          <Link to="/exam"><i className="fa fa-fw fa-columns" />KIỂM TRA</Link>
+          {/* <Link to="/exam"><i className="fa fa-fw fa-columns" />KIỂM TRA</Link> */}
+          <a><i className="fa fa-fw fa-columns" />KIỂM TRA</a>
           {this.renderClass("exam")}
         </li>
-       
         <li>
-        <Link to="/videolearning"><i className="fa fa-fw fa-windows" />HỌC ONLINE</Link>
+        {/* <Link to="/videolearning"><i className="fa fa-fw fa-windows" />HỌC ONLINE</Link> */}
+        <a><i className="fa fa-fw fa-windows" />HỌC ONLINE</a>
         {this.renderClass("videolearning")}
-       
         </li>
         <li>
         {/* <a href><i className="fa fa-fw fa-home" /></a> */}
