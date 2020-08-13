@@ -32,10 +32,10 @@ class Home extends Component {
     return (
       <div className="content ">
       <aside className="aside1">
-        <div className="js-carousel Carousel">
-          <div className="js-carouselCtx Carousel-content">
-            <div className="js-carouselList Carousel-content-list">
-              <Slider style={{width: '786px'}} {...settings}>
+        <div  className="js-carousel Carousel">
+          <div style={{width: '100%'}} className="js-carouselCtx Carousel-content">
+            <div style={{width: '100%'}}  className="js-carouselList Carousel-content-list">
+              <Slider style={{width: '100%'}} {...settings}>
                 <div className="Carousel-content-item" id="carousel1">
                   <img src="../img/imgs/slide1.jpg" alt="" />
                 </div>
@@ -52,28 +52,8 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        {/* <div className="Carousel-nav">
-          <div className="js-carouselNavItem Carousel-nav-item Carousel-nav-item--active" data-index={1}>
-            <p class="only-pc Carousel-nav-item__txt">1</p>
-            <p>Cùng gia đình Shin<br /> Đến NLKid học thôi</p>
-          </div>
-          <div className="js-carouselNavItem Carousel-nav-item" data-index={2}>
-            <p>Cùng gia đình Shin<br /> Đến NLKid học thôi</p>
-          </div>
-          <div className="js-carouselNavItem Carousel-nav-item" data-index={3}>
-            <p>Cùng gia đình Shin<br /> Đến NLKid học thôi</p>
-          </div>
-          <div className="js-carouselNavItem Carousel-nav-item" data-index={4}>
-            <p>Cùng gia đình Shin<br /> Đến NLKid học thôi</p>
-          </div>
-        </div> */}
       </aside>
       <LessionNew/>
-     <div className="promotebanner">
-        <a href>
-          <img src="../img/imgs/quang.jpg" alt="" />
-        </a>
-      </div>
       <div className="home-main">
       <LessonClass/>
       

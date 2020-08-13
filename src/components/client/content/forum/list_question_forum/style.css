@@ -1,7 +1,8 @@
 .hstieubieucuanuoc{
     display: flex;
     width: 80%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    margin-top: 0px;
     background-color: white;
 }
 ._item_ques {

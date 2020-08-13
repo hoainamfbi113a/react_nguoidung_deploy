@@ -42,10 +42,27 @@ export default class LessonFeatured extends Component {
             autoplay: true,
             autoplaySpeed: 2000,
             pauseOnHover: true,
-
+            responsive: [
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                  }
+                },
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                  }
+                },
+            ]
           };   
         return (
-            
             <div className="khoi-product-new">
                     <div className="productnew active_product">
                         <Slider style={{width: '90%'}} {...settings}>
