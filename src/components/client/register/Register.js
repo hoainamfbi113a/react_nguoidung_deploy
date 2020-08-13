@@ -18,7 +18,7 @@ class Register extends Component {
   onSubmit(e) {
     var r = this;
     e.preventDefault();//khong tu dong chuyen trang
-    axios.post('/users/register', {
+    axios.post('https://cititechnodejs.herokuapp.com/users/register', {
       memberLogin: this.state.memberLogin,
       memberPass: this.state.memberPass
     })
