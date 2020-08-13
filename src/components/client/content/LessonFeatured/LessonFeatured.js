@@ -11,7 +11,7 @@ export default class LessonFeatured extends Component {
     }
     componentDidMount = () => {
         // alert("vao")
-        axios.get('http://localhost:5000/client/lesson/list5/')
+        axios.get('https://cititechnodejs.herokuapp.com/client/lesson/list5/')
             .then(response => {
                 this.setState({ news: response.data })
             })

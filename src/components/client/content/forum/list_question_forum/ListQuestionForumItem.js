@@ -37,7 +37,7 @@ class ListQuestionForumItem extends Component {
             formData.answer= answer;
             formData.avatarContentImg = avatarContentImg
             // alert(this.props.id_question);
-            axios.post('http://localhost:5000/client/forumquestion/ans/'+this.props.id_question,formData
+            axios.post('https://cititechnodejs.herokuapp.com/client/forumquestion/ans/'+this.props.id_question,formData
               )
               .then(function (response) {
                 if(response.data ==='User already exists')
@@ -115,7 +115,7 @@ class ListQuestionForumItem extends Component {
               <div className="_title">
                 <a className="_gt-member" href="member/143886">
                   <div className="gt-ava">
-                    <img className="gt-ava-mem" src={`http://localhost:5000/${item.avatarContentImg}`} />
+                    <img className="gt-ava-mem" src={`https://cititechnodejs.herokuapp.com/${item.avatarContentImg}`} />
                     <span className="vip_user"> </span>
                   </div>
                   <div className="gt-info">
@@ -139,7 +139,7 @@ class ListQuestionForumItem extends Component {
           <div className="_title">
             <a className="_gt-member" href="member/155057">
               <div className="gt-ava">
-                <img className="gt-ava-mem" src={`http://localhost:5000/${item.memberForumQuestion.avatarContentImg}`} />
+                <img className="gt-ava-mem" src={`https://cititechnodejs.herokuapp.com/${item.memberForumQuestion.avatarContentImg}`} />
                 <span className="vip_user"> </span>
               </div>
               <div className="gt-info">

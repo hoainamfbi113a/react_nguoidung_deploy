@@ -39,7 +39,7 @@ class Question extends Component {
   onSubmit(e) {
     var r = this;
     e.preventDefault();
-    axios.post('http://localhost:5000/client/dethi', {
+    axios.post('https://cititechnodejs.herokuapp.com/client/dethi', {
       _id: this.state._id,
       ans0: this.state.ans0,
       ans1: this.state.ans1,
@@ -76,7 +76,7 @@ class Question extends Component {
       // first_name: decoded.first_name,
       memberid: decoded.memberLogin
     })
-    axios.get('http://localhost:5000/admin/question/list/' + this.props.match.params.id)
+    axios.get('https://cititechnodejs.herokuapp.com/admin/question/list/' + this.props.match.params.id)
       .then(response => {
         this.setState({ persons: response.data.question,
           timeEnd: response.data.timeEnd});

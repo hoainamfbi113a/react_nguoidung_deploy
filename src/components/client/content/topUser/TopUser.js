@@ -10,7 +10,7 @@ export default class TopUser extends Component {
       }
       componentDidMount =() =>
       {
-        axios.get('http://localhost:5000/admin/result/listtop/')
+        axios.get('https://cititechnodejs.herokuapp.com/admin/result/listtop/')
           .then(response => {
             this.setState({TopUser:response.data})
             // console.log(response.data);

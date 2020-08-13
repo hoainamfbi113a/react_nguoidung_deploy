@@ -11,7 +11,7 @@ class News extends Component {
   }
   componentDidMount =() =>
   {
-    axios.get('http://localhost:5000/client/news/listneweducation')
+    axios.get('https://cititechnodejs.herokuapp.com/client/news/listneweducation')
       .then(response => {
         this.setState({news:response.data})
       })

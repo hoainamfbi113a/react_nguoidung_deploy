@@ -13,7 +13,7 @@ class Dsdethi extends Component {
     }
   }
   fetchProfile() {
-    axios.get('http://localhost:5000/admin/exam/list/'+this.props.match.params.subject)
+    axios.get('https://cititechnodejs.herokuapp.com/admin/exam/list/'+this.props.match.params.subject)
         .then(response => {
             console.log(response.data);
             this.setState({persons: response.data});

@@ -11,7 +11,7 @@ export default class LessionDetail extends Component {
       }
     componentDidMount(){
         const { id } = this.props.match.params;
-        axios.get('http://localhost:5000/client/lesson/'+ id)
+        axios.get('https://cititechnodejs.herokuapp.com/client/lesson/'+ id)
             .then(response => {
                 this.setState({persons: response.data});
                 // console.log('LIEN : ' + JSON.stringify(response.data));

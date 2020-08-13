@@ -16,7 +16,7 @@ export default class LessionSubject extends Component {
     fetchProfile() {
          // const token = localStorage.usertoken
         let classId = this.props.match.params.subjects;
-        axios.get('http://localhost:5000/admin/lession/list/'+classId)
+        axios.get('https://cititechnodejs.herokuapp.com/admin/lession/list/'+classId)
             .then(response => {
                 console.log(response.data);
                 this.setState({persons: response.data});

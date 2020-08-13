@@ -15,7 +15,7 @@ export default class VideoLearning extends Component {
     fetchProfile() {
          // const token = localStorage.usertoken
         let classId = this.props.match.params.subject;
-        axios.get('http://localhost:5000/admin/videolearning/list/'+classId)
+        axios.get('https://cititechnodejs.herokuapp.com/admin/videolearning/list/'+classId)
             .then(response => {
                 console.log(response.data);
                 this.setState({persons: response.data});

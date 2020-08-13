@@ -10,7 +10,7 @@ export default class LessionNew extends Component {
       }
       componentDidMount =() =>
       {
-        axios.get('http://localhost:5000/client/lesson/list3/')
+        axios.get('https://cititechnodejs.herokuapp.com/client/lesson/list3/')
           .then(response => {
             this.setState({news:response.data})
           })

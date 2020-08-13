@@ -10,7 +10,7 @@ export default class VideoLearningDetail extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/admin/videolearning/'+this.props.match.params.id)
+        axios.get('https://cititechnodejs.herokuapp.com/admin/videolearning/'+this.props.match.params.id)
         .then(response => {
         this.setState({new:response.data})
         console.log(response.data);

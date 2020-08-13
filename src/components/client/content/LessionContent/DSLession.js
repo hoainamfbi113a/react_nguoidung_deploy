@@ -17,7 +17,7 @@ class DSLession extends Component {
   }
   componentDidMount(){
     alert(this.props.match.params.search);
-    axios.get('http://localhost:5000/admin/classsubject/list/')
+    axios.get('https://cititechnodejs.herokuapp.com/admin/classsubject/list/')
         .then(response => {
             // console.log(response.data);
             this.setState({classSubject: response.data});
@@ -25,7 +25,7 @@ class DSLession extends Component {
         .catch(function (error) {
 
         })
-    axios.get('http://localhost:5000/admin/lession/list/')
+    axios.get('https://cititechnodejs.herokuapp.com/admin/lession/list/')
         .then(response => {
             // console.log(response.data)
             this.setState({persons: response.data});

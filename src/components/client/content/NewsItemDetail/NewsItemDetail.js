@@ -12,7 +12,7 @@ class NewsItemDetail extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/client/news/list/')
+        axios.get('https://cititechnodejs.herokuapp.com/client/news/list/')
         .then(response => {
         this.setState({news:response.data})
             const id = this.props.match.params.id;
@@ -39,7 +39,7 @@ class NewsItemDetail extends Component {
                         <span>{this.state.new.timeUpdate}</span>
                     </div>
                     <div className="newsImg">
-                        <img src={`http://localhost:5000/${this.state.new.images}`} alt="" />
+                        <img src={`https://cititechnodejs.herokuapp.com/${this.state.new.images}`} alt="" />
                     </div>
                     <div className="newsContents" style={{width: '60%', margin: '31px auto'}}>
                         {/* <p>{this.state.new.contents}</p> */}

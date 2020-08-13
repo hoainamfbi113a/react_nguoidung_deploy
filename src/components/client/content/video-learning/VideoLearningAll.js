@@ -16,14 +16,14 @@ class VideoLearningAll extends Component {
     }
   }
   componentDidMount(){
-    axios.get('http://localhost:5000/admin/classsubject/list/')
+    axios.get('https://cititechnodejs.herokuapp.com/admin/classsubject/list/')
         .then(response => {
             this.setState({classSubject: response.data});
         })
         .catch(function (error) {
 
         })
-    axios.get('http://localhost:5000/admin/videolearning/list/')
+    axios.get('https://cititechnodejs.herokuapp.com/admin/videolearning/list/')
         .then(response => {
             this.setState({persons: response.data});
         })

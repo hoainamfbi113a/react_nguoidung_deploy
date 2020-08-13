@@ -8,7 +8,7 @@ export default class LessonNewItem extends Component {
         return (
             <div className="boxProduct">
             <Link to={"/lession/detail/"+item._id}>
-                 <img src={`http://localhost:5000/${item.lessionContentImg}`} alt="not display" />
+                 <img src={`https://cititechnodejs.herokuapp.com/${item.lessionContentImg}`} alt="not display" />
                 {/* <h3>Tiêu đề</h3> */}
                 <div className="destation">
                     {item.lessionContentTitle}

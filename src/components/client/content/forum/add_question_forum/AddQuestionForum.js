@@ -58,7 +58,7 @@ export default class AddQuestionForum extends Component {
         formData.classForumQuestion= classForumQuestion;
         formData.titleForumQuestion= titleForumQuestion;
         // alert(memberForumQuestionMemberName);
-        axios.post('http://localhost:5000/client/forumquestion', formData
+        axios.post('https://cititechnodejs.herokuapp.com/client/forumquestion', formData
           )
           .then(function (response) {
             if(response.data ==='User already exists')

@@ -16,7 +16,7 @@ class Dsdethi extends Component {
     }
   }
   componentDidMount(){
-    axios.get('http://localhost:5000/admin/classsubject/list/')
+    axios.get('https://cititechnodejs.herokuapp.com/admin/classsubject/list/')
         .then(response => {
             // console.log(response.data);
             this.setState({classSubject: response.data});
@@ -24,7 +24,7 @@ class Dsdethi extends Component {
         .catch(function (error) {
 
         })
-    axios.get('http://localhost:5000/admin/exam/list/')
+    axios.get('https://cititechnodejs.herokuapp.com/admin/exam/list/')
         .then(response => {
             this.setState({persons: response.data});
         })

@@ -18,7 +18,7 @@ class ListQuestionForum extends Component {
   }
   componentDidMount =() =>
   {
-    axios.get('http://localhost:5000/client/forumquestion/list/')
+    axios.get('https://cititechnodejs.herokuapp.com/client/forumquestion/list/')
       .then(response => {
         this.setState({questionForum:response.data})
       })

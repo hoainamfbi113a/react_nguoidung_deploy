@@ -23,7 +23,7 @@ export default class UpdateUser extends Component {
         const token = localStorage.usertoken
         const decoded = jwt_decode(token)//giai ma token
         // console.log(decoded)
-        axios.get('http://localhost:5000/admin/member/'+decoded._id)
+        axios.get('https://cititechnodejs.herokuapp.com/admin/member/'+decoded._id)
             .then(response => {
                 this.setState({
                     _id: decoded._id,
@@ -64,7 +64,7 @@ export default class UpdateUser extends Component {
           formData.append('memberDate', memberDate);
           formData.append('memberSex', memberSex);
           formData.append('memberAddress', memberAddress);
-          axios.post('http://localhost:5000/admin/exam/excel', formData)
+          axios.post('https://cititechnodejs.herokuapp.com/admin/exam/excel', formData)
           .then(res => console.log(res.data));
           alert("Cập nhật thành công")
         //   this.props.history.push('/');

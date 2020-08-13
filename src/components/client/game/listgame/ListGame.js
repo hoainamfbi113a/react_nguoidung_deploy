@@ -16,7 +16,7 @@ class DsNews extends Component {
   componentDidMount(){
     // const token = localStorage.usertoken
     // const decoded = jwt_decode(token)//giai ma token
-    axios.get('http://localhost:5000/admin/game/list/')
+    axios.get('https://cititechnodejs.herokuapp.com/admin/game/list/')
         .then(response => {
             this.setState({listquestionGame: response.data});
         })

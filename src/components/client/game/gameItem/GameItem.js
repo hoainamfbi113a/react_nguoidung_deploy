@@ -50,7 +50,7 @@ class MainQuiz extends React.Component {
 
  async componentDidMount() {
     // alert("xin chao")
-   await axios.get('http://localhost:5000/admin/game/list/'+this.props.match.params.subject)
+   await axios.get('https://cititechnodejs.herokuapp.com/admin/game/list/'+this.props.match.params.subject)
         .then(response => {
             console.log(response.data);
             this.setState({persons: response.data});
@@ -151,17 +151,17 @@ class MainQuiz extends React.Component {
           <div className="game-list-img">
           <ReactCardFlip isFlipped={this.state.isFlipped} >
           <div>
-          <img  onClick={() => this.checkAnswer(ans1)} className="img-game" src={`http://localhost:5000/${ans1img}`}></img>
+          <img  onClick={() => this.checkAnswer(ans1)} className="img-game" src={`https://cititechnodejs.herokuapp.com/${ans1img}`}></img>
           {/* <button onClick={this.handleClick}>Click to flip</button> */}
           </div>
           <div>{ans1}</div>
           </ReactCardFlip>
           <ReactCardFlip isFlipped={this.state.isFlipped} >
-          <img onClick={() => this.checkAnswer(ans2)} className="img-game" src={`http://localhost:5000/${ans2img}`}></img>
+          <img onClick={() => this.checkAnswer(ans2)} className="img-game" src={`https://cititechnodejs.herokuapp.com/${ans2img}`}></img>
           <div>{ans2}</div>
           </ReactCardFlip>
           <ReactCardFlip isFlipped={this.state.isFlipped} >
-          <img onClick={() => this.checkAnswer(ans3)} className="img-game" src={`http://localhost:5000/${ans3img}`}></img>
+          <img onClick={() => this.checkAnswer(ans3)} className="img-game" src={`https://cititechnodejs.herokuapp.com/${ans3img}`}></img>
           <div>{ans3}</div>
           </ReactCardFlip>
           </div>

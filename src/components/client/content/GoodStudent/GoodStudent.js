@@ -11,7 +11,7 @@ class GoodStudent extends Component {
   }
   componentDidMount =() =>
   {
-    axios.get('http://localhost:5000/client/news/listgoodstudent/')
+    axios.get('https://cititechnodejs.herokuapp.com/client/news/listgoodstudent/')
       .then(response => {
         this.setState({goodStudent:response.data})
         // console.log(response.data);

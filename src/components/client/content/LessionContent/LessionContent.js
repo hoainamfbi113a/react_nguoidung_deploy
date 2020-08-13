@@ -14,7 +14,7 @@ export default class LessionContent extends Component {
       }
     componentDidMount(){
         const token = localStorage.usertoken
-        axios.get('http://localhost:5000/admin/lession/list/')
+        axios.get('https://cititechnodejs.herokuapp.com/admin/lession/list/')
             .then(response => {
                 console.log(response.data);
                 this.setState({persons: response.data});
