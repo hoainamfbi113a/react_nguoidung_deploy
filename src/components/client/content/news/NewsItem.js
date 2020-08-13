@@ -8,7 +8,8 @@ class NewsItem extends Component {
             <NavLink to={`/news-item/${item._id}`}>
               <ul className="banner0">
                 <a href>
-                  <img src={item.images}></img>
+                  {/* <img src={item.images}></img> */}
+                  <img src={`https://cititechnodejs.herokuapp.com/${item.images}`} alt="not display" />
                   <h3>{item.title}</h3>
                   <span>{item.timeUpdate}</span>
                 </a>
